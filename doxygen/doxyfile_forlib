@@ -9,9 +9,9 @@
 # Project related configuration options
 #---------------------------------------------------------------------------
 DOXYFILE_ENCODING      = UTF-8
-PROJECT_NAME           = wcWebCamClient library
+PROJECT_NAME           = "wcWebCamClient library"
 PROJECT_NUMBER         = 0.7
-PROJECT_BRIEF          = Library for convenient work with the wcWebCamServer server via the JSON protocol.
+PROJECT_BRIEF          = "Library for convenient work with the wcWebCamServer server via the JSON protocol."
 PROJECT_LOGO           = doxygen/wclogo_c.svg
 OUTPUT_DIRECTORY       =
 CREATE_SUBDIRS         = NO
