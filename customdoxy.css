@@ -1,0 +1,15 @@
+h1 {
+        background-image: var(--header-gradient-image);
+        background-repeat:repeat-x;
+	background-color: var(--header-background-color);
+	margin:  0px;
+	border-bottom: 1px solid var(--header-separator-color);
+    padding: 15px 5px 15px 5px;
+}
+ 
+#projectlogo img
+{ 
+	border: 0px none;
+    max-width: 40px;
+    height: auto;
+}
