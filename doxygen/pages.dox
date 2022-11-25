@@ -1,0 +1,27 @@
+/*! @page users_guide wcWebCamClient library API User's Guide
+
+@par Table of Contents
+
+- \ref JSONProtocolHome
+    - \ref ServerConfig    
+    - \ref DataStreamFormat        
+    - \ref output
+    - \ref input
+    - \ref JSON_BAD
+- [wcWebCamServer - REST Web Camera server sources](https://github.com/iLya2IK/wcwebcamserver)
+- [wcWebCamClient library header](\ref wcwebcamclient.h)
+    - [Globals All](globals.html)
+    - [API Functions](globals_func.html)
+    - [Variables and Consts](globals_vars.html)
+    - [Typedefs](globals_type.html)
+    - [Enums](globals_enum.html)    
+    - \ref wcReturn
+    - \ref wcClientCallbacks
+    - \ref wcClientGettersSetters
+    - \ref wcClientLifeCircle
+    - \ref wcClientRequests
+    - \ref wcFramesFuncs
+    - \ref wcTasksFuncs
+    - \ref wcInTasksFuncs
+    - [Example](examples.html)
+*/ 

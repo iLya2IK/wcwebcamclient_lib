@@ -5,6 +5,8 @@
 *.bak
 *.obj
 *.compiled
+CppCheckResults.xml
+*.depend
 /bin/
 /lib/
 /obj/

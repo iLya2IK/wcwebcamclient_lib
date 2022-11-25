@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="wcwebcamclient" />
+		<Option platforms="Windows;Unix;" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Win">
+				<Option output="bin/Debug/wcwebcamclient" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-std=c++0x" />
+					<Add option="-g" />
+					<Add option="-finput-charset=iso-8859-1 -pthread" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add library="curl-4" />
+				</Linker>
+			</Target>
+			<Target title="Release Win">
+				<Option output="bin/Release/wcwebcamclient" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-std=c++0x" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="curl-4" />
+				</Linker>
+			</Target>
+			<Target title="Debug Linux">
+				<Option output="bin/Debug/wcwebcamclient" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-std=c++0x" />
+					<Add option="-fPIC" />
+					<Add option="-g" />
+					<Add option="-finput-charset=iso-8859-1 -pthread" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add library="curl" />
+				</Linker>
+			</Target>
+			<Target title="Release Linux">
+				<Option output="bin/Release/wcwebcamclient" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-std=c++0x" />
+					<Add option="-fPIC" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="curl" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-std=c++0x" />
+			<Add option="-fexceptions" />
+			<Add option="-DDLL_BUILD" />
+			<Add directory="cJSON/include" />
+		</Compiler>
+		<Unit filename="cJSON/include/cJSON.h" />
+		<Unit filename="cJSON/include/cJSON_Utils.h" />
+		<Unit filename="cJSON/src/cJSON.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cJSON/src/cJSON_Utils.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="include/NotifyObj.h" />
+		<Unit filename="include/tsCURLM.h" />
+		<Unit filename="include/tsInteger.h" />
+		<Unit filename="include/tsObject.h" />
+		<Unit filename="include/tsSeq.h" />
+		<Unit filename="include/tsStringList.h" />
+		<Unit filename="include/wcCURLClient.h" />
+		<Unit filename="include/wcCallbacks.h" />
+		<Unit filename="include/wcCommonCallbacks.h" />
+		<Unit filename="include/wcConstsTypes.h" />
+		<Unit filename="include/wcDefines.h" />
+		<Unit filename="include/wcHTTP2AsyncBackground.h" />
+		<Unit filename="include/wcHTTP2BackgroundTask.h" />
+		<Unit filename="include/wcHTTP2SettingsIntf.h" />
+		<Unit filename="include/wcJSON.h" />
+		<Unit filename="include/wcJSONUtils.h" />
+		<Unit filename="include/wcMemoryStream.h" />
+		<Unit filename="include/wcStreaming.h" />
+		<Unit filename="include/wcThread.h" />
+		<Unit filename="src/NotifyObj.cpp" />
+		<Unit filename="src/tsCURLM.cpp" />
+		<Unit filename="src/tsInteger.cpp" />
+		<Unit filename="src/tsObject.cpp" />
+		<Unit filename="src/tsSeq.cpp" />
+		<Unit filename="src/tsStringList.cpp" />
+		<Unit filename="src/wcCURLClient.cpp" />
+		<Unit filename="src/wcCallbacks.cpp" />
+		<Unit filename="src/wcConsts.cpp" />
+		<Unit filename="src/wcHTTP2AsyncBackground.cpp" />
+		<Unit filename="src/wcHTTP2BackgroundTask.cpp" />
+		<Unit filename="src/wcHTTP2SettingsIntf.cpp" />
+		<Unit filename="src/wcJSON.cpp" />
+		<Unit filename="src/wcMemoryStream.cpp" />
+		<Unit filename="src/wcStreaming.cpp" />
+		<Unit filename="src/wcThread.cpp" />
+		<Unit filename="src/wcUtils.cpp" />
+		<Unit filename="version.h" />
+		<Unit filename="wcwebcamclient.cpp" />
+		<Unit filename="wcwebcamclient.h" />
+		<Extensions>
+			<DoxyBlocks>
+				<comment_style block="3" line="3" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
+			<lib_finder disable_auto="1" />
+			<code_completion />
+			<AutoVersioning>
+				<Scheme minor_max="10" build_max="0" rev_max="0" rev_rand_max="10" build_times_to_increment_minor="100" />
+				<Settings autoincrement="1" date_declarations="1" use_define="0" update_manifest="1" do_auto_increment="0" ask_to_increment="0" language="C" svn="0" svn_directory="" header_path="version.h" />
+				<Changes_Log show_changes_editor="0" app_title="released version %M.%m.%b of %p" changeslog_path="ChangesLog.txt" />
+				<Code header_guard="VERSION_H" namespace="AutoVersion" prefix="" />
+			</AutoVersioning>
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
