@@ -1,4 +1,4 @@
-var annotated_dup =
+var annotated =
 [
     [ "ConnNotifyEvent", "struct_conn_notify_event.html", "struct_conn_notify_event" ],
     [ "CStringNotify", "struct_c_string_notify.html", "struct_c_string_notify" ],

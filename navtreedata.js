@@ -107,13 +107,11 @@ var NAVTREE =
       [ "JSON_BAD message format", "_j_s_o_n_protocol_home.html#JSON_BAD", null ]
     ] ],
     [ "Modules", "modules.html", "modules" ],
-    [ "Data Structures", "annotated.html", [
-      [ "Data Structures", "annotated.html", "annotated_dup" ],
-      [ "Data Structure Index", "classes.html", null ],
-      [ "Data Fields", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Variables", "functions_vars.html", null ]
-      ] ]
+    [ "Data Structures", "annotated.html", "annotated" ],
+    [ "Data Structure Index", "classes.html", null ],
+    [ "Data Fields", "functions.html", [
+      [ "All", "functions.html", null ],
+      [ "Variables", "functions_vars.html", null ]
     ] ],
     [ "Files", "files.html", [
       [ "Globals", "globals.html", [
