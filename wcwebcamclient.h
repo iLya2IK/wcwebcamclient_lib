@@ -99,6 +99,19 @@ typedef int wcHandle;
 //! \brief Pointer to task
 typedef wcCallbackTask wcTask;
 
+//! \brief Task class
+typedef uint32_t wcTaskClass;
+
+//! \brief The Base task class
+const wcTaskClass WC_BASE_TASK = 0;
+//! \brief The Simple task class (for POST requests)
+const wcTaskClass WC_TASK = 1;
+//! \brief The Input-stream task class (for GET requests)
+const wcTaskClass WC_IN_STREAM_TASK = 2;
+//! \brief The Output-stream task class (for UPLOAD requests)
+const wcTaskClass WC_OUT_STREAM_TASK = 4;
+//! \brief All tasks classes (mask)
+const wcTaskClass WC_ALL_TASKS = 0xffffffff;
 
 /*!
  * \defgroup wcClientCallbacks Library functions and typedefs to set callbacks for client
@@ -730,10 +743,78 @@ wcRCode DLLEXPORT wcLaunchInStream(wcHandle client, const char * deviceName, voi
  * \defgroup wcFramesFuncs Library functions to manage with output stream frames
  * @{
  */
+//! \brief Get the ID of the current output frame.
+/*! Related to request \ref output.
+ *
+ * \param client         The client handle.
+ * \param id             Pointer to the long type variable.
+ * \return \ref wcRCode  \ref WC_OK or error code.
+ *
+ * \sa wcRCode
+ */
 wcRCode DLLEXPORT wcClientGetFrameID(wcHandle client, long * id);
+//! \brief Lock the frame object for threadsafe access to the output data stack.
+/*! Related to request \ref output.
+ *
+ * \param client         The client handle.
+ * \return \ref wcRCode  \ref WC_OK or error code.
+ *
+ * \sa wcRCode, wcClientFrameUnLock
+ */
 wcRCode DLLEXPORT wcClientFrameLock(wcHandle client);
+//! \brief Unlock the frame object.
+/*! Related to request \ref output.
+ *
+ * \param client         The client handle.
+ * \return \ref wcRCode  \ref WC_OK or error code.
+ *
+ * \sa wcRCode, wcClientFrameLock
+ */
 wcRCode DLLEXPORT wcClientFrameUnLock(wcHandle client);
+//! \brief Add a new frame to the outgoing data stack to send.
+/*! Related to request \ref output. The sent frames counter is automatically incremented by one.
+ * It is strongly recommended to lock the frame object using the \ref wcClientFrameLock / \ref wcClientFrameUnLock
+ * procedures when accessing the outgoing data stack. To add a new frame after sending the previous one,
+ * use the \ref wccbkSynchroUpdateTask callback.
+ *
+ * \param client         The client handle.
+ * \return \ref wcRCode  \ref WC_OK or error code.
+ *
+ * \sa wcRCode, wccbkSynchroUpdateTask, wcSetTaskCallback, wcClientTasksProceed
+ */
 wcRCode DLLEXPORT wcClientFramePushData(wcHandle client, const void * data, size_t len);
+//! \brief Get access to the last frame in the outgoing data stack.
+/*! Related to request \ref output.
+ * It is strongly recommended to lock the frame object using the \ref wcClientFrameLock / \ref wcClientFrameUnLock
+ * procedures when accessing the outgoing data stack.
+ *
+ * \param client         The client handle.
+ * \param data           The pointer to the variable of void * type initialized with NULL value to return frame data.
+ * \param len            The pointer to the variable of size_t type to return frame size.
+ * \return \ref wcRCode  \ref WC_OK or error code.
+ *
+ * \b Example<br>
+ * \code
+ * void * data = NULL;
+ * size_t len = 0;
+ * wcRCode aCode = wcClientFrameLock(client);
+ * if (aCode == WC_OK) {
+ *    aCode = wcClientFrameGetData(client, &data, &len);
+ *    if (aCode == WC_OK) {
+ *       // work with data and len
+ *       // do not free this data! it will be deleted automatically by library
+ *    } else {
+ *       cout << "error occurred " << aCode << endl;
+ *    }
+ *    aCode = wcClientFrameUnLock(client);
+ * }
+ * if (aCode != WC_OK)
+ * {
+ *    cout << "error occurred " << aCode << endl;
+ * }
+ * \endcode
+ * \sa wcRCode
+ */
 wcRCode DLLEXPORT wcClientFrameGetData(wcHandle client, void ** data, size_t * len);
 /*!@}*/
 
@@ -741,16 +822,85 @@ wcRCode DLLEXPORT wcClientFrameGetData(wcHandle client, void ** data, size_t * l
  * \defgroup wcTasksFuncs Library functions to manage with background tasks
  * @{
  */
-wcRCode DLLEXPORT wcTaskGetClass(wcTask task, uint32_t * id);
+//! \brief Get the class of the \a task.
+/*! Possible results for the \a id parameter:<br>
+ *  \ref WC_TASK,<br>
+ *  \ref WC_IN_STREAM_TASK,<br>
+ *  \ref WC_OUT_STREAM_TASK.<br>
+ *
+ * \param task          Pointer to the task object.
+ * \param id            Pointer to the variable of \ref wcTaskClass type to return the task class.
+ * \return \ref wcRCode  \ref WC_OK or error code.
+ *
+ * \sa wcRCode
+ */
+wcRCode DLLEXPORT wcTaskGetClass(wcTask task, wcTaskClass * id);
+//! \brief Get the user data for the \a task.
+/*!
+ * \param task          Pointer to the task object.
+ * \param data          Pointer to the variable of \ref void * type to return the user data.
+ * \return \ref wcRCode  \ref WC_OK or error code.
+ *
+ * \sa wcRCode, wcTaskSetUserData, wcClientRequests
+ */
 wcRCode DLLEXPORT wcTaskGetUserData(wcTask task, void ** data);
+//! \brief Set the user data for the \a task.
+/*! Data is not deleted by library.
+ *
+ * \param task          Pointer to the task object.
+ * \param data          The user data.
+ * \return \ref wcRCode  \ref WC_OK or error code.
+ *
+ * \sa wcRCode, wcTaskGetUserData, wcClientRequests
+ */
 wcRCode DLLEXPORT wcTaskSetUserData(wcTask task, void * data);
+//! \brief Lock the task object for threadsafe access.
+/*!
+ * \param task           Pointer to the task object.
+ * \return \ref wcRCode  \ref WC_OK or error code.
+ *
+ * \sa wcRCode, wcTaskUnLock
+ */
 wcRCode DLLEXPORT wcTaskLock(wcTask task);
+//! \brief Unlock the task object.
+/*!
+ * \param task           Pointer to the task object.
+ * \return \ref wcRCode  \ref WC_OK or error code.
+ *
+ * \sa wcRCode, wcTaskLock
+ */
 wcRCode DLLEXPORT wcTaskUnLock(wcTask task);
 /*!@}*/
 
 /*!
  * \defgroup wcInTasksFuncs Library functions to manage with incoming streams
  * @{
+ */
+//! \brief Get access to the first frame in the incoming data stack.
+/*! Related to request \ref input. A signal that a new frame has been received is
+ * triggered by a \a task with the \ref wccbkSynchroUpdateTask callback.
+ *
+ * \param client         The client handle.
+ * \param data           The pointer to the variable of void * type initialized with NULL value to return frame data.
+ * \param len            The pointer to the variable of size_t type to return frame size.
+ * \return \ref wcRCode  \ref WC_OK or error code.
+ *
+ * \b Example<br>
+ * \code
+ * void * data = NULL;
+ * size_t len = 0;
+ *
+ * aCode = wcInTaskPopFrame(client, &data, &len);
+ * if (aCode == WC_OK) {
+ *    if (data && (len > 0)) {
+ *       // work with incoming data and len (draw, save, etc.)
+ *       free(data);
+ *    }
+ * } else {
+ *    cout << "error occurred " << aCode << endl;
+ * }
+ * \endcode
+ * \sa wcRCode, wccbkSynchroUpdateTask, wcSetTaskCallback, wcClientTasksProceed
  */
 wcRCode DLLEXPORT wcInTaskPopFrame(wcTask task, void ** data, size_t * len);
 /*!@}*/
