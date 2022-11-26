@@ -105,14 +105,19 @@ $(document).ready(function(){initNavTree('group__wc_frames_funcs.html',''); init
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga3d4c191e8d09057f26ae5c4fb60ca475"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> DLLEXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_frames_funcs.html#ga3d4c191e8d09057f26ae5c4fb60ca475">wcClientGetFrameID</a> (<a class="el" href="wcwebcamclient_8h.html#a8ed09f7b448a852b96e2a705531a285c">wcHandle</a> client, long *id)</td></tr>
+<tr class="memdesc:ga3d4c191e8d09057f26ae5c4fb60ca475"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the ID of the current output frame.  <a href="group__wc_frames_funcs.html#ga3d4c191e8d09057f26ae5c4fb60ca475">More...</a><br /></td></tr>
 <tr class="separator:ga3d4c191e8d09057f26ae5c4fb60ca475"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0e1289336aaf4a5a4ce6bd27abd08046"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> DLLEXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_frames_funcs.html#ga0e1289336aaf4a5a4ce6bd27abd08046">wcClientFrameLock</a> (<a class="el" href="wcwebcamclient_8h.html#a8ed09f7b448a852b96e2a705531a285c">wcHandle</a> client)</td></tr>
+<tr class="memdesc:ga0e1289336aaf4a5a4ce6bd27abd08046"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock the frame object for threadsafe access to the output data stack.  <a href="group__wc_frames_funcs.html#ga0e1289336aaf4a5a4ce6bd27abd08046">More...</a><br /></td></tr>
 <tr class="separator:ga0e1289336aaf4a5a4ce6bd27abd08046"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga36170bcfdabcfee2949f4a1b39f0ff85"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> DLLEXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_frames_funcs.html#ga36170bcfdabcfee2949f4a1b39f0ff85">wcClientFrameUnLock</a> (<a class="el" href="wcwebcamclient_8h.html#a8ed09f7b448a852b96e2a705531a285c">wcHandle</a> client)</td></tr>
+<tr class="memdesc:ga36170bcfdabcfee2949f4a1b39f0ff85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlock the frame object.  <a href="group__wc_frames_funcs.html#ga36170bcfdabcfee2949f4a1b39f0ff85">More...</a><br /></td></tr>
 <tr class="separator:ga36170bcfdabcfee2949f4a1b39f0ff85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga35f02325e16208cce53f2e553d1684e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> DLLEXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_frames_funcs.html#ga35f02325e16208cce53f2e553d1684e9">wcClientFramePushData</a> (<a class="el" href="wcwebcamclient_8h.html#a8ed09f7b448a852b96e2a705531a285c">wcHandle</a> client, const void *data, size_t len)</td></tr>
+<tr class="memdesc:ga35f02325e16208cce53f2e553d1684e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new frame to the outgoing data stack to send.  <a href="group__wc_frames_funcs.html#ga35f02325e16208cce53f2e553d1684e9">More...</a><br /></td></tr>
 <tr class="separator:ga35f02325e16208cce53f2e553d1684e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga270c4c1a35fae402490acb0e95eccf98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> DLLEXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_frames_funcs.html#ga270c4c1a35fae402490acb0e95eccf98">wcClientFrameGetData</a> (<a class="el" href="wcwebcamclient_8h.html#a8ed09f7b448a852b96e2a705531a285c">wcHandle</a> client, void **data, size_t *len)</td></tr>
+<tr class="memdesc:ga270c4c1a35fae402490acb0e95eccf98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get access to the last frame in the outgoing data stack.  <a href="group__wc_frames_funcs.html#ga270c4c1a35fae402490acb0e95eccf98">More...</a><br /></td></tr>
 <tr class="separator:ga270c4c1a35fae402490acb0e95eccf98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -143,6 +148,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Get the ID of the current output frame. </p>
+<p>Related to request <a class="el" href="_j_s_o_n_protocol_home.html#output">output.raw</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">client</td><td>The client handle. </td></tr>
+    <tr><td class="paramname">id</td><td>Pointer to the long type variable. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> <a class="el" href="group__wc_return.html#ga5f50c11b25339e1568bf54e5c4027418">WC_OK</a> or error code.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7" title="Operation completion codes.">wcRCode</a> </dd></dl>
+
 </div>
 </div>
 <a id="ga0e1289336aaf4a5a4ce6bd27abd08046"></a>
@@ -161,6 +178,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Lock the frame object for threadsafe access to the output data stack. </p>
+<p>Related to request <a class="el" href="_j_s_o_n_protocol_home.html#output">output.raw</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">client</td><td>The client handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> <a class="el" href="group__wc_return.html#ga5f50c11b25339e1568bf54e5c4027418">WC_OK</a> or error code.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7" title="Operation completion codes.">wcRCode</a>, <a class="el" href="group__wc_frames_funcs.html#ga36170bcfdabcfee2949f4a1b39f0ff85" title="Unlock the frame object.">wcClientFrameUnLock</a> </dd></dl>
+
 </div>
 </div>
 <a id="ga36170bcfdabcfee2949f4a1b39f0ff85"></a>
@@ -178,6 +206,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Unlock the frame object. </p>
+<p>Related to request <a class="el" href="_j_s_o_n_protocol_home.html#output">output.raw</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">client</td><td>The client handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> <a class="el" href="group__wc_return.html#ga5f50c11b25339e1568bf54e5c4027418">WC_OK</a> or error code.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7" title="Operation completion codes.">wcRCode</a>, <a class="el" href="group__wc_frames_funcs.html#ga0e1289336aaf4a5a4ce6bd27abd08046" title="Lock the frame object for threadsafe access to the output data stack.">wcClientFrameLock</a> </dd></dl>
 
 </div>
 </div>
@@ -213,6 +252,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Add a new frame to the outgoing data stack to send. </p>
+<p>Related to request <a class="el" href="_j_s_o_n_protocol_home.html#output">output.raw</a>. The sent frames counter is automatically incremented by one. It is strongly recommended to lock the frame object using the <a class="el" href="group__wc_frames_funcs.html#ga0e1289336aaf4a5a4ce6bd27abd08046">wcClientFrameLock</a> / <a class="el" href="group__wc_frames_funcs.html#ga36170bcfdabcfee2949f4a1b39f0ff85">wcClientFrameUnLock</a> procedures when accessing the outgoing data stack. To add a new frame after sending the previous one, use the <a class="el" href="group__wc_client_callbacks.html#ggaa0654287d510e9750e0293d6d27758b2a167e248df079d152ee639b9480ebd1b4">wccbkSynchroUpdateTask</a> callback.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">client</td><td>The client handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> <a class="el" href="group__wc_return.html#ga5f50c11b25339e1568bf54e5c4027418">WC_OK</a> or error code.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7" title="Operation completion codes.">wcRCode</a>, <a class="el" href="group__wc_client_callbacks.html#ggaa0654287d510e9750e0293d6d27758b2a167e248df079d152ee639b9480ebd1b4" title="The IO streaming task signals that a change has occurred.">wccbkSynchroUpdateTask</a>, <a class="el" href="group__wc_client_callbacks.html#ga236c9ab837587b20b0ff7633da2d8a99" title="Set specified task notify callback for client.">wcSetTaskCallback</a>, <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f" title="Call the synchronous client update stage.">wcClientTasksProceed</a> </dd></dl>
+
 </div>
 </div>
 <a id="ga270c4c1a35fae402490acb0e95eccf98"></a>
@@ -247,14 +297,50 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Get access to the last frame in the outgoing data stack. </p>
+<p>Related to request <a class="el" href="_j_s_o_n_protocol_home.html#output">output.raw</a>. It is strongly recommended to lock the frame object using the <a class="el" href="group__wc_frames_funcs.html#ga0e1289336aaf4a5a4ce6bd27abd08046">wcClientFrameLock</a> / <a class="el" href="group__wc_frames_funcs.html#ga36170bcfdabcfee2949f4a1b39f0ff85">wcClientFrameUnLock</a> procedures when accessing the outgoing data stack.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">client</td><td>The client handle. </td></tr>
+    <tr><td class="paramname">data</td><td>The pointer to the variable of void * type initialized with NULL value to return frame data. </td></tr>
+    <tr><td class="paramname">len</td><td>The pointer to the variable of size_t type to return frame size. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> <a class="el" href="group__wc_return.html#ga5f50c11b25339e1568bf54e5c4027418">WC_OK</a> or error code.</dd></dl>
+<p><b>Example</b> <br  />
+ </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> * data = NULL;</div>
+<div class="line"><span class="keywordtype">size_t</span> len = 0;</div>
+<div class="line"><a class="code" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> aCode = <a class="code" href="group__wc_frames_funcs.html#ga0e1289336aaf4a5a4ce6bd27abd08046">wcClientFrameLock</a>(client);</div>
+<div class="line"><span class="keywordflow">if</span> (aCode == <a class="code" href="group__wc_return.html#ga5f50c11b25339e1568bf54e5c4027418">WC_OK</a>) {</div>
+<div class="line">   aCode = <a class="code" href="group__wc_frames_funcs.html#ga270c4c1a35fae402490acb0e95eccf98">wcClientFrameGetData</a>(client, &amp;data, &amp;len);</div>
+<div class="line">   <span class="keywordflow">if</span> (aCode == <a class="code" href="group__wc_return.html#ga5f50c11b25339e1568bf54e5c4027418">WC_OK</a>) {</div>
+<div class="line">      <span class="comment">// work with data and len</span></div>
+<div class="line">      <span class="comment">// do not free this data! it will be deleted automatically by library</span></div>
+<div class="line">   } <span class="keywordflow">else</span> {</div>
+<div class="line">      cout &lt;&lt; <span class="stringliteral">&quot;error occurred &quot;</span> &lt;&lt; aCode &lt;&lt; endl;</div>
+<div class="line">   }</div>
+<div class="line">   aCode = <a class="code" href="group__wc_frames_funcs.html#ga36170bcfdabcfee2949f4a1b39f0ff85">wcClientFrameUnLock</a>(client);</div>
+<div class="line">}</div>
+<div class="line"><span class="keywordflow">if</span> (aCode != <a class="code" href="group__wc_return.html#ga5f50c11b25339e1568bf54e5c4027418">WC_OK</a>)</div>
+<div class="line">{</div>
+<div class="line">   cout &lt;&lt; <span class="stringliteral">&quot;error occurred &quot;</span> &lt;&lt; aCode &lt;&lt; endl;</div>
+<div class="line">}</div>
+</div><!-- fragment --> <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7" title="Operation completion codes.">wcRCode</a> </dd></dl>
+
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="agroup__wc_return_html_ga5f50c11b25339e1568bf54e5c4027418"><div class="ttname"><a href="group__wc_return.html#ga5f50c11b25339e1568bf54e5c4027418">WC_OK</a></div><div class="ttdeci">const wcRCode WC_OK</div><div class="ttdef"><b>Definition:</b> wcwebcamclient.h:72</div></div>
+<div class="ttc" id="agroup__wc_frames_funcs_html_ga270c4c1a35fae402490acb0e95eccf98"><div class="ttname"><a href="group__wc_frames_funcs.html#ga270c4c1a35fae402490acb0e95eccf98">wcClientFrameGetData</a></div><div class="ttdeci">wcRCode DLLEXPORT wcClientFrameGetData(wcHandle client, void **data, size_t *len)</div><div class="ttdoc">Get access to the last frame in the outgoing data stack.</div></div>
+<div class="ttc" id="agroup__wc_frames_funcs_html_ga0e1289336aaf4a5a4ce6bd27abd08046"><div class="ttname"><a href="group__wc_frames_funcs.html#ga0e1289336aaf4a5a4ce6bd27abd08046">wcClientFrameLock</a></div><div class="ttdeci">wcRCode DLLEXPORT wcClientFrameLock(wcHandle client)</div><div class="ttdoc">Lock the frame object for threadsafe access to the output data stack.</div></div>
+<div class="ttc" id="agroup__wc_frames_funcs_html_ga36170bcfdabcfee2949f4a1b39f0ff85"><div class="ttname"><a href="group__wc_frames_funcs.html#ga36170bcfdabcfee2949f4a1b39f0ff85">wcClientFrameUnLock</a></div><div class="ttdeci">wcRCode DLLEXPORT wcClientFrameUnLock(wcHandle client)</div><div class="ttdoc">Unlock the frame object.</div></div>
+<div class="ttc" id="agroup__wc_return_html_ga6a1fc62624f098c89977a9ab13a976e7"><div class="ttname"><a href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a></div><div class="ttdeci">int wcRCode</div><div class="ttdoc">Operation completion codes.</div><div class="ttdef"><b>Definition:</b> wcwebcamclient.h:63</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Nov 25 2022 18:57:57 for wcWebCamClient library by
+    <li class="footer">Generated on Sat Nov 26 2022 15:30:13 for wcWebCamClient library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
