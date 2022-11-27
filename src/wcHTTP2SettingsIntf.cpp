@@ -12,6 +12,11 @@
 
 using namespace std;
 
+wcHTTP2SettingsIntf::wcHTTP2SettingsIntf()
+{
+    proxy_prot = "http://";
+}
+
 string wcHTTP2SettingsIntf::getSID()
 {
     lock();
@@ -77,10 +82,16 @@ void wcHTTP2SettingsIntf::setDevice(const std::string & aDevice)
 void wcHTTP2SettingsIntf::setProxy(const std::string& aValue)
 {
     lock();
-    decodeProxy(aValue, proxy_host, proxy_port, proxy_enc_aname, proxy_enc_apass);
+    decodeProxy(aValue, proxy_prot, proxy_host, proxy_port, proxy_enc_aname, proxy_enc_apass);
     unlock();
 }
 
+void wcHTTP2SettingsIntf::setProxyProt(const std::string& aValue)
+{
+    lock();
+    proxy_prot = aValue;
+    unlock();
+}
 
 void wcHTTP2SettingsIntf::setProxyHost(const std::string& aValue)
 {
@@ -128,7 +139,7 @@ bool wcHTTP2SettingsIntf::hasMetaData()
 string wcHTTP2SettingsIntf::getProxyStr()
 {
     lock();
-    string aStr ("http://" + proxy_host);
+    string aStr (proxy_prot + proxy_host);
     if (!proxy_port.empty()) {
         aStr += ":" + proxy_port;
     }

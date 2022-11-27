@@ -296,6 +296,9 @@ wcRCode DLLEXPORT wcClientSetStrValue(wcHandle client, wcStateId aStateId, const
     case wcstProxy :
         WC_CLIENT(client)->setProxy(aStateVal);
         break;
+    case wcstProxyProtocol :
+        WC_CLIENT(client)->setProxyProtocol(aStateVal);
+        break;
     case wcstProxyHost :
         WC_CLIENT(client)->setProxyHost(aStateVal);
         break;

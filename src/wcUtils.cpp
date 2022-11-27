@@ -11,6 +11,8 @@
 #include <set>
 #include <exception>
 #include <cstring>
+#include <algorithm>
+#include <cctype>
 
 std::string vstr_format(const char * format, va_list args)
 {
@@ -31,7 +33,14 @@ std::string str_format(const char * format, ...)
     return res;
 }
 
-void decodeProxy(const std::string & aStr, std::string & aHost, std::string & aPort, std::string & aUName, std::string & aPwrd)
+bool is_number(const std::string &s) {
+  return !s.empty() && std::find_if(s.begin(),
+        s.end(), [](unsigned char c) { return !std::isdigit(c); }) == s.end();
+}
+
+void decodeProxy(const std::string & aStr,
+                 std::string & aProtocol,
+                 std::string & aHost, std::string & aPort, std::string & aUName, std::string & aPwrd)
 {
     int L = aStr.size();
 
@@ -88,16 +97,37 @@ void decodeProxy(const std::string & aStr, std::string & aHost, std::string & aP
             break;
         }
     }
-    if (parts.size() > unpos) {
-        aHost = parts.at(unpos);
-        unpos++;
-        if (parts.size() > unpos) {
-            aPort = parts.at(unpos);
-        } else
+    size_t address_len = parts.size() - unpos;
+
+    switch (address_len) {
+        case 1 : {
+            aHost = parts.at(parts.size()-1);
             aPort = empty_str;
-    } else {
-        aHost = empty_str;
-        aPort = empty_str;
+            break;
+        }
+        case 2 :
+        case 3 : {
+            if (is_number(parts.at(parts.size()-1))) {
+                aPort = parts.at(parts.size()-1);
+                address_len--;
+            } else {
+                aPort = empty_str;
+            }
+            if (address_len > 1) {
+                aProtocol = std::string(parts.at(unpos) + "://");
+                aHost = parts.at(unpos + 1);
+                while (!aHost.empty() && (aHost.at(0) == '/'))
+                    aHost.erase(0, 1);
+            } else {
+                aHost = parts.at(unpos);
+            }
+            break;
+        }
+        default : {
+            aHost = empty_str;
+            aPort = empty_str;
+            break;
+        }
     }
     free(res);
 }

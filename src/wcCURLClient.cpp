@@ -372,6 +372,7 @@ void wcCURLClient::successAuth(void* ATask)
                 setNeedToUpdateDevices(true);
                 setNeedToUpdateRecords(true);
                 setNeedToUpdateMsgs(true);
+                setNeedToUpdateStreams(true);
                 if _ASSIGNED(mOnSuccessAuth)
                     EXEC_METHOD(mOnSuccessAuth, ATask);
             }
@@ -389,6 +390,7 @@ void wcCURLClient::disconnect()
     mNeedToUpdateDevices = false;
     mNeedToUpdateRecords = false;
     mNeedToUpdateMsgs    = false;
+    mNeedToUpdateStreams = false;
     unlock();
 
     if _ASSIGNED(mOnDisconnect)

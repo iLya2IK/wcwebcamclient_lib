@@ -181,6 +181,7 @@ enum wcStateId {
     wcstHostName,
     wcstProxy,
     wcstProxyAuth,
+    wcstProxyProtocol,
     wcstProxyHost,
     wcstProxyPort,
     wcstProxyUser,
@@ -430,7 +431,7 @@ wcRCode DLLEXPORT wcClientSetBoolState(wcHandle client, wcStateId aStateId, wcSt
  * \ref wcstMetaData - the client metadata,  <br>
  * \ref wcstDeviceName - the client device name,  <br>
  * \ref wcstHostName - the client host name, <br>
- * \ref wcstProxy - the client proxy server address in format \code [address[:port]] \endcode ,<br>
+ * \ref wcstProxy - the client proxy server address in format \code [[protocol://]address[:port]] \endcode ,<br>
  * \ref wcstProxyAuth - the client proxy server authorization data in format \code [username[:password]] \endcode . <br>
  *
  * \param client         The client handle.
@@ -486,7 +487,8 @@ wcRCode DLLEXPORT wcClientGetStrNValue(wcHandle client, wcStateId aStateId, uint
  * \ref wcstHostName - set the client host name, <br>
  * \ref wcstMsgsStamp - set the timestamp value for messages (the *stamp* parameter in \ref getMsgs request),<br>
  * \ref wcstRecordsStamp - set the timestamp value for records (the *stamp* parameter in \ref getRecordCount request),<br>
- * \ref wcstProxy - set the client proxy server authorization@address in format \code [[username[:password]@]address[:port]] \endcode ,<br>
+ * \ref wcstProxy - set the client proxy server authorization@address in format \code [[username[:password]@][protocol://]address[:port]] \endcode ,<br>
+ * \ref wcstProxyProtocol - set the client proxy server protocol ("http://", "https://", etc), <br>
  * \ref wcstProxyHost - set the client proxy server host, <br>
  * \ref wcstProxyPort - set the client proxy server port, <br>
  * \ref wcstProxyUser - set the client proxy server user name, <br>

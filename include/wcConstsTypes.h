@@ -62,6 +62,6 @@ extern const char * RESPONSE_ERRORS[];
 std::string str_format(const char * format, ...);
 std::string vstr_format(const char * format, va_list args);
 std::string encodeHTTP(const std::string & aStr);
-void decodeProxy(const std::string & aStr, std::string & aHost, std::string & aPort, std::string & aUName, std::string & aPwrd);
+void decodeProxy(const std::string & aStr, std::string & aProtocol, std::string & aHost, std::string & aPort, std::string & aUName, std::string & aPwrd);
 
 #endif // WCCONSTSTYPES_H

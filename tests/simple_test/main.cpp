@@ -69,8 +69,9 @@ int main(int argc, char * argv[])
         if (input.ignoreTSLCert())
             client.setVerifyTSL(false);
 
-        if (!proxy.empty())
+        if (!proxy.empty()) {
             client.setProxy(proxy);
+        }
 
         client.setHost(host);
 

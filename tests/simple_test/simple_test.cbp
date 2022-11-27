@@ -6,18 +6,21 @@
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
-			<Target title="Debug">
+			<Target title="Debug Win">
 				<Option output="bin/Debug/simple_test" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
-					<Add option="-g" />
 					<Add option="-fPIC" />
+					<Add option="-g" />
 					<Add option="-finput-charset=iso-8859-1 -pthread" />
 				</Compiler>
+				<Linker>
+					<Add library="curl-4" />
+				</Linker>
 			</Target>
-			<Target title="Release">
+			<Target title="Release Win">
 				<Option output="bin/Release/simple_test" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
@@ -27,6 +30,34 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add library="curl-4" />
+				</Linker>
+			</Target>
+			<Target title="Debug Linux">
+				<Option output="bin/Debug/simple_test" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-fPIC" />
+					<Add option="-g" />
+					<Add option="-finput-charset=iso-8859-1 -pthread" />
+				</Compiler>
+				<Linker>
+					<Add library="curl" />
+				</Linker>
+			</Target>
+			<Target title="Release Linux">
+				<Option output="bin/Release/simple_test" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="curl" />
 				</Linker>
 			</Target>
 		</Build>
@@ -36,11 +67,17 @@
 			<Add option="-fPIC" />
 			<Add option="-fexceptions" />
 			<Add directory="../../include" />
+			<Add directory="../../cJSON/include" />
 		</Compiler>
 		<Linker>
-			<Add library="curl-4" />
 			<Add library="pthread" />
 		</Linker>
+		<Unit filename="../../cJSON/src/cJSON.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cJSON/src/cJSON_Utils.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="../../include/NotifyObj.h" />
 		<Unit filename="../../include/cJSON.h" />
 		<Unit filename="../../include/cJSON_Utils.h" />
@@ -63,12 +100,6 @@
 		<Unit filename="../../include/wcStreaming.h" />
 		<Unit filename="../../include/wcThread.h" />
 		<Unit filename="../../src/NotifyObj.cpp" />
-		<Unit filename="../../src/cJSON.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../../src/cJSON_Utils.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="../../src/tsCURLM.cpp" />
 		<Unit filename="../../src/tsInteger.cpp" />
 		<Unit filename="../../src/tsObject.cpp" />

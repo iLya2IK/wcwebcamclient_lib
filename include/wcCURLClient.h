@@ -39,6 +39,7 @@ class wcCURLClient : public tsObject
         void setMetaData(const std::string & aMeta) { mSetts->setMetaData(aMeta); };
         void setDevice(const std::string & aDevice) { mSetts->setDevice(aDevice); };
         void setProxy(const std::string & aValue) { mSetts->setProxy(aValue); };
+        void setProxyProtocol(const std::string & aValue) { mSetts->setProxyProt(aValue); };
         void setProxyHost(const std::string & aValue) { mSetts->setProxyHost(aValue); };
         void setProxyPort(const std::string & aValue) { mSetts->setProxyPort(aValue); };
         void setProxyUser(const std::string & aValue) { mSetts->setProxyAuthName(aValue); };

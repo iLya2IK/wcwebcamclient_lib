@@ -7,12 +7,13 @@
 class wcHTTP2SettingsIntf : public tsObject
 {
     public:
-
+        wcHTTP2SettingsIntf();
         void setMetaData(const std::string & aMeta);
         void setDevice(const std::string & aDevice);
         void setHost(const std::string & aHost);
         void setSID(const std::string & aSID);
         void setProxy(const std::string & aValue);
+        void setProxyProt(const std::string & aValue);
         void setProxyHost(const std::string & aValue);
         void setProxyPort(const std::string & aValue);
         void setProxyAuthName(const std::string & aValue);
@@ -35,7 +36,7 @@ class wcHTTP2SettingsIntf : public tsObject
         std::string getEncodedSID();
     private:
         std::string sid, encSid, host, device, meta;
-        std::string proxy_host, proxy_port, proxy_enc_aname, proxy_enc_apass;
+        std::string proxy_prot, proxy_host, proxy_port, proxy_enc_aname, proxy_enc_apass;
         bool verify_tsl {true};
 };
 

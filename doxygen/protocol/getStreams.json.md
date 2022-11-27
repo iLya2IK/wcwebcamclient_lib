@@ -25,10 +25,10 @@ Response
 <h3>JSON_OK response</h3>
 
 ~~~~~~~~~~~~~{.java}
-{"result":"OK","devices":[":string:",...]}
+{"result":"OK","devices":[{"device":":string:"},...]}
 ~~~~~~~~~~~~~
 
-* _**devices**_ - array of streaming device names received
+* _**devices**_ - array of streaming devices received
 
 <h3>JSON_BAD response</h3>
 [JSON_BAD response format and description of error codes](\ref JSON_BAD) 
@@ -37,6 +37,6 @@ Example
 ------------
 ```
 > curl --http2 -k -d '{"shash":"ra5PNJRgzrqpwbfw8JvHIkWuxJE="}' -X POST https://localhost:8080/getStreams.json
-{"result":"OK","devices":["user_pc","camera1"]}
+{"result":"OK","devices":[{"device":"user_pc"},{"device":"camera1"}]}
 ```
  
