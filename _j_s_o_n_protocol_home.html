@@ -598,16 +598,16 @@ Request</h2>
 <h2><a class="anchor" id="autotoc_md39"></a>
 Response</h2>
 <h3>JSON_OK response</h3>
-<div class="fragment"><div class="line">{<span class="stringliteral">&quot;result&quot;</span>:<span class="stringliteral">&quot;OK&quot;</span>,<span class="stringliteral">&quot;devices&quot;</span>:[<span class="stringliteral">&quot;:string:&quot;</span>,...]}</div>
+<div class="fragment"><div class="line">{<span class="stringliteral">&quot;result&quot;</span>:<span class="stringliteral">&quot;OK&quot;</span>,<span class="stringliteral">&quot;devices&quot;</span>:[{<span class="stringliteral">&quot;device&quot;</span>:<span class="stringliteral">&quot;:string:&quot;</span>},...]}</div>
 </div><!-- fragment --><ul>
-<li><em><b>devices</b></em> - array of streaming device names received</li>
+<li><em><b>devices</b></em> - array of streaming devices received</li>
 </ul>
 <h3>JSON_BAD response</h3>
 <p><a class="el" href="_j_s_o_n_protocol_home.html#JSON_BAD">JSON_BAD response format and description of error codes</a></p>
 <h2><a class="anchor" id="autotoc_md40"></a>
 Example</h2>
 <div class="fragment"><div class="line">&gt; curl --http2 -k -d &#39;{&quot;shash&quot;:&quot;ra5PNJRgzrqpwbfw8JvHIkWuxJE=&quot;}&#39; -X POST https://localhost:8080/getStreams.json</div>
-<div class="line">{&quot;result&quot;:&quot;OK&quot;,&quot;devices&quot;:[&quot;user_pc&quot;,&quot;camera1&quot;]}</div>
+<div class="line">{&quot;result&quot;:&quot;OK&quot;,&quot;devices&quot;:[{&quot;device&quot;:&quot;user_pc&quot;},{&quot;device&quot;:&quot;camera1&quot;}]}</div>
 </div><!-- fragment --><hr  />
 <h1><a class="anchor" id="deleteRecords"></a>
 deleteRecords.json</h1>
@@ -741,7 +741,7 @@ JSON_BAD message format</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat Nov 26 2022 15:30:13 for wcWebCamClient library by
+    <li class="footer">Generated on Sun Nov 27 2022 15:06:21 for wcWebCamClient library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -18,6 +18,7 @@ var group__wc_client_getters_setters =
       [ "wcstHostName", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aad2e69ee46e5e09f64d858cfc32d84e71", null ],
       [ "wcstProxy", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aabd9990c1a582ffb5883bb2d25be1bac8", null ],
       [ "wcstProxyAuth", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa8bb4ed469291eddcaba4ed8105a81caa", null ],
+      [ "wcstProxyProtocol", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aaf680307fe84e4af94f4c193a2249a418", null ],
       [ "wcstProxyHost", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa1c03d090cf3d890a33bcaceddf798a34", null ],
       [ "wcstProxyPort", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aab2137dde4b19d7b065225d312127575c", null ],
       [ "wcstProxyUser", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa321e222f0c991e5041f516b3ac155a27", null ],
