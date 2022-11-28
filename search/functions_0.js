@@ -23,7 +23,7 @@ var searchData=
   ['wcgetconfig_191',['wcGetConfig',['../group__wc_client_requests.html#gae97a59ad2b035a36608a64a3714cd908',1,'wcwebcamclient.h']]],
   ['wcintaskpopframe_192',['wcInTaskPopFrame',['../group__wc_in_tasks_funcs.html#gaac040def5a25b7fe708a86f2ddf43c4f',1,'wcwebcamclient.h']]],
   ['wclaunchinstream_193',['wcLaunchInStream',['../group__wc_client_requests.html#ga297e080f6cbd19a994286d5878e49ea5',1,'wcwebcamclient.h']]],
-  ['wclaunchoutstream_194',['wcLaunchOutStream',['../group__wc_client_requests.html#gad8e1eb6f51b149b149efc8df8a0ed609',1,'wcwebcamclient.h']]],
+  ['wclaunchoutstream_194',['wcLaunchOutStream',['../group__wc_client_requests.html#ga0f433f2e886bf7bf5fffcae9b05ce448',1,'wcwebcamclient.h']]],
   ['wcrequestrecord_195',['wcRequestRecord',['../group__wc_client_requests.html#ga16a38219184af5481b69c0f533b4497f',1,'wcwebcamclient.h']]],
   ['wcrequestrecordmeta_196',['wcRequestRecordMeta',['../group__wc_client_requests.html#ga6875cdb485e9e04d137560b6a2abdfe0',1,'wcwebcamclient.h']]],
   ['wcsaverecord_197',['wcSaveRecord',['../group__wc_client_requests.html#ga80f790db70266eff02eec74a560b22a1',1,'wcwebcamclient.h']]],

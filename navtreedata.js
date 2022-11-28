@@ -44,65 +44,66 @@ var NAVTREE =
       ] ],
       [ "input.raw", "_j_s_o_n_protocol_home.html#input", [
         [ "Request", "_j_s_o_n_protocol_home.html#autotoc_md10", null ],
-        [ "Response", "_j_s_o_n_protocol_home.html#autotoc_md11", null ],
-        [ "Example", "_j_s_o_n_protocol_home.html#autotoc_md12", null ]
+        [ "Sub-protocol", "_j_s_o_n_protocol_home.html#autotoc_md11", null ],
+        [ "Response", "_j_s_o_n_protocol_home.html#autotoc_md12", null ],
+        [ "Example", "_j_s_o_n_protocol_home.html#autotoc_md13", null ]
       ] ],
       [ "authorize.json", "_j_s_o_n_protocol_home.html#authorize", [
-        [ "Request", "_j_s_o_n_protocol_home.html#autotoc_md13", null ],
-        [ "Response", "_j_s_o_n_protocol_home.html#autotoc_md14", null ],
-        [ "Example", "_j_s_o_n_protocol_home.html#autotoc_md15", null ]
+        [ "Request", "_j_s_o_n_protocol_home.html#autotoc_md14", null ],
+        [ "Response", "_j_s_o_n_protocol_home.html#autotoc_md15", null ],
+        [ "Example", "_j_s_o_n_protocol_home.html#autotoc_md16", null ]
       ] ],
       [ "addRecord.json", "_j_s_o_n_protocol_home.html#addRecord", [
-        [ "Request", "_j_s_o_n_protocol_home.html#autotoc_md16", null ],
-        [ "Response", "_j_s_o_n_protocol_home.html#autotoc_md17", null ],
-        [ "Example", "_j_s_o_n_protocol_home.html#autotoc_md18", null ]
+        [ "Request", "_j_s_o_n_protocol_home.html#autotoc_md17", null ],
+        [ "Response", "_j_s_o_n_protocol_home.html#autotoc_md18", null ],
+        [ "Example", "_j_s_o_n_protocol_home.html#autotoc_md19", null ]
       ] ],
       [ "addMsgs.json", "_j_s_o_n_protocol_home.html#addMsgs", [
-        [ "Request", "_j_s_o_n_protocol_home.html#autotoc_md19", null ],
-        [ "Response", "_j_s_o_n_protocol_home.html#autotoc_md20", null ],
-        [ "Sync message", "_j_s_o_n_protocol_home.html#autotoc_md21", null ],
-        [ "Example", "_j_s_o_n_protocol_home.html#autotoc_md22", null ]
+        [ "Request", "_j_s_o_n_protocol_home.html#autotoc_md20", null ],
+        [ "Response", "_j_s_o_n_protocol_home.html#autotoc_md21", null ],
+        [ "Sync message", "_j_s_o_n_protocol_home.html#autotoc_md22", null ],
+        [ "Example", "_j_s_o_n_protocol_home.html#autotoc_md23", null ]
       ] ],
       [ "getRecordMeta.json", "_j_s_o_n_protocol_home.html#getRecordMeta", [
-        [ "Request", "_j_s_o_n_protocol_home.html#autotoc_md23", null ],
-        [ "Response", "_j_s_o_n_protocol_home.html#autotoc_md24", null ],
-        [ "Example", "_j_s_o_n_protocol_home.html#autotoc_md25", null ]
+        [ "Request", "_j_s_o_n_protocol_home.html#autotoc_md24", null ],
+        [ "Response", "_j_s_o_n_protocol_home.html#autotoc_md25", null ],
+        [ "Example", "_j_s_o_n_protocol_home.html#autotoc_md26", null ]
       ] ],
       [ "getRecordData.json", "_j_s_o_n_protocol_home.html#getRecordData", [
-        [ "Request", "_j_s_o_n_protocol_home.html#autotoc_md26", null ],
-        [ "Response", "_j_s_o_n_protocol_home.html#autotoc_md27", null ],
-        [ "Example", "_j_s_o_n_protocol_home.html#autotoc_md28", null ]
+        [ "Request", "_j_s_o_n_protocol_home.html#autotoc_md27", null ],
+        [ "Response", "_j_s_o_n_protocol_home.html#autotoc_md28", null ],
+        [ "Example", "_j_s_o_n_protocol_home.html#autotoc_md29", null ]
       ] ],
       [ "getRecordCount.json", "_j_s_o_n_protocol_home.html#getRecordCount", [
-        [ "Request", "_j_s_o_n_protocol_home.html#autotoc_md29", null ],
-        [ "Response", "_j_s_o_n_protocol_home.html#autotoc_md30", null ],
-        [ "Example", "_j_s_o_n_protocol_home.html#autotoc_md31", null ]
+        [ "Request", "_j_s_o_n_protocol_home.html#autotoc_md30", null ],
+        [ "Response", "_j_s_o_n_protocol_home.html#autotoc_md31", null ],
+        [ "Example", "_j_s_o_n_protocol_home.html#autotoc_md32", null ]
       ] ],
       [ "getMsgsAndSync.json", "_j_s_o_n_protocol_home.html#getMsgsAndSync", null ],
       [ "getMsgs.json", "_j_s_o_n_protocol_home.html#getMsgs", [
-        [ "Request", "_j_s_o_n_protocol_home.html#autotoc_md32", null ],
-        [ "Response", "_j_s_o_n_protocol_home.html#autotoc_md33", null ],
-        [ "Example", "_j_s_o_n_protocol_home.html#autotoc_md34", null ]
+        [ "Request", "_j_s_o_n_protocol_home.html#autotoc_md33", null ],
+        [ "Response", "_j_s_o_n_protocol_home.html#autotoc_md34", null ],
+        [ "Example", "_j_s_o_n_protocol_home.html#autotoc_md35", null ]
       ] ],
       [ "getDevicesOnline.json", "_j_s_o_n_protocol_home.html#getDevicesOnline", [
-        [ "Request", "_j_s_o_n_protocol_home.html#autotoc_md35", null ],
-        [ "Response", "_j_s_o_n_protocol_home.html#autotoc_md36", null ],
-        [ "Example", "_j_s_o_n_protocol_home.html#autotoc_md37", null ]
+        [ "Request", "_j_s_o_n_protocol_home.html#autotoc_md36", null ],
+        [ "Response", "_j_s_o_n_protocol_home.html#autotoc_md37", null ],
+        [ "Example", "_j_s_o_n_protocol_home.html#autotoc_md38", null ]
       ] ],
       [ "getStreams.json", "_j_s_o_n_protocol_home.html#getStreams", [
-        [ "Request", "_j_s_o_n_protocol_home.html#autotoc_md38", null ],
-        [ "Response", "_j_s_o_n_protocol_home.html#autotoc_md39", null ],
-        [ "Example", "_j_s_o_n_protocol_home.html#autotoc_md40", null ]
+        [ "Request", "_j_s_o_n_protocol_home.html#autotoc_md39", null ],
+        [ "Response", "_j_s_o_n_protocol_home.html#autotoc_md40", null ],
+        [ "Example", "_j_s_o_n_protocol_home.html#autotoc_md41", null ]
       ] ],
       [ "deleteRecords.json", "_j_s_o_n_protocol_home.html#deleteRecords", [
-        [ "Request", "_j_s_o_n_protocol_home.html#autotoc_md41", null ],
-        [ "Response", "_j_s_o_n_protocol_home.html#autotoc_md42", null ],
-        [ "Example", "_j_s_o_n_protocol_home.html#autotoc_md43", null ]
+        [ "Request", "_j_s_o_n_protocol_home.html#autotoc_md42", null ],
+        [ "Response", "_j_s_o_n_protocol_home.html#autotoc_md43", null ],
+        [ "Example", "_j_s_o_n_protocol_home.html#autotoc_md44", null ]
       ] ],
       [ "heartBit.json", "_j_s_o_n_protocol_home.html#heartBit", [
-        [ "Request", "_j_s_o_n_protocol_home.html#autotoc_md44", null ],
-        [ "Response", "_j_s_o_n_protocol_home.html#autotoc_md45", null ],
-        [ "Example", "_j_s_o_n_protocol_home.html#autotoc_md46", null ]
+        [ "Request", "_j_s_o_n_protocol_home.html#autotoc_md45", null ],
+        [ "Response", "_j_s_o_n_protocol_home.html#autotoc_md46", null ],
+        [ "Example", "_j_s_o_n_protocol_home.html#autotoc_md47", null ]
       ] ],
       [ "JSON_BAD message format", "_j_s_o_n_protocol_home.html#JSON_BAD", null ]
     ] ],

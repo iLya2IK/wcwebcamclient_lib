@@ -65,7 +65,7 @@ var searchData=
   ['wchandle_108',['wcHandle',['../wcwebcamclient_8h.html#a8ed09f7b448a852b96e2a705531a285c',1,'wcwebcamclient.h']]],
   ['wcintaskpopframe_109',['wcInTaskPopFrame',['../group__wc_in_tasks_funcs.html#gaac040def5a25b7fe708a86f2ddf43c4f',1,'wcwebcamclient.h']]],
   ['wclaunchinstream_110',['wcLaunchInStream',['../group__wc_client_requests.html#ga297e080f6cbd19a994286d5878e49ea5',1,'wcwebcamclient.h']]],
-  ['wclaunchoutstream_111',['wcLaunchOutStream',['../group__wc_client_requests.html#gad8e1eb6f51b149b149efc8df8a0ed609',1,'wcwebcamclient.h']]],
+  ['wclaunchoutstream_111',['wcLaunchOutStream',['../group__wc_client_requests.html#ga0f433f2e886bf7bf5fffcae9b05ce448',1,'wcwebcamclient.h']]],
   ['wcrcode_112',['wcRCode',['../group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7',1,'wcwebcamclient.h']]],
   ['wcrequestrecord_113',['wcRequestRecord',['../group__wc_client_requests.html#ga16a38219184af5481b69c0f533b4497f',1,'wcwebcamclient.h']]],
   ['wcrequestrecordmeta_114',['wcRequestRecordMeta',['../group__wc_client_requests.html#ga6875cdb485e9e04d137560b6a2abdfe0',1,'wcwebcamclient.h']]],
