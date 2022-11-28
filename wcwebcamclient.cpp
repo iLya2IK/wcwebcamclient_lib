@@ -961,10 +961,11 @@ wcRCode DLLEXPORT wcSaveRecord(wcHandle client, const void * aBuf, size_t  Sz, c
     return v;
 }
 
-wcRCode DLLEXPORT wcLaunchOutStream(wcHandle client, void * data) {
+wcRCode DLLEXPORT wcLaunchOutStream(wcHandle client, const char * subProtocol, int delta, void * data) {
     wcRCode v = CheckClient(client);
     if (v != WC_OK) return v;
-    WC_CLIENT(client)->launchOutStream(data);
+    if (!ASSIGNED(subProtocol)) return WC_BAD_VALUE;
+    WC_CLIENT(client)->launchOutStream(std::string(subProtocol), delta, data);
     return v;
 }
 

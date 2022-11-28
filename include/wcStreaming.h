@@ -14,6 +14,8 @@ class wcHTTP2BackgroundOutStreamTask : public wcHTTP2BackgroundTask
 {
   private:
     int mInc;
+    int mDelta;
+    std::string mSubProto;
     wcMemSeq * mFrames;
     OnGetNextFrame mOnGetNextFrame {NULL, NULL};
   protected:
@@ -22,6 +24,9 @@ class wcHTTP2BackgroundOutStreamTask : public wcHTTP2BackgroundTask
     virtual uint32_t getTaskClass() override {return WC_OUT_STREAM_TASK;};
     wcHTTP2BackgroundOutStreamTask(wcHTTP2BackgroundTasks * aPool, wcHTTP2SettingsIntf * Settings, bool aIsSilent, void * aData);
     virtual ~wcHTTP2BackgroundOutStreamTask();
+
+    void setSubProto(const std::string & aSubProto);
+    void setDelta(int delta);
 
     virtual size_t read(void * ptr, size_t len, size_t nmemb) override;
     void launchStream(OnGetNextFrame aOnGetNextFrame);

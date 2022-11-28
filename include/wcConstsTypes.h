@@ -54,6 +54,8 @@ extern const char * JSON_RPC_RID;
 extern const char * JSON_RPC_DEVICE;
 extern const char * JSON_RPC_TARGET;
 extern const char * JSON_RPC_PARAMS;
+extern const char * JSON_RPC_SUBPROTO;
+extern const char * JSON_RPC_DELTA;
 
 #define MAX_RESPONSE_ERRORS 15
 

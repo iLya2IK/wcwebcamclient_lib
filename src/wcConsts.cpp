@@ -36,6 +36,8 @@ const char * JSON_RPC_RID     =  "rid";
 const char * JSON_RPC_DEVICE  =  "device";
 const char * JSON_RPC_TARGET  =  "target";
 const char * JSON_RPC_PARAMS  =  "params";
+const char * JSON_RPC_SUBPROTO=  "subproto";
+const char * JSON_RPC_DELTA   =  "delta";
 
 const char * RESPONSE_ERRORS[] = {
                           "NO_ERROR",

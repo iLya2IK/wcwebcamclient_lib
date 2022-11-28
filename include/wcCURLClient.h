@@ -99,7 +99,7 @@ class wcCURLClient : public tsObject
         void requestRecord(int rid, void * data = NULL);
         void requestRecordMeta(int rid, void * data);
         void saveRecord(const void * aBuf, size_t  Sz, const char * meta, void * data = NULL);
-        bool launchOutStream(void * data);
+        bool launchOutStream(const std::string & aSubProto, int delta, void * data);
         bool launchInStream(const std::string & aDevice, void * data);
         void disconnect();
 

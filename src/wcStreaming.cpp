@@ -67,6 +67,8 @@ void wcHTTP2BackgroundOutStreamTask::launchStream(OnGetNextFrame aOnGetNextFrame
         {
             mResponse->resetPos();
             mPath = "/input.raw?" + std::string(JSON_RPC_SHASH) + "=" + mSettings->getEncodedSID();
+            if (!mSubProto.empty()) mPath += "&" + std::string(JSON_RPC_SUBPROTO) + "=" + encodeHTTP(mSubProto);
+            if (mDelta > 0) mPath += "&" + std::string(JSON_RPC_DELTA) + "=" + std::to_string(mDelta);
 
             CURLConfig((int64_t)0x500000000);
             CURLSetUpload();
@@ -84,6 +86,16 @@ void wcHTTP2BackgroundOutStreamTask::launchStream(OnGetNextFrame aOnGetNextFrame
 void wcHTTP2BackgroundOutStreamTask::pushFrame(wcCustomMemoryStream* aFrame)
 {
     if ASSIGNED(aFrame) mFrames->push_back(aFrame);
+}
+
+void wcHTTP2BackgroundOutStreamTask::setSubProto(const std::string & aSubProto)
+{
+    mSubProto = aSubProto;
+}
+
+void wcHTTP2BackgroundOutStreamTask::setDelta(int delta)
+{
+    mDelta = delta;
 }
 
 void wcHTTP2BackgroundOutStreamTask::doIdle()

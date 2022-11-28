@@ -921,10 +921,12 @@ bool wcCURLClient::doInitMultiPipeling()
     return res;
 }
 
-bool wcCURLClient::launchOutStream(void * data)
+bool wcCURLClient::launchOutStream(const std::string & aSubProto, int delta, void * data)
 {
     if (doInitMultiPipeling()) {
         wcHTTP2BackgroundOutStreamTask * Tsk = new wcHTTP2BackgroundOutStreamTask(getTaskPool()->getTasks(), mSetts, true, NULL);
+        Tsk->setSubProto(aSubProto);
+        Tsk->setDelta(delta);
         Tsk->setOnFinish({intern_TaskFinished, this});
         Tsk->setOnSuccess({intern_SuccessIOStream, this});
         Tsk->setData(data);

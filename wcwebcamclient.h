@@ -719,17 +719,19 @@ wcRCode DLLEXPORT wcRequestRecordMeta(wcHandle client, int rid, void * data);
  */
 wcRCode DLLEXPORT wcSaveRecord(wcHandle client, const void * aBuf, size_t  Sz, const char * meta, void * data);
 //! \brief Launch output stream for authorized \a client.
-/*! See protocol request \ref output.
+/*! See protocol request \ref input.
  *
  * \param client         The client handle.
+ * \param subProtocol    The sub protocol description (C-style string, not NULL).
+ * \param delta          The delta time between frames in ms.
  * \param data           Additional user data that passed to the new task ( see also \ref wcTaskGetUserData ).
  * \return \ref wcRCode  \ref WC_OK or error code.
  *
  * \sa wcRCode, wcSetTaskCallback, wccbkAfterLaunchOutStream, wccbkSynchroUpdateTask, wccbkSuccessIOStream, wcClientFramePushData, wcTaskGetUserData
  */
-wcRCode DLLEXPORT wcLaunchOutStream(wcHandle client, void * data);
+wcRCode DLLEXPORT wcLaunchOutStream(wcHandle client, const char * subProtocol, int delta, void * data);
 //! \brief Launch task to consume incoming stream from the specified device for authorized \a client.
-/*! See protocol request \ref input.
+/*! See protocol request \ref output.
  *
  * \param client         The client handle.
  * \param deviceName     C-style string containing the specified device name.
@@ -746,7 +748,7 @@ wcRCode DLLEXPORT wcLaunchInStream(wcHandle client, const char * deviceName, voi
  * @{
  */
 //! \brief Get the ID of the current output frame.
-/*! Related to request \ref output.
+/*! Related to request \ref input.
  *
  * \param client         The client handle.
  * \param id             Pointer to the long type variable.
@@ -756,7 +758,7 @@ wcRCode DLLEXPORT wcLaunchInStream(wcHandle client, const char * deviceName, voi
  */
 wcRCode DLLEXPORT wcClientGetFrameID(wcHandle client, long * id);
 //! \brief Lock the frame object for threadsafe access to the output data stack.
-/*! Related to request \ref output.
+/*! Related to request \ref input.
  *
  * \param client         The client handle.
  * \return \ref wcRCode  \ref WC_OK or error code.
@@ -765,7 +767,7 @@ wcRCode DLLEXPORT wcClientGetFrameID(wcHandle client, long * id);
  */
 wcRCode DLLEXPORT wcClientFrameLock(wcHandle client);
 //! \brief Unlock the frame object.
-/*! Related to request \ref output.
+/*! Related to request \ref input.
  *
  * \param client         The client handle.
  * \return \ref wcRCode  \ref WC_OK or error code.
@@ -774,7 +776,7 @@ wcRCode DLLEXPORT wcClientFrameLock(wcHandle client);
  */
 wcRCode DLLEXPORT wcClientFrameUnLock(wcHandle client);
 //! \brief Add a new frame to the outgoing data stack to send.
-/*! Related to request \ref output. The sent frames counter is automatically incremented by one.
+/*! Related to request \ref input. The sent frames counter is automatically incremented by one.
  * It is strongly recommended to lock the frame object using the \ref wcClientFrameLock / \ref wcClientFrameUnLock
  * procedures when accessing the outgoing data stack. To add a new frame after sending the previous one,
  * use the \ref wccbkSynchroUpdateTask callback.
@@ -786,7 +788,7 @@ wcRCode DLLEXPORT wcClientFrameUnLock(wcHandle client);
  */
 wcRCode DLLEXPORT wcClientFramePushData(wcHandle client, const void * data, size_t len);
 //! \brief Get access to the last frame in the outgoing data stack.
-/*! Related to request \ref output.
+/*! Related to request \ref input.
  * It is strongly recommended to lock the frame object using the \ref wcClientFrameLock / \ref wcClientFrameUnLock
  * procedures when accessing the outgoing data stack.
  *
@@ -879,7 +881,7 @@ wcRCode DLLEXPORT wcTaskUnLock(wcTask task);
  * @{
  */
 //! \brief Get access to the first frame in the incoming data stack.
-/*! Related to request \ref input. A signal that a new frame has been received is
+/*! Related to request \ref output. A signal that a new frame has been received is
  * triggered by a \a task with the \ref wccbkSynchroUpdateTask callback.
  *
  * \param client         The client handle.
