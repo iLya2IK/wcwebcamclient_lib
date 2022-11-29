@@ -1,0 +1,45 @@
+    digraph "wcWebCam structure" {
+        rankdir=TD;
+        node [fontname="sans"];
+        edge [fontname="sans"];
+        
+        0 [URL="https://github.com/iLya2IK/wchttpserver";label="wcHTTPServer";shape="tab"];
+        1 [URL="https://github.com/iLya2IK/wcwebcamserver";label="wcWebCamServer";shape="component"];
+        node [fontname="sans bold"];
+        7 [URL="https://github.com/curl/curl";style=filled;fillcolor=gray30;fontcolor=white;label="cURL";shape="component"];        
+        10 [URL="https://github.com/nghttp2/nghttp2";style=filled;fillcolor=gray30;fontcolor=white;label="nghttp2";shape="component"];
+        13 [URL="https://square.github.io/okhttp/";style=filled;fillcolor=gray30;fontcolor=white;label="okHttp";shape="component"];        
+        node [fontname="sans"];
+        8 [label="Clients via wcWebCamClient";style=filled;fillcolor=gray90;shape="box3d"];
+        9 [label="Clients via wcCURLClient";style=filled;fillcolor=gray90;shape="box3d"];    
+        11 [label="Clients via nghttp2";style=filled;fillcolor=gray90;shape="box3d"];
+        12 [label="Clients via cURL";style=filled;fillcolor=gray90;shape="box3d"];        
+        14 [label="Clients via okHttp";style=filled;fillcolor=gray90;shape="box3d"];
+        2 [URL="https://github.com/iLya2IK/wcwebcamclient_lib";label="wcWebCamClient\nLibrary";shape="tab"];
+        3 [URL="https://github.com/iLya2IK/wccurlclient";label="HTTP2 Web Camera\nAbstract Client for Lazarus";shape="tab"];    
+        4 [URL="https://github.com/iLya2IK/webcamclientviewer";label="HTTP2 Web Camera\nDesktop Viewer";shape="tab"];
+        5 [URL="https://github.com/iLya2IK/webcamdevice";label="HTTP2 Web Camera\nClient Device";shape="tab"];
+        6 [URL="https://github.com/iLya2IK/wcwebcameracontrol";label="HTTP2 Web Camera\nAndroid Client";shape="tab"];	
+        
+        0 -> 1 [label = "wcHTTPServer API"];
+        1 -> 7 [label = "responses"];
+        7 -> 1 [label = "requests"];
+        1 -> 10 [label = "responses"];
+        10 -> 1 [label = "requests"];
+        1 -> 13 [label = "responses"];
+        13 -> 1 [label = "requests"];
+        
+        7 -> 12 [label = "cURL API"];
+        7 -> 2 
+        7 -> 3
+        2 -> 8 [label = "wcWebCamClient API"];    
+        
+        3 -> 9 [label = "Lazarus classes and interfaces"];	    
+        3 -> 4 
+        
+        10 -> 11 [label = "nghttp2 API"]
+        10 -> 5
+        
+        13 -> 14 [label = "okHttp classes"]
+        13 -> 6
+    }

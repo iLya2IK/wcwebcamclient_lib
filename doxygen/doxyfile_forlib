@@ -11,8 +11,8 @@
 DOXYFILE_ENCODING      = UTF-8
 PROJECT_NAME           = "wcWebCamClient library"
 PROJECT_NUMBER         = 0.7
-PROJECT_BRIEF          = "Library for convenient work with the wcWebCamServer server via the JSON protocol."
-PROJECT_LOGO           = doxygen/wclogo_c.svg
+PROJECT_BRIEF          = "Library for convenient work with the wcWebCamServer server via the JSON protocol"
+PROJECT_LOGO           = doxygen/images/wclogo_c.svg
 OUTPUT_DIRECTORY       =
 CREATE_SUBDIRS         = NO
 OUTPUT_LANGUAGE        = English
@@ -101,6 +101,7 @@ WARN_LOGFILE            = "doxygen.log"
 INPUT                  = \
     "doxygen/pages.dox" \
     "doxygen/protocol/JSONSubProtocol.md" \
+    "doxygen/structure.md" \
     "include/wcCommonCallbacks.h" \
     "wcwebcamclient.h" 
 INPUT_ENCODING         = UTF-8
@@ -113,7 +114,7 @@ EXCLUDE_SYMBOLS        =
 EXAMPLE_PATH           = tests
 EXAMPLE_PATTERNS       =
 EXAMPLE_RECURSIVE      = NO
-IMAGE_PATH             =
+IMAGE_PATH             = doxygen/images
 INPUT_FILTER           =
 FILTER_PATTERNS        = *.md="cpp -P -traditional-cpp"
 FILTER_SOURCE_FILES    = NO

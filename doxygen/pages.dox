@@ -8,6 +8,7 @@
     - \ref output
     - \ref input
     - \ref JSON_BAD
+- \ref structure
 - [wcWebCamServer - REST Web Camera server sources](https://github.com/iLya2IK/wcwebcamserver)
 - [wcWebCamClient library header](\ref wcwebcamclient.h)
     - [Globals All](globals.html)
