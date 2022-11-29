@@ -9,6 +9,10 @@ A detailed implementation of an external device based on "ESP32-CAM" is given in
 The example of a desktop application for external device controlling and viewing images is [webcamclientviewer (Lazarus)](https://github.com/iLya2IK/webcamclientviewer).
 An example of an Android application for controlling external devices, chatting and streaming is [wcwebcameracontrol (Java)](https://github.com/iLya2IK/wcwebcameracontrol).
 
+## Documents
+
+[wcWebCamClient library API User's Guide - Doxygen](https://ilya2ik.github.io/wcwebcamclient_lib/index.html)
+
 ## Development environment
 * [Code::Blocks](https://www.codeblocks.org/)
 * [GNU Autotools](https://www.gnu.org/software/automake/manual/html_node/Autotools-Introduction.html)
