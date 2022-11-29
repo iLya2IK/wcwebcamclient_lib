@@ -1,5 +1,42 @@
-# wcwebcamclient_lib
+# wcWebCamClient Library
 
-Library for convenient work with the wcWebCamServer server via the JSON protocol.
+This is a library for convenient client work with the wcWebCamServer server via the JSON protocol.
 
-[wcWebCamClient library API User's Guide - Doxygen](https://ilya2ik.github.io/wcwebcamclient_lib/index.html)
+## The structure of the client-server software package
+The server designed to collect images and data streams from cameras (devices) and forwards messages between devices to control the periphery via an HTTP 2 connection is [wcwebcamserver (Lazarus/Free Pascal)](https://github.com/iLya2IK/wcwebcamserver).
+Abstract client for Lazarus is [wccurlclient (Lazarus/Free Pascal)](https://github.com/iLya2IK/wccurlclient).
+A detailed implementation of an external device based on "ESP32-CAM" is given in the example [webcamdevice (С)](https://github.com/iLya2IK/webcamdevice).
+The example of a desktop application for external device controlling and viewing images is [webcamclientviewer (Lazarus)](https://github.com/iLya2IK/webcamclientviewer).
+An example of an Android application for controlling external devices, chatting and streaming is [wcwebcameracontrol (Java)](https://github.com/iLya2IK/wcwebcameracontrol).
+
+## Development environment
+* [Code::Blocks](https://www.codeblocks.org/)
+* [GNU Autotools](https://www.gnu.org/software/automake/manual/html_node/Autotools-Introduction.html)
+
+## How to build library with automake
+
+````
+make -f wcwebcamclient.cbp.mak [clean_]{build_target}_{platform}
+````
+
+### Build targets:
+1. `release`
+2. `debug`
+
+### Platfroms:
+1. `linux`
+2. `win`
+
+### Example:
+````
+make -f wcwebcamclient.cbp.mak release_linux
+make -f wcwebcamclient.cbp.mak clean_release_linux
+````
+
+## Necessary libraries
+1. OpenSSL (v1.1.0 or higher)
+2. cURL (with http2 support)
+
+# Copyrights and contributions
+* [OpenSSL](https://www.openssl.org/)
+* [cURL](https://curl.se/libcurl)
