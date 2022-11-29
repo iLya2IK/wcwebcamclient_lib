@@ -1,7 +1,7 @@
 wcWebCam Structure  {#structure}
 ==================
 
-![](structure.svg)
+<img src="structure.svg" alt="drawing" style="max-width: 100%;"/>
 
 Links 
 -----
@@ -14,5 +14,5 @@ Links
 * [wcWebCamClient Library](https://github.com/iLya2IK/wcwebcamclient_lib)
 * [HTTP2 Web Camera Abstract Client for Lazarus](https://github.com/iLya2IK/wccurlclient)
 * [HTTP2 Web Camera Desktop Viewer](https://github.com/iLya2IK/webcamclientviewer)
-* [HTTP2 Web Camera Client Device"](https://github.com/iLya2IK/webcamdevice)
+* [HTTP2 Web Camera Client Device](https://github.com/iLya2IK/webcamdevice)
 * [HTTP2 Web Camera Android Client](https://github.com/iLya2IK/wcwebcameracontrol)
