@@ -107,6 +107,9 @@ var NAVTREE =
       ] ],
       [ "JSON_BAD message format", "_j_s_o_n_protocol_home.html#JSON_BAD", null ]
     ] ],
+    [ "wcWebCam Structure", "structure.html", [
+      [ "Links", "structure.html#autotoc_md48", null ]
+    ] ],
     [ "Modules", "modules.html", "modules" ],
     [ "Data Structures", "annotated.html", "annotated" ],
     [ "Data Structure Index", "classes.html", null ],
