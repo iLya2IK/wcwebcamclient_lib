@@ -4,10 +4,10 @@ Contributions {#Contributions}
 <div align="center">
 <a href="https://www.sqlite.org/index.html" target="_blank"><img src="sqlite-original.svg" title="Sqlite" alt="Sqlite" width="auto" height="40" style="margin: 5px;"/></a>
 <a href="https://www.openssl.org/" target="_blank"><img src="openssl-official.svg" title="OpenSSL" alt="OpenSSL" width="auto" height="30" style="margin: 5px;"/></a>
-<a href="https://curl.se/libcurl" target="_blank"><img src="https://curl.se/logo/curl-logo.svg" title="cURL" alt="cURL" width="auto" height="30" style="margin: 5px 5px 15px 5px;"/></a>
+<a href="https://curl.se/libcurl" target="_blank"><img src="curl-logo.svg" title="cURL" alt="cURL" width="auto" height="30" style="margin: 5px 5px 15px 5px;"/></a>
 </div>
 
-<div align="center" style="margin-bottom: 25px;">
+<div align="center">
 <a href="https://www.lazarus-ide.org/" target="_blank"><img src="https://wiki.freepascal.org/images/f/fd/Lazarus-icons-lpr-proposal-bpsoftware.png" title="Lazarus IDE" alt="Lazarus IDE" width="40" height="40"/></a>
 <a href="https://www.codeblocks.org/" target="_blank"><img src="codeblocks.svg" title="Code::Blocks" alt="Code::Blocks" width="40" height="40"/></a>
 <a href="https://gcc.gnu.org/" target="_blank"><img src="gcc-original.svg" title="GCC" alt="GCC" width="40" height="40"/></a>
