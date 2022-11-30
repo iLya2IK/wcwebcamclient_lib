@@ -10,6 +10,10 @@ h1 {
 #projectlogo img
 { 
 	border: 0px none;
-    max-width: 40px;
+    max-width: 60px;
     height: auto;
+}
+
+.svg_image .image > * {
+    pointer-events: all !important;
 }

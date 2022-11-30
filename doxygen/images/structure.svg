@@ -12,7 +12,7 @@
 <!-- 0 -->
 <g id="node1" class="node">
 <title>0</title>
-<g id="a_node1"><a xlink:href="https://github.com/iLya2IK/wchttpserver" xlink:title="wcHTTPServer">
+<g id="a_node1"><a href="https://github.com/iLya2IK/wchttpserver" target="_blank"><title>wcHTTPServer</title>
 <polygon fill="none" stroke="black" points="690,-388 593,-388 593,-392 581,-392 581,-352 690,-352 690,-388"/>
 <polyline fill="none" stroke="black" points="581,-388 593,-388 "/>
 <text text-anchor="middle" x="635.5" y="-366.3" font-family="sans" font-size="14.00">wcHTTPServer</text>
@@ -22,7 +22,7 @@
 <!-- 1 -->
 <g id="node2" class="node">
 <title>1</title>
-<g id="a_node2"><a xlink:href="https://github.com/iLya2IK/wcwebcamserver" xlink:title="wcWebCamServer">
+<g id="a_node2"><a href="https://github.com/iLya2IK/wcwebcamserver" target="_blank"><title>wcWebCamServer</title>
 <polygon fill="none" stroke="black" points="700,-301 571,-301 571,-297 567,-297 567,-293 571,-293 571,-273 567,-273 567,-269 571,-269 571,-265 700,-265 700,-301"/>
 <polyline fill="none" stroke="black" points="571,-297 575,-297 575,-293 571,-293 "/>
 <polyline fill="none" stroke="black" points="571,-273 575,-273 575,-269 571,-269 "/>
@@ -40,7 +40,7 @@
 <!-- 7 -->
 <g id="node3" class="node">
 <title>7</title>
-<g id="a_node3"><a xlink:href="https://github.com/curl/curl" xlink:title="cURL">
+<g id="a_node3"><a href="https://github.com/curl/curl" target="_blank"><title>cURL</title>
 <polygon fill="#4d4d4d" stroke="black" points="399.5,-214 345.5,-214 345.5,-210 341.5,-210 341.5,-206 345.5,-206 345.5,-186 341.5,-186 341.5,-182 345.5,-182 345.5,-178 399.5,-178 399.5,-214"/>
 <polyline fill="none" stroke="black" points="345.5,-210 349.5,-210 349.5,-206 345.5,-206 "/>
 <polyline fill="none" stroke="black" points="345.5,-186 349.5,-186 349.5,-182 345.5,-182 "/>
@@ -58,7 +58,7 @@
 <!-- 10 -->
 <g id="node4" class="node">
 <title>10</title>
-<g id="a_node4"><a xlink:href="https://github.com/nghttp2/nghttp2" xlink:title="nghttp2">
+<g id="a_node4"><a href="https://github.com/nghttp2/nghttp2" target="_blank"><title>nghttp2</title>
 <polygon fill="#4d4d4d" stroke="black" points="669,-214 604,-214 604,-210 600,-210 600,-206 604,-206 604,-186 600,-186 600,-182 604,-182 604,-178 669,-178 669,-214"/>
 <polyline fill="none" stroke="black" points="604,-210 608,-210 608,-206 604,-206 "/>
 <polyline fill="none" stroke="black" points="604,-186 608,-186 608,-182 604,-182 "/>
@@ -76,7 +76,7 @@
 <!-- 13 -->
 <g id="node5" class="node">
 <title>13</title>
-<g id="a_node5"><a xlink:href="https://square.github.io/okhttp/" xlink:title="okHttp">
+<g id="a_node5"><a href="https://square.github.io/okhttp/" target="_blank"><title>okHttp</title>
 <polygon fill="#4d4d4d" stroke="black" points="884,-214 825,-214 825,-210 821,-210 821,-206 825,-206 825,-186 821,-186 821,-182 825,-182 825,-178 884,-178 884,-214"/>
 <polyline fill="none" stroke="black" points="825,-210 829,-210 829,-206 825,-206 "/>
 <polyline fill="none" stroke="black" points="825,-186 829,-186 829,-182 825,-182 "/>
@@ -117,7 +117,7 @@
 <!-- 2 -->
 <g id="node11" class="node">
 <title>2</title>
-<g id="a_node11"><a xlink:href="https://github.com/iLya2IK/wcwebcamclient_lib" xlink:title="wcWebCamClient\nLibrary">
+<g id="a_node11"><a href="https://github.com/iLya2IK/wcwebcamclient_lib" target="_blank"><title>wcWebCamClient\nLibrary</title>
 <polygon fill="none" stroke="black" points="263.5,-127 149.5,-127 149.5,-131 137.5,-131 137.5,-89 263.5,-89 263.5,-127"/>
 <polyline fill="none" stroke="black" points="137.5,-127 149.5,-127 "/>
 <text text-anchor="middle" x="200.5" y="-111.8" font-family="sans" font-size="14.00">wcWebCamClient</text>
@@ -134,7 +134,7 @@
 <!-- 3 -->
 <g id="node12" class="node">
 <title>3</title>
-<g id="a_node12"><a xlink:href="https://github.com/iLya2IK/wccurlclient" xlink:title="HTTP2 Web Camera\nAbstract Client for Lazarus">
+<g id="a_node12"><a href="https://github.com/iLya2IK/wccurlclient" target="_blank"><title>HTTP2 Web Camera\nAbstract Client for Lazarus</title>
 <polygon fill="none" stroke="black" points="463.5,-127 293.5,-127 293.5,-131 281.5,-131 281.5,-89 463.5,-89 463.5,-127"/>
 <polyline fill="none" stroke="black" points="281.5,-127 293.5,-127 "/>
 <text text-anchor="middle" x="372.5" y="-111.8" font-family="sans" font-size="14.00">HTTP2 Web Camera</text>
@@ -174,7 +174,7 @@
 <!-- 5 -->
 <g id="node14" class="node">
 <title>5</title>
-<g id="a_node14"><a xlink:href="https://github.com/iLya2IK/webcamdevice" xlink:title="HTTP2 Web Camera\nClient Device">
+<g id="a_node14"><a href="https://github.com/iLya2IK/webcamdevice" target="_blank"><title>HTTP2 Web Camera\nClient Device</title>
 <polygon fill="none" stroke="black" points="773.5,-127 643.5,-127 643.5,-131 631.5,-131 631.5,-89 773.5,-89 773.5,-127"/>
 <polyline fill="none" stroke="black" points="631.5,-127 643.5,-127 "/>
 <text text-anchor="middle" x="702.5" y="-111.8" font-family="sans" font-size="14.00">HTTP2 Web Camera</text>
@@ -214,7 +214,7 @@
 <!-- 6 -->
 <g id="node15" class="node">
 <title>6</title>
-<g id="a_node15"><a xlink:href="https://github.com/iLya2IK/wcwebcameracontrol" xlink:title="HTTP2 Web Camera\nAndroid Client">
+<g id="a_node15"><a href="https://github.com/iLya2IK/wcwebcameracontrol" target="_blank"><title>HTTP2 Web Camera\nAndroid Client</title>
 <polygon fill="none" stroke="black" points="1079.5,-127 949.5,-127 949.5,-131 937.5,-131 937.5,-89 1079.5,-89 1079.5,-127"/>
 <polyline fill="none" stroke="black" points="937.5,-127 949.5,-127 "/>
 <text text-anchor="middle" x="1008.5" y="-111.8" font-family="sans" font-size="14.00">HTTP2 Web Camera</text>
@@ -263,7 +263,7 @@
 <!-- 4 -->
 <g id="node13" class="node">
 <title>4</title>
-<g id="a_node13"><a xlink:href="https://github.com/iLya2IK/webcamclientviewer" xlink:title="HTTP2 Web Camera\nDesktop Viewer">
+<g id="a_node13"><a href="https://github.com/iLya2IK/webcamclientviewer" target="_blank"><title>HTTP2 Web Camera\nDesktop Viewer</title>
 <polygon fill="none" stroke="black" points="653.5,-38 523.5,-38 523.5,-42 511.5,-42 511.5,0 653.5,0 653.5,-38"/>
 <polyline fill="none" stroke="black" points="511.5,-38 523.5,-38 "/>
 <text text-anchor="middle" x="582.5" y="-22.8" font-family="sans" font-size="14.00">HTTP2 Web Camera</text>
