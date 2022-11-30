@@ -103,7 +103,8 @@ INPUT                  = \
     "doxygen/protocol/JSONSubProtocol.md" \
     "doxygen/structure.md" \
     "include/wcCommonCallbacks.h" \
-    "wcwebcamclient.h" 
+    "wcwebcamclient.h" \
+    "doxygen/contributions.md"
 INPUT_ENCODING         = UTF-8
 FILE_PATTERNS          =
 RECURSIVE              = YES

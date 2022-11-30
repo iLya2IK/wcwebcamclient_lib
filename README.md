@@ -40,7 +40,9 @@ make -f wcwebcamclient.cbp.mak clean_release_linux
 ## Necessary libraries
 1. OpenSSL (v1.1.0 or higher)
 2. cURL (with http2 support)
+3. cJSON
 
 # Copyrights and contributions
-* [OpenSSL](https://www.openssl.org/)
-* [cURL](https://curl.se/libcurl)
+* [OpenSSL - TLS/SSL and crypto library](https://www.openssl.org/)
+* [cURL - A command library for transferring data with URL syntax](https://curl.se/libcurl)
+* [cJSON - Ultralightweight JSON parser in ANSI C](https://github.com/DaveGamble/cJSON)
