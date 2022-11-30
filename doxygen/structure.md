@@ -3,11 +3,9 @@ wcWebCam Structure  {#structure}
 
 <div class="svg_image">
 
-![](structure.svg){ width=100% }
+![](structure.svg)
 
 </div>
-
-< img src="structure.svg" style="max-width: 100%;"/>
 
 Links 
 -----
