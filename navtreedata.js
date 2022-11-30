@@ -110,6 +110,9 @@ var NAVTREE =
     [ "wcWebCam Structure", "structure.html", [
       [ "Links", "structure.html#autotoc_md48", null ]
     ] ],
+    [ "Contributions", "_contributions.html", [
+      [ "Listed", "_contributions.html#autotoc_md49", null ]
+    ] ],
     [ "Modules", "modules.html", "modules" ],
     [ "Data Structures", "annotated.html", "annotated" ],
     [ "Data Structure Index", "classes.html", null ],
@@ -134,7 +137,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_j_s_o_n_protocol_home.html"
+"_contributions.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
