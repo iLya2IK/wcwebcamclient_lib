@@ -8,10 +8,10 @@ Contributions {#Contributions}
 </div>
 
 <div align="center">
-<a href="https://www.lazarus-ide.org/" target="_blank"><img src="https://wiki.freepascal.org/images/f/fd/Lazarus-icons-lpr-proposal-bpsoftware.png" title="Lazarus IDE" alt="Lazarus IDE" width="40" height="40"/></a>
+<a href="https://www.lazarus-ide.org/" target="_blank"><img src="https://wiki.freepascal.org/images/f/fd/Lazarus-icons-lpr-proposal-bpsoftware.png" title="Lazarus IDE" alt="Lazarus IDE" width="auto" height="40"/></a>
 <a href="https://www.codeblocks.org/" target="_blank"><img src="codeblocks.svg" title="Code::Blocks" alt="Code::Blocks" width="40" height="40"/></a>
-<a href="https://gcc.gnu.org/" target="_blank"><img src="gcc-original.svg" title="GCC" alt="GCC" width="40" height="40"/></a>
-<a href="https://code.visualstudio.com/" target="_blank"><img src="vscode-original-wordmark.svg" title="VSCode" alt="VSCode" width="40" height="40"/></a>
+<a href="https://gcc.gnu.org/" target="_blank"><img src="gcc-original.svg" title="GCC" alt="GCC" width="auto" height="40"/></a>
+<a href="https://code.visualstudio.com/" target="_blank"><img src="vscode-original-wordmark.svg" title="VSCode" alt="VSCode" width="auto" height="40"/></a>
 <a href="https://developer.android.com/studio" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Android_Studio_Trademark.svg" title="Android Studio"  alt="Android Studio" height="40" width="auto"/></a>
 </div>
 

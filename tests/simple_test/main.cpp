@@ -66,8 +66,8 @@ int main(int argc, char * argv[])
 
         wcCURLClient client;
 
-        if (input.ignoreTSLCert())
-            client.setVerifyTSL(false);
+        if (input.ignoreTLSCert())
+            client.setVerifyTLS(false);
 
         if (!proxy.empty()) {
             client.setProxy(proxy);

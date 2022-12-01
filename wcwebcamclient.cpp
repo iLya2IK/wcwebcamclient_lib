@@ -187,8 +187,8 @@ wcRCode DLLEXPORT wcClientGetBoolState(wcHandle client, wcStateId aStateId) {
     case wcstConnection :
         if (WC_CLIENT(client)->getConnected()) v = WC_TRUE;
         break;
-    case wcstVerifyTSL :
-        if (WC_CLIENT(client)->getVerifyTSL()) v = WC_TRUE;
+    case wcstVerifyTLS :
+        if (WC_CLIENT(client)->getVerifyTLS()) v = WC_TRUE;
         break;
     case wcstError :
         if (WC_CLIENT(client)->hasError()) v = WC_TRUE;
@@ -230,8 +230,8 @@ wcRCode DLLEXPORT wcClientSetBoolState(wcHandle client, wcStateId aStateId, wcSt
         else
             v = WC_BAD_VALUE;
         break;
-    case wcstVerifyTSL :
-        WC_CLIENT(client)->setVerifyTSL(aStateVal == WC_TRUE);
+    case wcstVerifyTLS :
+        WC_CLIENT(client)->setVerifyTLS(aStateVal == WC_TRUE);
         break;
     case wcstStreaming :
         if (aStateVal == WC_FALSE)

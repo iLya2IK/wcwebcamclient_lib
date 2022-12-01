@@ -125,32 +125,32 @@ __pragma( pack(push, 1) )
 //! \brief The list of callbacks
 enum wcCallback {
     /* maintaining block */
-    wccbkInitCURL=0,               /*!< Successful initialization of the multiCURL handle. */
-    wccbkSuccessAuth,              /*!< Successful authorization. This callback is called during \ref wcClientTasksProceed. */
-    wccbkConnected,                /*!< The connection state has been changed. */
-    wccbkDisconnect,               /*!< Client has been disconnected. */
-    wccbkSIDSetted,                /*!< The session id has been changed. */
-    wccbkAddLog,                   /*!< Added new log entry. */
-    wccbkSynchroUpdateTask,        /*!< The IO streaming task signals that a change has occurred. This callback is called during \ref wcClientTasksProceed. */
+    wccbkInitCURL=0,               /*!< Successful initialization of the multiCURL handle. \sa wcSetNotifyCallback */
+    wccbkSuccessAuth,              /*!< Successful authorization. This callback is called during \ref wcClientTasksProceed. \sa wcSetTaskCallback */
+    wccbkConnected,                /*!< The connection state has been changed. \sa wcSetConnCallback */
+    wccbkDisconnect,               /*!< Client has been disconnected. \sa wcSetNotifyCallback */
+    wccbkSIDSetted,                /*!< The session id has been changed. \sa wcSetCStringCallback */
+    wccbkAddLog,                   /*!< Added new log entry. \sa wcSetCStringCallback */
+    wccbkSynchroUpdateTask,        /*!< The IO streaming task signals that a change has occurred. This callback is called during \ref wcClientTasksProceed. \sa wcSetTaskCallback */
 
     /* streams block */
-    wccbkAfterLaunchInStream,      /*!< Incoming stream started. */
-    wccbkAfterLaunchOutStream,     /*!< Outgoing stream started. */
-    wccbkSuccessIOStream,          /*!< IO stream terminated for some reason. This callback is called during \ref wcClientTasksProceed. */
+    wccbkAfterLaunchInStream,      /*!< Incoming stream started. \sa wcSetTaskCallback */
+    wccbkAfterLaunchOutStream,     /*!< Outgoing stream started. \sa wcSetTaskCallback */
+    wccbkSuccessIOStream,          /*!< IO stream terminated for some reason. This callback is called during \ref wcClientTasksProceed. \sa wcSetTaskCallback */
 
     /* data blobs block */
-    wccbkSuccessSaveRecord,        /*!< The request to save the media record has been completed. The response has arrived. This callback is called during \ref wcClientTasksProceed. */
-    wccbkSuccessRequestRecord,     /*!< The request to get the media record has been completed. The response has arrived. This callback is called during \ref wcClientTasksProceed. */
+    wccbkSuccessSaveRecord,        /*!< The request to save the media record has been completed. The response has arrived. This callback is called during \ref wcClientTasksProceed. \sa wcSetTaskCallback */
+    wccbkSuccessRequestRecord,     /*!< The request to get the media record has been completed. The response has arrived. This callback is called during \ref wcClientTasksProceed. \sa wcSetDataCallback, wcSetAltDataCallback */
 
     /* JSON block */
-    wccbkSuccessUpdateRecords,     /*!< The request to update list of records has been completed. The response has arrived. This callback is called during \ref wcClientTasksProceed. */
-    wccbkSuccessUpdateDevices,     /*!< The request to update list of online devices has been completed. The response has arrived. This callback is called during \ref wcClientTasksProceed. */
-    wccbkSuccessUpdateStreams,     /*!< The request to update list of streaming devices has been completed. The response has arrived. This callback is called during \ref wcClientTasksProceed. */
-    wccbkSuccessUpdateMsgs,        /*!< The request to update list of messages has been completed. The response has arrived. This callback is called during \ref wcClientTasksProceed. */
-    wccbkSuccessSendMsg,           /*!< The request to send message has been completed. The response has arrived. This callback is called during \ref wcClientTasksProceed. */
-    wccbkSuccessRequestRecordMeta, /*!< The request to get metadata for the media record has been completed. The response has arrived. This callback is called during \ref wcClientTasksProceed. */
-    wccbkSuccessGetConfig,         /*!< The request to get actual config has been completed. The response has arrived. This callback is called during \ref wcClientTasksProceed. */
-    wccbkSuccessDeleteRecords,     /*!< The request to delete records has been completed. The response has arrived. This callback is called during \ref wcClientTasksProceed. */
+    wccbkSuccessUpdateRecords,     /*!< The request to update list of records has been completed. The response has arrived. This callback is called during \ref wcClientTasksProceed. \sa wcSetJSONStrCallback, wcSetcJSONCallback, wcSetJSONCallback */
+    wccbkSuccessUpdateDevices,     /*!< The request to update list of online devices has been completed. The response has arrived. This callback is called during \ref wcClientTasksProceed. \sa wcSetJSONStrCallback, wcSetcJSONCallback, wcSetJSONCallback  */
+    wccbkSuccessUpdateStreams,     /*!< The request to update list of streaming devices has been completed. The response has arrived. This callback is called during \ref wcClientTasksProceed. \sa wcSetJSONStrCallback, wcSetcJSONCallback, wcSetJSONCallback  */
+    wccbkSuccessUpdateMsgs,        /*!< The request to update list of messages has been completed. The response has arrived. This callback is called during \ref wcClientTasksProceed. \sa wcSetJSONStrCallback, wcSetcJSONCallback, wcSetJSONCallback  */
+    wccbkSuccessSendMsg,           /*!< The request to send message has been completed. The response has arrived. This callback is called during \ref wcClientTasksProceed. \sa wcSetJSONStrCallback, wcSetcJSONCallback, wcSetJSONCallback  */
+    wccbkSuccessRequestRecordMeta, /*!< The request to get metadata for the media record has been completed. The response has arrived. This callback is called during \ref wcClientTasksProceed. \sa wcSetJSONStrCallback, wcSetcJSONCallback, wcSetJSONCallback  */
+    wccbkSuccessGetConfig,         /*!< The request to get actual config has been completed. The response has arrived. This callback is called during \ref wcClientTasksProceed. \sa wcSetJSONStrCallback, wcSetcJSONCallback, wcSetJSONCallback  */
+    wccbkSuccessDeleteRecords,     /*!< The request to delete records has been completed. The response has arrived. This callback is called during \ref wcClientTasksProceed. \sa wcSetJSONStrCallback, wcSetcJSONCallback, wcSetJSONCallback  */
 
     wccbkLast}
 #ifdef __GNUC__
@@ -165,7 +165,7 @@ __attribute__((__packed__))
  */
 enum wcStateId {
     wcstConnection = 0,
-    wcstVerifyTSL,
+    wcstVerifyTLS,
     wcstError,
     wcstLog,
     wcstStreaming,
@@ -387,7 +387,7 @@ wcRCode DLLEXPORT wcClientGetIntState(wcHandle client, wcStateId aStateId, int *
 //! \brief Get a boolean value for the selected client state.
 /*! Acceptable values of the state param are:<br>
  * \ref wcstConnection - is client connected, <br>
- * \ref wcstVerifyTSL - should client verify TSL certificate,  <br>
+ * \ref wcstVerifyTLS - should client verify TLS certificate,  <br>
  * \ref wcstError - an error has occurred, <br>
  * \ref wcstStreaming - has the client started the media stream,<br>
  * \ref wcstLog - does the log contain entries,<br>
@@ -405,7 +405,7 @@ wcRCode DLLEXPORT wcClientGetBoolState(wcHandle client, wcStateId aStateId);
 //! \brief Set the boolean value to the selected client state.
 /*! Acceptable values of the state param are:<br>
  * \ref wcstConnection - disconnect ( \ref WC_FALSE, see also \ref wcClientDisconnect) the client ( \ref WC_TRUE not allowed, use \ref wcClientAuth instead), <br>
- * \ref wcstVerifyTSL - should client verify TSL certificate ( \ref WC_TRUE/ \ref WC_FALSE allowed),  <br>
+ * \ref wcstVerifyTLS - should client verify TLS certificate ( \ref WC_TRUE/ \ref WC_FALSE allowed),  <br>
  * \ref wcstStreaming - stop streaming ( \ref WC_FALSE) for the client ( \ref WC_TRUE not allowed, use \ref wcLaunchOutStream instead),<br>
  * \ref wcstDevices - the client should update the list of devices (only \ref WC_TRUE value allowed),<br>
  * \ref wcstRecords - the client should update the list of media records (only \ref WC_TRUE value allowed),<br>

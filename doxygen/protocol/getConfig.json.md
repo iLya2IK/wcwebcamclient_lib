@@ -25,7 +25,15 @@ Response
 <h3>JSON_OK response</h3>
 
 ~~~~~~~~~~~~~{.java}
-{"config":[{"kind":0,"descr":":string:","miv":0.0,"mav":0.0,"dv":0.0,"fv":0.0},...],"result":"OK"}
+{"config":[
+    {"kind":integer,
+     "descr":":string:",
+     "miv":double,
+     "mav":double,
+     "dv":double,
+     "fv":double},
+    ...],
+ "result":"OK"}
 ~~~~~~~~~~~~~
 
 * _**config**_ - the array of configurations received

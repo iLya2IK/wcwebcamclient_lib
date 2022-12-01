@@ -89,9 +89,9 @@ class InputParser{
                 return res;
         }
 
-        bool ignoreTSLCert() {
-            static const std::string OPT_TSL_IGNORE("-k");
-            return cmdOptionExists(OPT_TSL_IGNORE);
+        bool ignoreTLSCert() {
+            static const std::string OPT_TLS_IGNORE("-k");
+            return cmdOptionExists(OPT_TLS_IGNORE);
         }
 
         bool showHelp() {
@@ -107,7 +107,7 @@ class InputParser{
             std::cout << " -d, --device     Device name" << std::endl;
             std::cout << " -n, --name       Login name" << std::endl;
             std::cout << " -x, --pwrd       Login password" << std::endl;
-            std::cout << " -k               Ignore TSL certificate errors" << std::endl;
+            std::cout << " -k               Ignore TLS certificate errors" << std::endl;
             std::cout << " -h               Show this help" << std::endl;
         }
     private:

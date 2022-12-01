@@ -13,11 +13,11 @@ The JSON object
 ~~~~~~~~~~~~~
 
 Possible (alternative) query string
-`https://localhost/heartBit.json?name=string&shash=string
+`https://localhost/heartBit.json?name=string&shash=string`
 
 <h3>Parameters</h3>
 
-* _**shash**_ - new session id returned(required)
+* _**shash**_ - session id (required)
 
 Response
 ------------

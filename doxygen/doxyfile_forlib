@@ -9,9 +9,9 @@
 # Project related configuration options
 #---------------------------------------------------------------------------
 DOXYFILE_ENCODING      = UTF-8
-PROJECT_NAME           = "wcWebCamClient library"
-PROJECT_NUMBER         = 0.7
-PROJECT_BRIEF          = "Library for convenient work with the wcWebCamServer server via the JSON protocol"
+PROJECT_NAME           = "wcWebCamClient lib"
+PROJECT_NUMBER         = v0.7
+PROJECT_BRIEF          = 
 PROJECT_LOGO           = doxygen/images/wclogo_c.svg
 OUTPUT_DIRECTORY       =
 CREATE_SUBDIRS         = NO
@@ -148,7 +148,7 @@ HTML_FOOTER            =
 HTML_STYLESHEET        =
 HTML_COLORSTYLE_HUE    = 220
 HTML_COLORSTYLE_SAT    = 100
-HTML_COLORSTYLE_GAMMA  = 80
+HTML_COLORSTYLE_GAMMA  = 120
 HTML_TIMESTAMP         = YES
 HTML_ALIGN_MEMBERS     = YES
 HTML_DYNAMIC_SECTIONS  = NO

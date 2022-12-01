@@ -10,11 +10,30 @@ h1 {
 #projectlogo img
 { 
 	border: 0px none;
-    max-width: 60px;
+    max-width: 40px;
     height: auto;
 }
 
 .svg_image .image > * {
     width: 100% !important;
     pointer-events: all !important;
+}
+
+div.line {
+    white-space: pre;
+}
+
+#projectname
+{
+	font-size: 120%;
+}
+
+#projectrow
+{
+	height: 46px;
+}
+
+#projectnumber
+{
+	font-size: 70%;
 }

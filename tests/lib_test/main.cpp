@@ -92,8 +92,8 @@ int main(int argc, char * argv[])
         wcHandle client = wcClientCreate();
 
         /* Configure certificate */
-        if (input.ignoreTSLCert())
-            wcClientSetBoolState(client, wcstVerifyTSL, WC_FALSE);
+        if (input.ignoreTLSCert())
+            wcClientSetBoolState(client, wcstVerifyTLS, WC_FALSE);
         /* Configure proxy */
         if (!proxy.empty())
             wcClientSetStrValue(client, wcstProxy, proxy.c_str());

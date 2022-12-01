@@ -26,7 +26,7 @@ Response
 <h3>JSON_OK response</h3>
 
 ~~~~~~~~~~~~~{.java}
-{"records":[{"rid":0,"device":":string:","stamp":":string:"},...],"result":"OK"}
+{"records":[{"rid":integer,"device":":string:","stamp":":string:"},...],"result":"OK"}
 ~~~~~~~~~~~~~
 
 * _**records**_ - the array of media records received

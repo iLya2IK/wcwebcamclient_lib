@@ -61,7 +61,7 @@ void wcHTTP2BackgroundTask::CURLConfig(int64_t mContentSize) {
         }
     }
 
-    if (!mSettings->getVerifyTSL()) {
+    if (!mSettings->getVerifyTLS()) {
         curl_easy_setopt(mCURL, CURLOPT_SSL_VERIFYPEER, (long)0);
         curl_easy_setopt(mCURL, CURLOPT_SSL_VERIFYHOST, (long)0);
     }

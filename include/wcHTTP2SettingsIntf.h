@@ -21,8 +21,8 @@ class wcHTTP2SettingsIntf : public tsObject
 
         bool hasMetaData();
 
-        void setVerifyTSL(bool aValue);
-        bool getVerifyTSL();
+        void setVerifyTLS(bool aValue);
+        bool getVerifyTLS();
 
         bool hasProxy();
         bool hasProxyAuth();

@@ -169,14 +169,14 @@ bool wcHTTP2SettingsIntf::hasProxyAuth() {
     return res;
 }
 
-void wcHTTP2SettingsIntf::setVerifyTSL(bool aValue)
+void wcHTTP2SettingsIntf::setVerifyTLS(bool aValue)
 {
     lock();
     verify_tsl = aValue;
     unlock();
 }
 
-bool wcHTTP2SettingsIntf::getVerifyTSL()
+bool wcHTTP2SettingsIntf::getVerifyTLS()
 {
     lock();
     bool res = verify_tsl;

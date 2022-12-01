@@ -12,7 +12,7 @@ The JSON object
 ~~~~~~~~~~~~~
 
 Possible (alternative) query string
-`https://localhost/authorize.json?name=string&pass=string&device=string`
+`https://localhost/authorize.json?name=string&pass=string&device=string&meta=string`
 
 <h3>Parameters</h3>
 

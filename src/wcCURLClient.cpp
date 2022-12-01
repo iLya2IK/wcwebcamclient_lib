@@ -157,9 +157,9 @@ bool wcCURLClient::getConnected()
     return res;
 }
 
-bool wcCURLClient::getVerifyTSL()
+bool wcCURLClient::getVerifyTLS()
 {
-    return mSetts->getVerifyTSL();
+    return mSetts->getVerifyTLS();
 }
 
 string wcCURLClient::getDevice()

@@ -9,7 +9,7 @@ Request
 The JSON object
 
 ~~~~~~~~~~~~~{.java}
-{"shash":":string:","config":[{"kind":0,"fv":0.0},...]}
+{"shash":":string:","config":[{"kind":integer,"fv":double},...]}
 ~~~~~~~~~~~~~
 
 Possible (alternative) query string

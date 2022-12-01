@@ -24,10 +24,10 @@ There are no requirements for naming subprotocols. The set and description of su
 
 `(COMPRESSION){1}_(FORMAT){1}(_[A-Z0-9]+)*`
 
-Examples:
-`DEFLATE_TEXT`
-`RAW_JPEG`
-`DEFLATE_JSON`
+Examples:<br>
+`DEFLATE_TEXT`<br>
+`RAW_JPEG`<br>
+`DEFLATE_JSON`<br>
 `LZMA_FILE_HEADER128B`
 
 Response

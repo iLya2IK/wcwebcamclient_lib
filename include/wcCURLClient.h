@@ -44,14 +44,14 @@ class wcCURLClient : public tsObject
         void setProxyPort(const std::string & aValue) { mSetts->setProxyPort(aValue); };
         void setProxyUser(const std::string & aValue) { mSetts->setProxyAuthName(aValue); };
         void setProxyPwrd(const std::string & aValue) { mSetts->setProxyAuthPass(aValue); };
-        void setVerifyTSL(bool aValue) { mSetts->setVerifyTSL(aValue); };
+        void setVerifyTLS(bool aValue) { mSetts->setVerifyTLS(aValue); };
         void setLastMsgsStamp(const std::string & aValue) { lock(); mLastMsgsStamp = aValue; unlock(); };
         void setLastRecsStamp(const std::string & aValue) { lock(); mLastRecsStamp = aValue; unlock(); };
         void start();
         void tasksProceed();
         void proceed();
 
-        bool getVerifyTSL();
+        bool getVerifyTLS();
         bool hasMetaData() { return mSetts->hasMetaData(); };
         std::string getMetaData();
         std::string getDevice();
