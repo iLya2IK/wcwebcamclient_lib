@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['wcwebcam_20structure_49',['wcWebCam Structure',['../structure.html',1,'']]],
-  ['wcwebcamclient_20library_20api_20user_27s_20guide_50',['wcWebCamClient library API User&apos;s Guide',['../users_guide.html',1,'']]],
+  ['wcwebcamclient_20library_20api_20user_27s_20guide_49',['wcWebCamClient library API User&apos;s Guide',['../index.html',1,'']]],
+  ['wcwebcam_20structure_50',['wcWebCam Structure',['../structure.html',1,'']]],
   ['wc_5fall_5ftasks_51',['WC_ALL_TASKS',['../wcwebcamclient_8h.html#a7593cc5ebe036ef34f6790e91ad6ffee',1,'wcwebcamclient.h']]],
   ['wc_5fbad_5fparam_52',['WC_BAD_PARAM',['../group__wc_return.html#ga3dc025c6176c57c2136c82b9b75cef15',1,'wcwebcamclient.h']]],
   ['wc_5fbad_5ftarget_53',['WC_BAD_TARGET',['../group__wc_return.html#ga943348a86a477828b0a9b925e77cdcb5',1,'wcwebcamclient.h']]],
@@ -102,7 +102,7 @@ var searchData=
   ['wcstsid_148',['wcstSID',['../group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aab1459f27a26ce8e6b2a7b3ad90bc87aa',1,'wcwebcamclient.h']]],
   ['wcststreaming_149',['wcstStreaming',['../group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aaa62117485ce6e92c53d1234fbb2987cb',1,'wcwebcamclient.h']]],
   ['wcststreams_150',['wcstStreams',['../group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa23994f253f4746232e1803519d171356',1,'wcwebcamclient.h']]],
-  ['wcstverifytsl_151',['wcstVerifyTSL',['../group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa131c09561bfa30e192b56ba290cdc8cb',1,'wcwebcamclient.h']]],
+  ['wcstverifytls_151',['wcstVerifyTLS',['../group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aad394968a9441b19a5e30987b72364027',1,'wcwebcamclient.h']]],
   ['wctask_152',['wcTask',['../wcwebcamclient_8h.html#a91c112d47f81589bb3ead6630798b831',1,'wcwebcamclient.h']]],
   ['wctaskclass_153',['wcTaskClass',['../wcwebcamclient_8h.html#ae1ba77ff9ed951c2384f2564b6680760',1,'wcwebcamclient.h']]],
   ['wctaskgetclass_154',['wcTaskGetClass',['../group__wc_tasks_funcs.html#ga07eee37da8ec74d384f07e43eb0eb3c1',1,'wcwebcamclient.h']]],

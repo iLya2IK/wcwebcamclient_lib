@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>wcWebCamClient library: Library functions and typedefs to set callbacks for client</title>
+<title>wcWebCamClient lib: Library functions and typedefs to set callbacks for client</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,10 +32,9 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="wclogo_c.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">wcWebCamClient library
-   &#160;<span id="projectnumber">0.7</span>
+   <div id="projectname">wcWebCamClient lib
+   &#160;<span id="projectnumber">v0.7</span>
    </div>
-   <div id="projectbrief">Library for convenient work with the wcWebCamServer server via the JSON protocol</div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -391,57 +390,71 @@ Functions</h2></td></tr>
 <p>The list of callbacks. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggaa0654287d510e9750e0293d6d27758b2a68767c5dd04b5f6808cb33ad15015d28"></a>wccbkInitCURL&#160;</td><td class="fielddoc"><p>Successful initialization of the multiCURL handle. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_callbacks.html#ga484a3470a41431b547c03e262f9740ae" title="Set specified notify callback for client.">wcSetNotifyCallback</a> </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa0654287d510e9750e0293d6d27758b2a75ab4237c20dc9903443885ea5179125"></a>wccbkSuccessAuth&#160;</td><td class="fielddoc"><p>Successful authorization. </p>
-<p>This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p>
+<p>This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_callbacks.html#ga236c9ab837587b20b0ff7633da2d8a99" title="Set specified task notify callback for client.">wcSetTaskCallback</a> </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa0654287d510e9750e0293d6d27758b2a701cb989bec0991757058bf0288753b7"></a>wccbkConnected&#160;</td><td class="fielddoc"><p>The connection state has been changed. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_callbacks.html#gaff423ec577d1f989d5b958d037f1e1dd" title="Set specified connection notify callback for client.">wcSetConnCallback</a> </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa0654287d510e9750e0293d6d27758b2abc6003d6b3b869de905cf70bde94d88a"></a>wccbkDisconnect&#160;</td><td class="fielddoc"><p>Client has been disconnected. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_callbacks.html#ga484a3470a41431b547c03e262f9740ae" title="Set specified notify callback for client.">wcSetNotifyCallback</a> </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa0654287d510e9750e0293d6d27758b2ae6b1b14a4d95b002dcf3ac8e06ae7a6e"></a>wccbkSIDSetted&#160;</td><td class="fielddoc"><p>The session id has been changed. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_callbacks.html#ga8620a24ec871f07776cad99b0482c1de" title="Set specified notify callback for client to handling the C-style string values.">wcSetCStringCallback</a> </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa0654287d510e9750e0293d6d27758b2a0bb165e7d967922ab898bbaec010616f"></a>wccbkAddLog&#160;</td><td class="fielddoc"><p>Added new log entry. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_callbacks.html#ga8620a24ec871f07776cad99b0482c1de" title="Set specified notify callback for client to handling the C-style string values.">wcSetCStringCallback</a> </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa0654287d510e9750e0293d6d27758b2a167e248df079d152ee639b9480ebd1b4"></a>wccbkSynchroUpdateTask&#160;</td><td class="fielddoc"><p>The IO streaming task signals that a change has occurred. </p>
-<p>This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p>
+<p>This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_callbacks.html#ga236c9ab837587b20b0ff7633da2d8a99" title="Set specified task notify callback for client.">wcSetTaskCallback</a> </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa0654287d510e9750e0293d6d27758b2a17acb2489b43f54a9b3f8e9f7ab3ccda"></a>wccbkAfterLaunchInStream&#160;</td><td class="fielddoc"><p>Incoming stream started. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_callbacks.html#ga236c9ab837587b20b0ff7633da2d8a99" title="Set specified task notify callback for client.">wcSetTaskCallback</a> </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa0654287d510e9750e0293d6d27758b2a9433fc29d1de2d34b23eccc004296142"></a>wccbkAfterLaunchOutStream&#160;</td><td class="fielddoc"><p>Outgoing stream started. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_callbacks.html#ga236c9ab837587b20b0ff7633da2d8a99" title="Set specified task notify callback for client.">wcSetTaskCallback</a> </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa0654287d510e9750e0293d6d27758b2aae551be528f4ee38a12c10d679c609b8"></a>wccbkSuccessIOStream&#160;</td><td class="fielddoc"><p>IO stream terminated for some reason. </p>
-<p>This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p>
+<p>This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_callbacks.html#ga236c9ab837587b20b0ff7633da2d8a99" title="Set specified task notify callback for client.">wcSetTaskCallback</a> </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa0654287d510e9750e0293d6d27758b2a61980db14343fabefa568dbb41589c47"></a>wccbkSuccessSaveRecord&#160;</td><td class="fielddoc"><p>The request to save the media record has been completed. </p>
-<p>The response has arrived. This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p>
+<p>The response has arrived. This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_callbacks.html#ga236c9ab837587b20b0ff7633da2d8a99" title="Set specified task notify callback for client.">wcSetTaskCallback</a> </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa0654287d510e9750e0293d6d27758b2a2dc813374f09ca41926d54013971b490"></a>wccbkSuccessRequestRecord&#160;</td><td class="fielddoc"><p>The request to get the media record has been completed. </p>
-<p>The response has arrived. This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p>
+<p>The response has arrived. This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p><dl class="section see"><dt>See also</dt><dd>wcSetDataCallback, <a class="el" href="group__wc_client_callbacks.html#gadea82cab460fd04f9556282a6cc842ab" title="Set specified notify callback for client to handling the sized data values.">wcSetAltDataCallback</a> </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa0654287d510e9750e0293d6d27758b2ab58d38a51a10e66f85c86179e4359591"></a>wccbkSuccessUpdateRecords&#160;</td><td class="fielddoc"><p>The request to update list of records has been completed. </p>
-<p>The response has arrived. This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p>
+<p>The response has arrived. This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_callbacks.html#gaf8c6d2bfd06c4984e990744e7fa8b7cd" title="Set specified notify callback for client to process the JSON-formatted response results represented a...">wcSetJSONStrCallback</a>, wcSetcJSONCallback, wcSetJSONCallback </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa0654287d510e9750e0293d6d27758b2aa9a41198e5947fb6b1143c1c51e22299"></a>wccbkSuccessUpdateDevices&#160;</td><td class="fielddoc"><p>The request to update list of online devices has been completed. </p>
-<p>The response has arrived. This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p>
+<p>The response has arrived. This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_callbacks.html#gaf8c6d2bfd06c4984e990744e7fa8b7cd" title="Set specified notify callback for client to process the JSON-formatted response results represented a...">wcSetJSONStrCallback</a>, wcSetcJSONCallback, wcSetJSONCallback <br  />
+ </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa0654287d510e9750e0293d6d27758b2acd9882ae8575f5e4a7b3f85751c319a8"></a>wccbkSuccessUpdateStreams&#160;</td><td class="fielddoc"><p>The request to update list of streaming devices has been completed. </p>
-<p>The response has arrived. This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p>
+<p>The response has arrived. This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_callbacks.html#gaf8c6d2bfd06c4984e990744e7fa8b7cd" title="Set specified notify callback for client to process the JSON-formatted response results represented a...">wcSetJSONStrCallback</a>, wcSetcJSONCallback, wcSetJSONCallback <br  />
+ </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa0654287d510e9750e0293d6d27758b2a28209be128c84c94c53c674c0c7f2724"></a>wccbkSuccessUpdateMsgs&#160;</td><td class="fielddoc"><p>The request to update list of messages has been completed. </p>
-<p>The response has arrived. This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p>
+<p>The response has arrived. This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_callbacks.html#gaf8c6d2bfd06c4984e990744e7fa8b7cd" title="Set specified notify callback for client to process the JSON-formatted response results represented a...">wcSetJSONStrCallback</a>, wcSetcJSONCallback, wcSetJSONCallback <br  />
+ </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa0654287d510e9750e0293d6d27758b2a12f7d23b88522875f776a647efd958be"></a>wccbkSuccessSendMsg&#160;</td><td class="fielddoc"><p>The request to send message has been completed. </p>
-<p>The response has arrived. This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p>
+<p>The response has arrived. This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_callbacks.html#gaf8c6d2bfd06c4984e990744e7fa8b7cd" title="Set specified notify callback for client to process the JSON-formatted response results represented a...">wcSetJSONStrCallback</a>, wcSetcJSONCallback, wcSetJSONCallback <br  />
+ </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa0654287d510e9750e0293d6d27758b2a3e371ce2bd4799fa2326d3dc3b542b93"></a>wccbkSuccessRequestRecordMeta&#160;</td><td class="fielddoc"><p>The request to get metadata for the media record has been completed. </p>
-<p>The response has arrived. This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p>
+<p>The response has arrived. This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_callbacks.html#gaf8c6d2bfd06c4984e990744e7fa8b7cd" title="Set specified notify callback for client to process the JSON-formatted response results represented a...">wcSetJSONStrCallback</a>, wcSetcJSONCallback, wcSetJSONCallback <br  />
+ </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa0654287d510e9750e0293d6d27758b2aebb22d94c1e0f3c90c9056163fa24795"></a>wccbkSuccessGetConfig&#160;</td><td class="fielddoc"><p>The request to get actual config has been completed. </p>
-<p>The response has arrived. This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p>
+<p>The response has arrived. This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_callbacks.html#gaf8c6d2bfd06c4984e990744e7fa8b7cd" title="Set specified notify callback for client to process the JSON-formatted response results represented a...">wcSetJSONStrCallback</a>, wcSetcJSONCallback, wcSetJSONCallback <br  />
+ </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa0654287d510e9750e0293d6d27758b2a106a46afa4f9ccb2bdcf8026ebcecf54"></a>wccbkSuccessDeleteRecords&#160;</td><td class="fielddoc"><p>The request to delete records has been completed. </p>
-<p>The response has arrived. This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p>
+<p>The response has arrived. This callback is called during <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f">wcClientTasksProceed</a>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_callbacks.html#gaf8c6d2bfd06c4984e990744e7fa8b7cd" title="Set specified notify callback for client to process the JSON-formatted response results represented a...">wcSetJSONStrCallback</a>, wcSetcJSONCallback, wcSetJSONCallback <br  />
+ </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa0654287d510e9750e0293d6d27758b2a547530103c9bd031c249b5fa297177b5"></a>wccbkLast&#160;</td><td class="fielddoc"></td></tr>
 </table>
@@ -761,7 +774,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Nov 30 2022 17:24:55 for wcWebCamClient library by
+    <li class="footer">Generated on Thu Dec 1 2022 18:18:39 for wcWebCamClient lib by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -2,7 +2,7 @@ var group__wc_client_getters_setters =
 [
     [ "wcStateId", "group__wc_client_getters_setters.html#gadfaa57b72e59d00fa03e0a1fd5ff4c5a", [
       [ "wcstConnection", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aaacc6a1d214490dc05c4b6bdbcaf7e44c", null ],
-      [ "wcstVerifyTSL", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa131c09561bfa30e192b56ba290cdc8cb", null ],
+      [ "wcstVerifyTLS", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aad394968a9441b19a5e30987b72364027", null ],
       [ "wcstError", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa4989442f67002f7dd6384dd4bd461358", null ],
       [ "wcstLog", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aafba27a9a89c4de0e23ee38a3a7778e3d", null ],
       [ "wcstStreaming", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aaa62117485ce6e92c53d1234fbb2987cb", null ],

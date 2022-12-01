@@ -128,7 +128,6 @@ var NAVTREEINDEX0 =
 "group__wc_client_getters_setters.html#gac97734ba66f6be7fbfa7fb52bae580d2":[4,2,3],
 "group__wc_client_getters_setters.html#gadfaa57b72e59d00fa03e0a1fd5ff4c5a":[4,2,0],
 "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa07f6f3cd860c1b8db2d3fab001d4f176":[4,2,0,6],
-"group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa131c09561bfa30e192b56ba290cdc8cb":[4,2,0,1],
 "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa1aa9b996e02b164d54e815bb1bfddd8e":[4,2,0,21],
 "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa1c03d090cf3d890a33bcaceddf798a34":[4,2,0,18],
 "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa23994f253f4746232e1803519d171356":[4,2,0,5],
@@ -145,6 +144,7 @@ var NAVTREEINDEX0 =
 "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aac7b6bd153a2123bc35c85c1f911729a5":[4,2,0,9],
 "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aace42dcc05f883ac24529ba6c72c3eec2":[4,2,0,11],
 "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aad2e69ee46e5e09f64d858cfc32d84e71":[4,2,0,14],
+"group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aad394968a9441b19a5e30987b72364027":[4,2,0,1],
 "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aae03ffeb519318983af4a7e1f51b7f922":[4,2,0,7],
 "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aaf680307fe84e4af94f4c193a2249a418":[4,2,0,17],
 "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aaf8cf7a58830e3c3b386ad1e791ef0ca7":[4,2,0,8],
@@ -194,6 +194,7 @@ var NAVTREEINDEX0 =
 "group__wc_tasks_funcs.html#ga16c8b8aadada87fb86fc58982baaa7cb":[4,6,2],
 "group__wc_tasks_funcs.html#ga9f8bc8647b35caef638283a775d27a99":[4,6,4],
 "group__wc_tasks_funcs.html#gadf23ece9f30ffad29c93e5ecc031f306":[4,6,1],
+"index.html":[0],
 "index.html":[],
 "lib_test_2main_8cpp-example.html":[9,0],
 "modules.html":[4],
@@ -232,6 +233,5 @@ var NAVTREEINDEX0 =
 "struct_task_notify.html#a1d0eb600b268b35a9e8749fa9e066cc2":[5,10,1],
 "struct_task_notify.html#ab9832130aec8a15c5e70fcff5cbb215c":[5,10,0],
 "structure.html":[2],
-"structure.html#autotoc_md48":[2,0],
-"users_guide.html":[0]
+"structure.html#autotoc_md48":[2,0]
 };

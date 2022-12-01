@@ -42,5 +42,5 @@ var searchData=
   ['wcstsid_301',['wcstSID',['../group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aab1459f27a26ce8e6b2a7b3ad90bc87aa',1,'wcwebcamclient.h']]],
   ['wcststreaming_302',['wcstStreaming',['../group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aaa62117485ce6e92c53d1234fbb2987cb',1,'wcwebcamclient.h']]],
   ['wcststreams_303',['wcstStreams',['../group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa23994f253f4746232e1803519d171356',1,'wcwebcamclient.h']]],
-  ['wcstverifytsl_304',['wcstVerifyTSL',['../group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa131c09561bfa30e192b56ba290cdc8cb',1,'wcwebcamclient.h']]]
+  ['wcstverifytls_304',['wcstVerifyTLS',['../group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aad394968a9441b19a5e30987b72364027',1,'wcwebcamclient.h']]]
 ];

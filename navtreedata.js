@@ -22,8 +22,8 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "wcWebCamClient library", "index.html", [
-    [ "wcWebCamClient library API User's Guide", "users_guide.html", null ],
+  [ "wcWebCamClient lib", "index.html", [
+    [ "wcWebCamClient library API User's Guide", "index.html", null ],
     [ "JSON sub-protocol description", "_j_s_o_n_protocol_home.html", [
       [ "getConfig.json", "_j_s_o_n_protocol_home.html#getConfig", [
         [ "Request", "_j_s_o_n_protocol_home.html#autotoc_md1", null ],

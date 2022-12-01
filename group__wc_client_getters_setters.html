@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>wcWebCamClient library: Library functions and typedefs to get or set state values for client</title>
+<title>wcWebCamClient lib: Library functions and typedefs to get or set state values for client</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,10 +32,9 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="wclogo_c.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">wcWebCamClient library
-   &#160;<span id="projectnumber">0.7</span>
+   <div id="projectname">wcWebCamClient lib
+   &#160;<span id="projectnumber">v0.7</span>
    </div>
-   <div id="projectbrief">Library for convenient work with the wcWebCamServer server via the JSON protocol</div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -107,7 +106,7 @@ $(document).ready(function(){initNavTree('group__wc_client_getters_setters.html'
 Enumerations</h2></td></tr>
 <tr class="memitem:gadfaa57b72e59d00fa03e0a1fd5ff4c5a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_client_getters_setters.html#gadfaa57b72e59d00fa03e0a1fd5ff4c5a">wcStateId</a> { <br />
 &#160;&#160;<a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aaacc6a1d214490dc05c4b6bdbcaf7e44c">wcstConnection</a> = 0, 
-<a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa131c09561bfa30e192b56ba290cdc8cb">wcstVerifyTSL</a>, 
+<a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aad394968a9441b19a5e30987b72364027">wcstVerifyTLS</a>, 
 <a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa4989442f67002f7dd6384dd4bd461358">wcstError</a>, 
 <a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aafba27a9a89c4de0e23ee38a3a7778e3d">wcstLog</a>, 
 <br />
@@ -176,7 +175,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggadfaa57b72e59d00fa03e0a1fd5ff4c5aaacc6a1d214490dc05c4b6bdbcaf7e44c"></a>wcstConnection&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa131c09561bfa30e192b56ba290cdc8cb"></a>wcstVerifyTSL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggadfaa57b72e59d00fa03e0a1fd5ff4c5aad394968a9441b19a5e30987b72364027"></a>wcstVerifyTLS&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa4989442f67002f7dd6384dd4bd461358"></a>wcstError&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ggadfaa57b72e59d00fa03e0a1fd5ff4c5aafba27a9a89c4de0e23ee38a3a7778e3d"></a>wcstLog&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ggadfaa57b72e59d00fa03e0a1fd5ff4c5aaa62117485ce6e92c53d1234fbb2987cb"></a>wcstStreaming&#160;</td><td class="fielddoc"></td></tr>
@@ -344,7 +343,7 @@ Functions</h2></td></tr>
 <p>Get a boolean value for the selected client state. </p>
 <p>Acceptable values of the state param are:<br  />
  <a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aaacc6a1d214490dc05c4b6bdbcaf7e44c">wcstConnection</a> - is client connected, <br  />
- <a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa131c09561bfa30e192b56ba290cdc8cb">wcstVerifyTSL</a> - should client verify TSL certificate, <br  />
+ <a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aad394968a9441b19a5e30987b72364027">wcstVerifyTLS</a> - should client verify TLS certificate, <br  />
  <a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa4989442f67002f7dd6384dd4bd461358">wcstError</a> - an error has occurred, <br  />
  <a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aaa62117485ce6e92c53d1234fbb2987cb">wcstStreaming</a> - has the client started the media stream,<br  />
  <a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aafba27a9a89c4de0e23ee38a3a7778e3d">wcstLog</a> - does the log contain entries,<br  />
@@ -399,7 +398,7 @@ Functions</h2></td></tr>
 <p>Set the boolean value to the selected client state. </p>
 <p>Acceptable values of the state param are:<br  />
  <a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aaacc6a1d214490dc05c4b6bdbcaf7e44c">wcstConnection</a> - disconnect ( <a class="el" href="group__wc_return.html#ga8d8feb58e6ee2a2bb9a6e16e1a38b537">WC_FALSE</a>, see also <a class="el" href="group__wc_client_life_circle.html#ga938e623d526f8a4b6f0f84bba1898c89">wcClientDisconnect</a>) the client ( <a class="el" href="group__wc_return.html#gaf6a3eb913fe1eb568345ae6ce3a8e193">WC_TRUE</a> not allowed, use <a class="el" href="group__wc_client_life_circle.html#gaa7063345c0553e273627b0674b11f2fa">wcClientAuth</a> instead), <br  />
- <a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa131c09561bfa30e192b56ba290cdc8cb">wcstVerifyTSL</a> - should client verify TSL certificate ( <a class="el" href="group__wc_return.html#gaf6a3eb913fe1eb568345ae6ce3a8e193">WC_TRUE</a>/ <a class="el" href="group__wc_return.html#ga8d8feb58e6ee2a2bb9a6e16e1a38b537">WC_FALSE</a> allowed), <br  />
+ <a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aad394968a9441b19a5e30987b72364027">wcstVerifyTLS</a> - should client verify TLS certificate ( <a class="el" href="group__wc_return.html#gaf6a3eb913fe1eb568345ae6ce3a8e193">WC_TRUE</a>/ <a class="el" href="group__wc_return.html#ga8d8feb58e6ee2a2bb9a6e16e1a38b537">WC_FALSE</a> allowed), <br  />
  <a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aaa62117485ce6e92c53d1234fbb2987cb">wcstStreaming</a> - stop streaming ( <a class="el" href="group__wc_return.html#ga8d8feb58e6ee2a2bb9a6e16e1a38b537">WC_FALSE</a>) for the client ( <a class="el" href="group__wc_return.html#gaf6a3eb913fe1eb568345ae6ce3a8e193">WC_TRUE</a> not allowed, use <a class="el" href="group__wc_client_requests.html#ga0f433f2e886bf7bf5fffcae9b05ce448">wcLaunchOutStream</a> instead),<br  />
  <a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa07f6f3cd860c1b8db2d3fab001d4f176">wcstDevices</a> - the client should update the list of devices (only <a class="el" href="group__wc_return.html#gaf6a3eb913fe1eb568345ae6ce3a8e193">WC_TRUE</a> value allowed),<br  />
  <a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aae03ffeb519318983af4a7e1f51b7f922">wcstRecords</a> - the client should update the list of media records (only <a class="el" href="group__wc_return.html#gaf6a3eb913fe1eb568345ae6ce3a8e193">WC_TRUE</a> value allowed),<br  />
@@ -637,7 +636,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Nov 30 2022 17:24:55 for wcWebCamClient library by
+    <li class="footer">Generated on Thu Dec 1 2022 18:18:39 for wcWebCamClient lib by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
