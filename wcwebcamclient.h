@@ -31,7 +31,9 @@
     #endif
 #endif
 #else
+#ifdef __cplusplus
 #include <cstddef>
+#endif
 #if defined(_MSC_VER)
     //  Microsoft
     #define DLLEXPORT __declspec(dllimport)
@@ -113,6 +115,11 @@ const wcTaskClass WC_OUT_STREAM_TASK = 4;
 //! \brief All tasks classes (mask)
 const wcTaskClass WC_ALL_TASKS = 0xffffffff;
 
+//! \brief The size of frame header (6 bytes)
+const uint16_t WC_STREAM_FRAME_HEADER_SIZE = sizeof(uint16_t) + sizeof(uint32_t);
+//! \brief The frame header sequence
+const uint16_t WC_FRAME_START_SEQ = 0xaaaa;
+
 /*!
  * \defgroup wcClientCallbacks Library functions and typedefs to set callbacks for client
  * @{
@@ -123,7 +130,7 @@ __pragma( pack(push, 1) )
 #endif
 
 //! \brief The list of callbacks
-enum wcCallback {
+typedef enum wcCallback {
     /* maintaining block */
     wccbkInitCURL=0,               /*!< Successful initialization of the multiCURL handle. \sa wcSetNotifyCallback */
     wccbkSuccessAuth,              /*!< Successful authorization. This callback is called during \ref wcClientTasksProceed. \sa wcSetTaskCallback */
@@ -156,14 +163,14 @@ enum wcCallback {
 #ifdef __GNUC__
 __attribute__((__packed__))
 #endif
-;
+wcCallback;
 /*!@}*/
 
 /*!
- * \defgroup wcClientGettersSetters Library functions and typedefs to get or set state values for client
+ * \defgroup wcClientGettersSetters Library functions and typedefs to get or set state values for client and tasks
  * @{
  */
-enum wcStateId {
+typedef enum wcStateId {
     wcstConnection = 0,
     wcstVerifyTLS,
     wcstError,
@@ -189,7 +196,17 @@ enum wcStateId {
 #ifdef __GNUC__
 __attribute__((__packed__))
 #endif
-;
+wcStateId;
+
+typedef enum wcTaskStateId {
+    wctstError = 0,
+    wctstPath,
+    wctstSubProto,
+    wctstDeviceName}
+#ifdef __GNUC__
+__attribute__((__packed__))
+#endif
+wcTaskStateId;
 /*!@}*/
 
 #ifdef _MSC_VER
@@ -218,7 +235,7 @@ typedef void (*TaskNotifyLibFunc) (wcHandle client, wcTask tsk);
  *  \param client   The client handle.
  *  \param state    The connection state value.
  */
-typedef void (*ConnNotifyEventLibFunc) (wcHandle client, bool state);
+typedef void (*ConnNotifyEventLibFunc) (wcHandle client, int state);
 /*! \brief Notification callback that returned a C-style string.
  *  \param client   The client handle.
  *  \param value    The incoming C-style string value.
@@ -874,6 +891,61 @@ wcRCode DLLEXPORT wcTaskLock(wcTask task);
  * \sa wcRCode, wcTaskLock
  */
 wcRCode DLLEXPORT wcTaskUnLock(wcTask task);
+//! \brief Get a C-style string value for the selected task state.
+/*! As a result of successful execution of the function, the \a aStateVal parameter will contain a
+ * pointer to NULL-terminated string. (Don't forget to free up memory after using the \a aStateVal).
+ * Acceptable values of the state param are:<br>
+ * \ref wctstError - get the last error for the task - acceptable for \ref WC_ALL_TASKS, <br>
+ * \ref wctstPath - get the target path for the task - acceptable for \ref WC_ALL_TASKS, <br>
+ * \ref wctstSubProto - get the specified protocol for the output streaming task - acceptable for \ref WC_OUT_STREAM_TASK - \ref wcLaunchOutStream, <br>
+ * \ref wctstDeviceName - get the specified device name for the input streaming task - acceptable for \ref WC_IN_STREAM_TASK - \ref wcLaunchInStream.<br>
+ *
+ * \param task           Pointer to the task object.
+ * \param aStateId       The selected task state.
+ * \param aStateVal      The pointer to the variable of char * type initialized with NULL value
+ * \return \ref wcRCode  \ref WC_OK or error code.
+ *
+ * \b Example<br>
+ * \code
+ * char * res = NULL;
+ * wcRCode aCode = wcTaskGetStrValue(client, wctstPath, &res);
+ * if (aCode == WC_OK) {
+ *    cout << "task path is " << res << endl;
+ *    free(res);
+ * } else {
+ *    cout << "error occurred " << aCode << endl;
+ * }
+ * \endcode
+ *
+ * \sa wcTaskStateId, wcRCode, wcStateVal, wcTaskGetStrNValue
+ */
+wcRCode DLLEXPORT wcTaskGetStrValue(wcTask task, wcTaskStateId aStateId, char ** aStateVal);
+//! \brief Get a C-style string value for the selected task state.
+/*! As a result of successful execution of the function, the requested value will be copied to the passed array \a aStateVal.
+ * If the size of the passed array is less than the requested state value, the function returns an \ref WC_NOT_ENOUGH_MEM error.
+ * Acceptable values of the state param are listed in \ref wcTaskGetStrValue
+ *
+ * \param task           Pointer to the task object.
+ * \param aStateId       The selected task state.
+ * \param aStateVal      The pointer to allocated char array with at least sz+1 chars.
+ * \param sz             The size of the given char array.
+ * \return \ref wcRCode  \ref WC_OK or error code.
+ *
+ * \b Example<br>
+ * \code
+ * static const uint32_t LEN = 128;
+ * char res [LEN];
+ * wcRCode aCode = wcTaskGetStrNValue(client, wctstPath, LEN-1, res);
+ * if (aCode == WC_OK) {
+ *    cout << "task path is " << res << endl;
+ * } else {
+ *    cout << "error occurred " << aCode << endl;
+ * }
+ * \endcode
+ *
+ * \sa wcTaskStateId, wcRCode, wcStateVal, wcTaskGetStrValue
+ */
+wcRCode DLLEXPORT wcTaskGetStrNValue(wcTask task, wcTaskStateId aStateId, uint32_t sz, char * aStateVal);
 /*!@}*/
 
 /*!
@@ -884,12 +956,12 @@ wcRCode DLLEXPORT wcTaskUnLock(wcTask task);
 /*! Related to request \ref output. A signal that a new frame has been received is
  * triggered by a \a task with the \ref wccbkSynchroUpdateTask callback.
  *
- * \param client         The client handle.
- * \param data           The pointer to the variable of void * type initialized with NULL value to return frame data.
+ * \param task           Pointer to the task object of \ref WC_IN_STREAM_TASK class.
+ * \param data           The pointer to the variable of void * type to return frame data.
  * \param len            The pointer to the variable of size_t type to return frame size.
  * \return \ref wcRCode  \ref WC_OK or error code.
  *
- * \b Example<br>
+ * \b Example 1<br>
  * \code
  * void * data = NULL;
  * size_t len = 0;
@@ -899,6 +971,25 @@ wcRCode DLLEXPORT wcTaskUnLock(wcTask task);
  *    if (data && (len > 0)) {
  *       // work with incoming data and len (draw, save, etc.)
  *       free(data);
+ *    }
+ * } else {
+ *    cout << "error occurred " << aCode << endl;
+ * }
+ * \endcode
+ * \b Example 2<br>
+ * \code
+ * // The data can be initialized in advance.
+ * // Then the len variable should contain the size of the
+ * // allocated memory for the data variable.
+ * static const size_t BUFFER_SIZE = 0xffff;
+ * size_t len = BUFFER_SIZE;
+ * void * data = malloc(len);
+ *
+ * aCode = wcInTaskPopFrame(client, &data, &len);
+ * if (aCode == WC_OK) {
+ *    // now the len variable contains the actual length of the data
+ *    if (data && (len > 0)) {
+ *       // work with incoming data and len (draw, save, etc.)
  *    }
  * } else {
  *    cout << "error occurred " << aCode << endl;
@@ -918,6 +1009,18 @@ wcRCode DLLEXPORT wcInTaskPopFrame(wcTask task, void ** data, size_t * len);
     \example lib_test/main.cpp
  * This is an example of how to use the wcWebCamClient library.
  * In this example, a client is created, authorized on the server, and downloads a list of active devices.
+ */
+
+/** \include commline_tools.h
+    \example theora_test/output_strm/main.cpp
+ * This is an example of how to use the wcWebCamClient library.
+ * A simple test program to demonstrate the streaming of output data.
+ */
+
+/** \include commline_tools.h
+    \example theora_test/input_strm/main.cpp
+ * This is an example of how to use the wcWebCamClient library.
+ * A simple test program to demonstrate input streaming.
  */
 
 #endif // WCWEBCAMCLIENT_H

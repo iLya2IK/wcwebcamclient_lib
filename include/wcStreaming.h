@@ -22,11 +22,14 @@ class wcHTTP2BackgroundOutStreamTask : public wcHTTP2BackgroundTask
     void popNextFrame();
   public:
     virtual uint32_t getTaskClass() override {return WC_OUT_STREAM_TASK;};
-    wcHTTP2BackgroundOutStreamTask(wcHTTP2BackgroundTasks * aPool, wcHTTP2SettingsIntf * Settings, bool aIsSilent, void * aData);
+    wcHTTP2BackgroundOutStreamTask(wcHTTP2BackgroundTasks * aPool,
+                                   wcHTTP2SettingsIntf * Settings,
+                                   const std::string & aSubProto,
+                                   int aDelta,
+                                   bool aIsSilent, void * aData);
     virtual ~wcHTTP2BackgroundOutStreamTask();
 
-    void setSubProto(const std::string & aSubProto);
-    void setDelta(int delta);
+    std::string getSubProto() { return mSubProto; }
 
     virtual size_t read(void * ptr, size_t len, size_t nmemb) override;
     void launchStream(OnGetNextFrame aOnGetNextFrame);
@@ -50,6 +53,8 @@ class wcHTTP2BackgroundInStreamTask : public wcHTTP2BackgroundTask
         uint32_t mFrameBufferSize;
         int mFrameID;
 
+        std::string mDevice;
+
         wcMemSeq * mFrames;
         OnHasNextFrame mOnHasNextFrame {NULL, NULL};
     protected:
@@ -57,11 +62,16 @@ class wcHTTP2BackgroundInStreamTask : public wcHTTP2BackgroundTask
         int tryConsumeFrame(const void * Chunk, int ChunkSz);
     public:
         virtual uint32_t getTaskClass() override {return WC_IN_STREAM_TASK;};
-        wcHTTP2BackgroundInStreamTask(wcHTTP2BackgroundTasks * aPool, wcHTTP2SettingsIntf * Settings, bool aIsSilent, void * aData);
+        wcHTTP2BackgroundInStreamTask(wcHTTP2BackgroundTasks * aPool,
+                                      wcHTTP2SettingsIntf * Settings,
+                                      const std::string & aDevice,
+                                      bool aIsSilent, void * aData);
         virtual ~wcHTTP2BackgroundInStreamTask();
 
+        std::string getDeviceName() { return mDevice; }
+
         virtual size_t write(const void * ptr, size_t len, size_t nmemb) override;
-        void launchStream(const std::string & aDevice, OnHasNextFrame aOnHasNextFrame);
+        void launchStream(OnHasNextFrame aOnHasNextFrame);
 
         wcCustomMemoryStream * popFrame();
 

@@ -34,15 +34,16 @@ wcCURLClient::~wcCURLClient()
 {
     mTaskPool->terminate();
     mTaskPool->join();
-    delete mTaskPool;
+
+    mUpdates->extractAll();
 
     curl_global_cleanup();
 
     delete mSetts;
     delete mSynchroFinishedTasks;
     delete mFrame;
-    mUpdates->extractAll();
     delete mUpdates;
+    delete mTaskPool;
 
     delete mLog;
     delete mLastError;
@@ -924,9 +925,11 @@ bool wcCURLClient::doInitMultiPipeling()
 bool wcCURLClient::launchOutStream(const std::string & aSubProto, int delta, void * data)
 {
     if (doInitMultiPipeling()) {
-        wcHTTP2BackgroundOutStreamTask * Tsk = new wcHTTP2BackgroundOutStreamTask(getTaskPool()->getTasks(), mSetts, true, NULL);
-        Tsk->setSubProto(aSubProto);
-        Tsk->setDelta(delta);
+        wcHTTP2BackgroundOutStreamTask * Tsk = new wcHTTP2BackgroundOutStreamTask(getTaskPool()->getTasks(),
+                                                                                  mSetts,
+                                                                                  aSubProto,
+                                                                                  delta,
+                                                                                  true, NULL);
         Tsk->setOnFinish({intern_TaskFinished, this});
         Tsk->setOnSuccess({intern_SuccessIOStream, this});
         Tsk->setData(data);
@@ -946,7 +949,10 @@ bool wcCURLClient::launchOutStream(const std::string & aSubProto, int delta, voi
 bool wcCURLClient::launchInStream(const std::string& aDevice, void * data)
 {
     if (doInitMultiPipeling()) {
-        wcHTTP2BackgroundInStreamTask * Tsk = new wcHTTP2BackgroundInStreamTask(getTaskPool()->getTasks(), mSetts, true, NULL);
+        wcHTTP2BackgroundInStreamTask * Tsk = new wcHTTP2BackgroundInStreamTask(getTaskPool()->getTasks(),
+                                                                                mSetts,
+                                                                                aDevice,
+                                                                                true, NULL);
         Tsk->setOnFinish({intern_TaskFinished, this});
         Tsk->setOnSuccess({intern_SuccessIOStream, this});
         Tsk->setData(data);
@@ -954,7 +960,7 @@ bool wcCURLClient::launchInStream(const std::string& aDevice, void * data)
         if _ASSIGNED(mOnAfterLaunchInStream)
           EXEC_METHOD(mOnAfterLaunchInStream, Tsk);
 
-        Tsk->launchStream(aDevice, {intern_HasNextFrame, this});
+        Tsk->launchStream({intern_HasNextFrame, this});
         getTaskPool()->addTask(Tsk);
 
         return true;

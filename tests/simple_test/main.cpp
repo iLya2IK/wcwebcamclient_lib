@@ -31,7 +31,7 @@ void onDisconnect(wcCallbackClient self, wcCallbackTask task)
     running = 5;
 }
 
-void onConnChanged(wcCallbackClient self, bool state)
+void onConnChanged(wcCallbackClient self, int state)
 {
     cout << "Client connection changed " << state << endl;
 }

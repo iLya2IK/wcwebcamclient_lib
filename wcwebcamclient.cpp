@@ -477,7 +477,7 @@ void lib_callTaskNotifyEvent(wcCallback cbk, wcCallbackClient self, wcCallbackTa
         ((TaskNotifyLibFunc)(int_client->getCallback(cbk)))(int_client->handle, tsk);
 }
 
-void lib_callConnNotifyEvent(wcCallback cbk, wcCallbackClient self, bool v) {
+void lib_callConnNotifyEvent(wcCallback cbk, wcCallbackClient self, int v) {
     wcInternalClient * int_client = findClient(self);
     if ASSIGNED(int_client)
         ((ConnNotifyEventLibFunc)(int_client->getCallback(cbk)))(int_client->handle, v);
@@ -521,7 +521,7 @@ void lib_wccbkSuccessSaveRecord(wcCallbackClient self, wcCallbackTask tsk) {
     lib_callTaskNotifyEvent(wccbkSuccessSaveRecord, self, tsk);
 }
 
-void lib_wccbkConnected(wcCallbackClient self, bool v) {
+void lib_wccbkConnected(wcCallbackClient self, int v) {
     lib_callConnNotifyEvent(wccbkConnected, self, v);
 }
 
@@ -1090,6 +1090,81 @@ wcRCode DLLEXPORT wcTaskUnLock(wcTask task){
     if (v != WC_OK) return v;
 
     static_cast<wcHTTP2BackgroundTask *>(task)->unlock();
+
+    return v;
+}
+
+wcRCode internalCheckTaskState(wcTask task, wcTaskStateId aStateId) {
+    wcTaskClass ava_cls;
+    switch (aStateId) {
+    case wctstError:
+    case wctstPath:
+        ava_cls = WC_ALL_TASKS;
+        break;
+    case wctstDeviceName:
+        ava_cls = WC_IN_STREAM_TASK;
+        break;
+    case wctstSubProto :
+        ava_cls = WC_OUT_STREAM_TASK;
+        break;
+    default :
+        return WC_BAD_PARAM;
+    }
+    return CheckTask(task, ava_cls);
+}
+
+wcRCode internalTaskGetStrValue(wcTask task, wcTaskStateId aStateId, std::string & value) {
+    switch (aStateId) {
+    case wctstError:
+        value = static_cast<wcHTTP2BackgroundTask *>(task)->getErrorString();
+        break;
+    case wctstPath:
+        value = static_cast<wcHTTP2BackgroundTask *>(task)->getPath();
+        break;
+    case wctstSubProto :
+        value = static_cast<wcHTTP2BackgroundOutStreamTask *>(task)->getSubProto();
+        break;
+    case wctstDeviceName :
+        value = static_cast<wcHTTP2BackgroundInStreamTask *>(task)->getDeviceName();
+        break;
+    default :
+        return WC_BAD_PARAM;
+    }
+    return WC_OK;
+}
+
+wcRCode DLLEXPORT wcTaskGetStrValue(wcTask task, wcTaskStateId aStateId, char ** aStateVal) {
+    wcRCode v = internalCheckTaskState(task, aStateId);
+    if (v != WC_OK) return v;
+
+    if (!ASSIGNED(aStateVal)) return WC_BAD_VALUE;
+    if (ASSIGNED(*aStateVal)) return WC_BAD_VALUE;
+
+    std::string value;
+    v = internalTaskGetStrValue(task, aStateId, value);
+    if (v != WC_OK) return v;
+
+    *aStateVal = (char*)malloc(value.size()+1);
+    memcpy(*aStateVal, value.c_str(), value.size());
+    (*aStateVal)[value.size()] = 0;
+
+    return v;
+}
+
+wcRCode DLLEXPORT wcTaskGetStrNValue(wcTask task, wcTaskStateId aStateId, uint32_t sz, char * aStateVal)
+{
+    wcRCode v = internalCheckTaskState(task, aStateId);
+    if (v != WC_OK) return v;
+
+    if (!ASSIGNED(aStateVal)) return WC_BAD_VALUE;
+
+    std::string value;
+    v = internalTaskGetStrValue(task, aStateId, value);
+    if (v != WC_OK) return v;
+
+    if (sz <= value.size()) return WC_BAD_VALUE;
+    memcpy(aStateVal, value.c_str(), value.size());
+    aStateVal[value.size()] = 0;
 
     return v;
 }

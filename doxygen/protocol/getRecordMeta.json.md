@@ -26,11 +26,11 @@ Response
 <h3>JSON_OK response</h3>
 
 ~~~~~~~~~~~~~{.java}
-{"device":":string:","record":":string:","stamp":":string:","result":"OK"}
+{"device":":string:","meta":":string:","stamp":":string:","result":"OK"}
 ~~~~~~~~~~~~~
 
 * _**device**_  - media record emitter device name.
-* _**record**_ - text data assigned to the media record by the client. For example, the format of the media record can be specified here. By default, the media record format is JPEG. 
+* _**meta**_ - text data assigned to the media record by the client. For example, the format of the media record can be specified here. By default, the media record format is JPEG. 
 * _**stamp**_  - the timestamp of a media record. The timestamp is in a format determined by the server and may not match the client's local settings.
 
 <h3>JSON_BAD response</h3>

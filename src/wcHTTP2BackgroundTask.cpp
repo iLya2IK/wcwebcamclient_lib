@@ -216,7 +216,7 @@ void wcHTTP2BackgroundTasks_afterTaskExtract(void* obj, void* aTsk)
         delete aTask;
 }
 
-bool wcHTTP2BackgroundTasks_isTaskFinished(void* obj, void* aTsk, const void* data)
+int wcHTTP2BackgroundTasks_isTaskFinished(void* obj, void* aTsk, const void* data)
 {
     return (static_cast<wcHTTP2BackgroundTask*>(aTsk))->finished();
 }

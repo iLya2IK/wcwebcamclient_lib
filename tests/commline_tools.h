@@ -99,7 +99,7 @@ class InputParser{
             return cmdOptionExists(OPT_SHOW_HELP);
         }
 
-        void printCommonHelp() {
+        virtual void printCommonHelp() {
             if (tokens.size() > 0)
                 std::cout << "Usage:" << tokens.at(0) << " [options...]" << std::endl;
             std::cout << " -u, --host       URL for server host in format https://hostname:port" << std::endl;

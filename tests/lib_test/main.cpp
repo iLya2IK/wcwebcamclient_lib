@@ -31,7 +31,7 @@ void onCURLinit(wcHandle self, wcTask task)
 /* Callback. Authorization was successful. */
 void onAuth(wcHandle self, wcTask task)
 {
-    char * res;
+    char * res = NULL;
     /* Get a new session id and display it on the screen. */
     if (wcClientGetStrValue(self, wcstSID, &res) == WC_OK) {
         if (res) {
@@ -50,7 +50,7 @@ void onDisconnect(wcHandle self, wcTask task)
 }
 
 /* Callback. Connection state changed. */
-void onConnChanged(wcHandle self, bool state)
+void onConnChanged(wcHandle self, int state)
 {
     cout << "Client connection changed " << state << endl;
 }

@@ -14,6 +14,12 @@ CppCheckResults.xml
 */*/bin/
 */*/lib/
 */*/obj/
+*/*/*/bin/
+*/*/*/lib/
+*/*/*/obj/
+*/*/*/*/bin/
+*/*/*/*/lib/
+*/*/*/*/obj/
 *.log
 *.exe
 *.sh

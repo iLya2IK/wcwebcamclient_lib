@@ -20,11 +20,17 @@ void wcHTTP2BackgroundOutStreamTask::popNextFrame()
     }
 }
 
-wcHTTP2BackgroundOutStreamTask::wcHTTP2BackgroundOutStreamTask(wcHTTP2BackgroundTasks* aPool, wcHTTP2SettingsIntf* Settings, bool aIsSilent, void* aData)
+wcHTTP2BackgroundOutStreamTask::wcHTTP2BackgroundOutStreamTask(wcHTTP2BackgroundTasks* aPool,
+                                                               wcHTTP2SettingsIntf* Settings,
+                                                               const std::string & aSubProto,
+                                                               int aDelta,
+                                                               bool aIsSilent, void* aData)
 : wcHTTP2BackgroundTask(aPool, Settings, aIsSilent, aData)
 {
     mFrames = new wcMemSeq();
     mInc = 0;
+    mDelta = aDelta;
+    mSubProto = aSubProto;
 }
 
 wcHTTP2BackgroundOutStreamTask::~wcHTTP2BackgroundOutStreamTask()
@@ -86,16 +92,6 @@ void wcHTTP2BackgroundOutStreamTask::launchStream(OnGetNextFrame aOnGetNextFrame
 void wcHTTP2BackgroundOutStreamTask::pushFrame(wcCustomMemoryStream* aFrame)
 {
     if ASSIGNED(aFrame) mFrames->push_back(aFrame);
-}
-
-void wcHTTP2BackgroundOutStreamTask::setSubProto(const std::string & aSubProto)
-{
-    mSubProto = aSubProto;
-}
-
-void wcHTTP2BackgroundOutStreamTask::setDelta(int delta)
-{
-    mDelta = delta;
 }
 
 void wcHTTP2BackgroundOutStreamTask::doIdle()
@@ -218,11 +214,16 @@ int wcHTTP2BackgroundInStreamTask::tryConsumeFrame(const void* Chunk, int ChunkS
     return ChunkPos;
 }
 
-wcHTTP2BackgroundInStreamTask::wcHTTP2BackgroundInStreamTask(wcHTTP2BackgroundTasks* aPool, wcHTTP2SettingsIntf* Settings, bool aIsSilent, void* aData)
+wcHTTP2BackgroundInStreamTask::wcHTTP2BackgroundInStreamTask(wcHTTP2BackgroundTasks* aPool,
+                                                             wcHTTP2SettingsIntf* Settings,
+                                                             const std::string & aDevice,
+                                                             bool aIsSilent, void* aData)
 : wcHTTP2BackgroundTask(aPool, Settings, aIsSilent, aData)
 {
     delete mResponse;
     mResponse = NULL;
+
+    mDevice = aDevice;
 
     mFrames = new wcMemSeq();
 
@@ -252,7 +253,7 @@ size_t wcHTTP2BackgroundInStreamTask::write(const void* ptr, size_t len, size_t 
     return res;
 }
 
-void wcHTTP2BackgroundInStreamTask::launchStream(const std::string& aDevice, OnHasNextFrame aOnHasNextFrame)
+void wcHTTP2BackgroundInStreamTask::launchStream(OnHasNextFrame aOnHasNextFrame)
 {
     mOnHasNextFrame = aOnHasNextFrame;
     if (getPool()->ready())
@@ -261,7 +262,7 @@ void wcHTTP2BackgroundInStreamTask::launchStream(const std::string& aDevice, OnH
         if ASSIGNED(mCURL)
         {
             mPath = "/output.raw?" + std::string(JSON_RPC_SHASH) + "=" + mSettings->getEncodedSID() +
-                                              "&" + JSON_RPC_DEVICE + "=" + encodeHTTP(aDevice);
+                                              "&" + JSON_RPC_DEVICE + "=" + encodeHTTP(mDevice);
 
             CURLConfig((int64_t)0);
 

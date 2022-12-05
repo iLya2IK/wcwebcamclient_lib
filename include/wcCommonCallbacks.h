@@ -8,41 +8,41 @@ typedef void * wcCallbackClient;
 typedef void * wcCallbackTask;
 
 typedef void (*EmptyNotifyFunc) (wcCallbackClient self);
-struct EmptyNotify {  EmptyNotifyFunc exec; wcCallbackClient self; };
+typedef struct EmptyNotify {  EmptyNotifyFunc exec; wcCallbackClient self; } EmptyNotify;
 typedef void (*NotifyEventFunc) (wcCallbackClient self, void *);
-struct NotifyEvent {  NotifyEventFunc exec; wcCallbackClient self; };
+typedef struct NotifyEvent {  NotifyEventFunc exec; wcCallbackClient self; } NotifyEvent;
 typedef void (*TaskNotifyFunc) (wcCallbackClient, wcCallbackTask);
-struct TaskNotify {  TaskNotifyFunc exec; wcCallbackClient self; };
-typedef void (*ConnNotifyEventFunc) (wcCallbackClient, bool);
-struct ConnNotifyEvent { ConnNotifyEventFunc exec; wcCallbackClient self; };
+typedef struct TaskNotify {  TaskNotifyFunc exec; wcCallbackClient self; } TaskNotify;
+typedef void (*ConnNotifyEventFunc) (wcCallbackClient, int);
+typedef struct ConnNotifyEvent { ConnNotifyEventFunc exec; wcCallbackClient self; } ConnNotifyEvent;
 typedef void (*CStringNotifyFunc) (wcCallbackClient self, const char *);
-struct CStringNotify { CStringNotifyFunc exec; wcCallbackClient self; };
+typedef struct CStringNotify { CStringNotifyFunc exec; wcCallbackClient self; } CStringNotify;
 typedef void (*DataNotifyEventFunc) (wcCallbackClient, wcCallbackTask, void*);
-struct DataNotifyEvent { DataNotifyEventFunc exec; wcCallbackClient self; };
+typedef struct DataNotifyEvent { DataNotifyEventFunc exec; wcCallbackClient self; } DataNotifyEvent;
 typedef void (*DataAltNotifyEventFunc) (wcCallbackClient, wcCallbackTask, void*, size_t);
-struct DataAltNotifyEvent { DataAltNotifyEventFunc exec; wcCallbackClient self; };
+typedef struct DataAltNotifyEvent { DataAltNotifyEventFunc exec; wcCallbackClient self; } DataAltNotifyEvent;
 typedef void (*DoExecuteFunc) (void*, void*);
-struct DoExecute { DoExecuteFunc exec; void* self; };
+typedef struct DoExecute { DoExecuteFunc exec; void* self; } DoExecute;
 typedef void (*DoExecuteExFunc) (void*, void*, const void*);
-struct DoExecuteEx { DoExecuteExFunc exec; void* self; };
-typedef bool (*DoExecuteCheckFunc) (void*, void*, const void*);
-struct DoExecuteCheck { DoExecuteCheckFunc exec; void* self; };
+typedef struct DoExecuteEx { DoExecuteExFunc exec; void* self; } DoExecuteEx;
+typedef int (*DoExecuteCheckFunc) (void*, void*, const void*);
+typedef struct DoExecuteCheck { DoExecuteCheckFunc exec; void* self; } DoExecuteCheck;
 typedef void (*JSONStrNotifyEventFunc) (wcCallbackClient, wcCallbackTask, const char *);
-struct JSONStrNotifyEvent { JSONStrNotifyEventFunc exec; wcCallbackClient self; };
+typedef struct JSONStrNotifyEvent { JSONStrNotifyEventFunc exec; wcCallbackClient self; } JSONStrNotifyEvent;
 
 #define EXEC_METHOD(meth, ...)  (*(meth.exec))(meth.self, ##__VA_ARGS__)
 #define _ASSIGNED(meth) (meth.self != NULL)
 
-static const EmptyNotify NULL_EmptyNotify {NULL, NULL};
-static const NotifyEvent NULL_NotifyEvent {NULL, NULL};
-static const TaskNotify NULL_TaskNotify {NULL, NULL};
-static const ConnNotifyEvent NULL_ConnNotifyEvent {NULL, NULL};
-static const CStringNotify NULL_CStringNotify {NULL, NULL};
-static const DataNotifyEvent NULL_DataNotifyEvent {NULL, NULL};
-static const DataAltNotifyEvent NULL_DataAltNotifyEvent {NULL, NULL};
-static const DoExecute NULL_DoExecute {NULL, NULL};
-static const DoExecuteEx NULL_DoExecuteEx {NULL, NULL};
-static const DoExecuteCheck NULL_DoExecuteCheck {NULL, NULL};
-static const JSONStrNotifyEvent NULL_JSONStrNotifyEvent {NULL, NULL};
+static const EmptyNotify NULL_EmptyNotify = {NULL, NULL};
+static const NotifyEvent NULL_NotifyEvent = {NULL, NULL};
+static const TaskNotify NULL_TaskNotify = {NULL, NULL};
+static const ConnNotifyEvent NULL_ConnNotifyEvent = {NULL, NULL};
+static const CStringNotify NULL_CStringNotify = {NULL, NULL};
+static const DataNotifyEvent NULL_DataNotifyEvent = {NULL, NULL};
+static const DataAltNotifyEvent NULL_DataAltNotifyEvent = {NULL, NULL};
+static const DoExecute NULL_DoExecute = {NULL, NULL};
+static const DoExecuteEx NULL_DoExecuteEx = {NULL, NULL};
+static const DoExecuteCheck NULL_DoExecuteCheck = {NULL, NULL};
+static const JSONStrNotifyEvent NULL_JSONStrNotifyEvent = {NULL, NULL};
 
 #endif // WCCOMMONCALLBACKS_H_INCLUDED
