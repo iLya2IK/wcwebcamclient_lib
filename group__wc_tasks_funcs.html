@@ -118,6 +118,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga9f8bc8647b35caef638283a775d27a99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> DLLEXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_tasks_funcs.html#ga9f8bc8647b35caef638283a775d27a99">wcTaskUnLock</a> (<a class="el" href="wcwebcamclient_8h.html#a91c112d47f81589bb3ead6630798b831">wcTask</a> task)</td></tr>
 <tr class="memdesc:ga9f8bc8647b35caef638283a775d27a99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlock the task object.  <a href="group__wc_tasks_funcs.html#ga9f8bc8647b35caef638283a775d27a99">More...</a><br /></td></tr>
 <tr class="separator:ga9f8bc8647b35caef638283a775d27a99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6b36906f0ca22d4990ac7570a597952b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> DLLEXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_tasks_funcs.html#ga6b36906f0ca22d4990ac7570a597952b">wcTaskGetStrValue</a> (<a class="el" href="wcwebcamclient_8h.html#a91c112d47f81589bb3ead6630798b831">wcTask</a> task, <a class="el" href="group__wc_client_getters_setters.html#gae447488abc576169d41101c8601978db">wcTaskStateId</a> aStateId, char **aStateVal)</td></tr>
+<tr class="memdesc:ga6b36906f0ca22d4990ac7570a597952b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a C-style string value for the selected task state.  <a href="group__wc_tasks_funcs.html#ga6b36906f0ca22d4990ac7570a597952b">More...</a><br /></td></tr>
+<tr class="separator:ga6b36906f0ca22d4990ac7570a597952b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaafa5e30affb3fb4d0644be29612621a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> DLLEXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_tasks_funcs.html#gaafa5e30affb3fb4d0644be29612621a4">wcTaskGetStrNValue</a> (<a class="el" href="wcwebcamclient_8h.html#a91c112d47f81589bb3ead6630798b831">wcTask</a> task, <a class="el" href="group__wc_client_getters_setters.html#gae447488abc576169d41101c8601978db">wcTaskStateId</a> aStateId, uint32_t sz, char *aStateVal)</td></tr>
+<tr class="memdesc:gaafa5e30affb3fb4d0644be29612621a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a C-style string value for the selected task state.  <a href="group__wc_tasks_funcs.html#gaafa5e30affb3fb4d0644be29612621a4">More...</a><br /></td></tr>
+<tr class="separator:gaafa5e30affb3fb4d0644be29612621a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Function Documentation</h2>
@@ -162,6 +168,8 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> <a class="el" href="group__wc_return.html#ga5f50c11b25339e1568bf54e5c4027418">WC_OK</a> or error code.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7" title="Operation completion codes.">wcRCode</a> </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="theora_test_2input_strm_2main_8cpp-example.html#a5">theora_test/input_strm/main.cpp</a>, and <a class="el" href="theora_test_2output_strm_2main_8cpp-example.html#a9">theora_test/output_strm/main.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -300,12 +308,141 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ga6b36906f0ca22d4990ac7570a597952b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6b36906f0ca22d4990ac7570a597952b">&#9670;&nbsp;</a></span>wcTaskGetStrValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> DLLEXPORT wcTaskGetStrValue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="wcwebcamclient_8h.html#a91c112d47f81589bb3ead6630798b831">wcTask</a>&#160;</td>
+          <td class="paramname"><em>task</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__wc_client_getters_setters.html#gae447488abc576169d41101c8601978db">wcTaskStateId</a>&#160;</td>
+          <td class="paramname"><em>aStateId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>aStateVal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a C-style string value for the selected task state. </p>
+<p>As a result of successful execution of the function, the <em>aStateVal</em> parameter will contain a pointer to NULL-terminated string. (Don't forget to free up memory after using the <em>aStateVal</em>). Acceptable values of the state param are:<br  />
+ <a class="el" href="group__wc_client_getters_setters.html#ggae447488abc576169d41101c8601978dbae1440513e0701efec724aa4082e00b0e">wctstError</a> - get the last error for the task - acceptable for <a class="el" href="wcwebcamclient_8h.html#a7593cc5ebe036ef34f6790e91ad6ffee">WC_ALL_TASKS</a>, <br  />
+ <a class="el" href="group__wc_client_getters_setters.html#ggae447488abc576169d41101c8601978dba034494baf7ae35849d78e109412c8179">wctstPath</a> - get the target path for the task - acceptable for <a class="el" href="wcwebcamclient_8h.html#a7593cc5ebe036ef34f6790e91ad6ffee">WC_ALL_TASKS</a>, <br  />
+ <a class="el" href="group__wc_client_getters_setters.html#ggae447488abc576169d41101c8601978dbad3f9c951a5392a0e947a569cb94c9841">wctstSubProto</a> - get the specified protocol for the output streaming task - acceptable for <a class="el" href="wcwebcamclient_8h.html#a540c9e5e1a0f8162baa06279ec0122b5">WC_OUT_STREAM_TASK</a> - <a class="el" href="group__wc_client_requests.html#ga0f433f2e886bf7bf5fffcae9b05ce448">wcLaunchOutStream</a>, <br  />
+ <a class="el" href="group__wc_client_getters_setters.html#ggae447488abc576169d41101c8601978dba4da58e1cb983034d87161c93303e42d9">wctstDeviceName</a> - get the specified device name for the input streaming task - acceptable for <a class="el" href="wcwebcamclient_8h.html#a75f2ee25f8849ec1859b53ecc06bbff6">WC_IN_STREAM_TASK</a> - <a class="el" href="group__wc_client_requests.html#ga297e080f6cbd19a994286d5878e49ea5">wcLaunchInStream</a>.<br  />
+</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">task</td><td>Pointer to the task object. </td></tr>
+    <tr><td class="paramname">aStateId</td><td>The selected task state. </td></tr>
+    <tr><td class="paramname">aStateVal</td><td>The pointer to the variable of char * type initialized with NULL value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> <a class="el" href="group__wc_return.html#ga5f50c11b25339e1568bf54e5c4027418">WC_OK</a> or error code.</dd></dl>
+<p><b>Example</b> <br  />
+ </p><div class="fragment"><div class="line"><span class="keywordtype">char</span> * res = NULL;</div>
+<div class="line"><a class="code" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> aCode = <a class="code" href="group__wc_tasks_funcs.html#ga6b36906f0ca22d4990ac7570a597952b">wcTaskGetStrValue</a>(client, <a class="code" href="group__wc_client_getters_setters.html#ggae447488abc576169d41101c8601978dba034494baf7ae35849d78e109412c8179">wctstPath</a>, &amp;res);</div>
+<div class="line"><span class="keywordflow">if</span> (aCode == <a class="code" href="group__wc_return.html#ga5f50c11b25339e1568bf54e5c4027418">WC_OK</a>) {</div>
+<div class="line">   cout &lt;&lt; <span class="stringliteral">&quot;task path is &quot;</span> &lt;&lt; res &lt;&lt; endl;</div>
+<div class="line">   free(res);</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">   cout &lt;&lt; <span class="stringliteral">&quot;error occurred &quot;</span> &lt;&lt; aCode &lt;&lt; endl;</div>
+<div class="line">}</div>
+</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_getters_setters.html#gae447488abc576169d41101c8601978db">wcTaskStateId</a>, <a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7" title="Operation completion codes.">wcRCode</a>, <a class="el" href="group__wc_return.html#ga38af1acfc8221fab2e7449e8051add9e" title="Boolean operation completion codes.">wcStateVal</a>, <a class="el" href="group__wc_tasks_funcs.html#gaafa5e30affb3fb4d0644be29612621a4" title="Get a C-style string value for the selected task state.">wcTaskGetStrNValue</a> </dd></dl>
+
+</div>
+</div>
+<a id="gaafa5e30affb3fb4d0644be29612621a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaafa5e30affb3fb4d0644be29612621a4">&#9670;&nbsp;</a></span>wcTaskGetStrNValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> DLLEXPORT wcTaskGetStrNValue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="wcwebcamclient_8h.html#a91c112d47f81589bb3ead6630798b831">wcTask</a>&#160;</td>
+          <td class="paramname"><em>task</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__wc_client_getters_setters.html#gae447488abc576169d41101c8601978db">wcTaskStateId</a>&#160;</td>
+          <td class="paramname"><em>aStateId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>sz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>aStateVal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a C-style string value for the selected task state. </p>
+<p>As a result of successful execution of the function, the requested value will be copied to the passed array <em>aStateVal</em>. If the size of the passed array is less than the requested state value, the function returns an <a class="el" href="group__wc_return.html#ga91e54fea328c43680649c85e7d4e3abe">WC_NOT_ENOUGH_MEM</a> error. Acceptable values of the state param are listed in <a class="el" href="group__wc_tasks_funcs.html#ga6b36906f0ca22d4990ac7570a597952b">wcTaskGetStrValue</a></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">task</td><td>Pointer to the task object. </td></tr>
+    <tr><td class="paramname">aStateId</td><td>The selected task state. </td></tr>
+    <tr><td class="paramname">aStateVal</td><td>The pointer to allocated char array with at least sz+1 chars. </td></tr>
+    <tr><td class="paramname">sz</td><td>The size of the given char array. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> <a class="el" href="group__wc_return.html#ga5f50c11b25339e1568bf54e5c4027418">WC_OK</a> or error code.</dd></dl>
+<p><b>Example</b> <br  />
+ </p><div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> uint32_t LEN = 128;</div>
+<div class="line"><span class="keywordtype">char</span> res [LEN];</div>
+<div class="line"><a class="code" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> aCode = <a class="code" href="group__wc_tasks_funcs.html#gaafa5e30affb3fb4d0644be29612621a4">wcTaskGetStrNValue</a>(client, <a class="code" href="group__wc_client_getters_setters.html#ggae447488abc576169d41101c8601978dba034494baf7ae35849d78e109412c8179">wctstPath</a>, LEN-1, res);</div>
+<div class="line"><span class="keywordflow">if</span> (aCode == <a class="code" href="group__wc_return.html#ga5f50c11b25339e1568bf54e5c4027418">WC_OK</a>) {</div>
+<div class="line">   cout &lt;&lt; <span class="stringliteral">&quot;task path is &quot;</span> &lt;&lt; res &lt;&lt; endl;</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">   cout &lt;&lt; <span class="stringliteral">&quot;error occurred &quot;</span> &lt;&lt; aCode &lt;&lt; endl;</div>
+<div class="line">}</div>
+</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_getters_setters.html#gae447488abc576169d41101c8601978db">wcTaskStateId</a>, <a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7" title="Operation completion codes.">wcRCode</a>, <a class="el" href="group__wc_return.html#ga38af1acfc8221fab2e7449e8051add9e" title="Boolean operation completion codes.">wcStateVal</a>, <a class="el" href="group__wc_tasks_funcs.html#ga6b36906f0ca22d4990ac7570a597952b" title="Get a C-style string value for the selected task state.">wcTaskGetStrValue</a> </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="agroup__wc_return_html_ga5f50c11b25339e1568bf54e5c4027418"><div class="ttname"><a href="group__wc_return.html#ga5f50c11b25339e1568bf54e5c4027418">WC_OK</a></div><div class="ttdeci">const wcRCode WC_OK</div><div class="ttdef"><b>Definition:</b> wcwebcamclient.h:74</div></div>
+<div class="ttc" id="agroup__wc_tasks_funcs_html_ga6b36906f0ca22d4990ac7570a597952b"><div class="ttname"><a href="group__wc_tasks_funcs.html#ga6b36906f0ca22d4990ac7570a597952b">wcTaskGetStrValue</a></div><div class="ttdeci">wcRCode DLLEXPORT wcTaskGetStrValue(wcTask task, wcTaskStateId aStateId, char **aStateVal)</div><div class="ttdoc">Get a C-style string value for the selected task state.</div></div>
+<div class="ttc" id="agroup__wc_client_getters_setters_html_ggae447488abc576169d41101c8601978dba034494baf7ae35849d78e109412c8179"><div class="ttname"><a href="group__wc_client_getters_setters.html#ggae447488abc576169d41101c8601978dba034494baf7ae35849d78e109412c8179">wctstPath</a></div><div class="ttdeci">@ wctstPath</div><div class="ttdef"><b>Definition:</b> wcwebcamclient.h:203</div></div>
+<div class="ttc" id="agroup__wc_tasks_funcs_html_gaafa5e30affb3fb4d0644be29612621a4"><div class="ttname"><a href="group__wc_tasks_funcs.html#gaafa5e30affb3fb4d0644be29612621a4">wcTaskGetStrNValue</a></div><div class="ttdeci">wcRCode DLLEXPORT wcTaskGetStrNValue(wcTask task, wcTaskStateId aStateId, uint32_t sz, char *aStateVal)</div><div class="ttdoc">Get a C-style string value for the selected task state.</div></div>
+<div class="ttc" id="agroup__wc_return_html_ga6a1fc62624f098c89977a9ab13a976e7"><div class="ttname"><a href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a></div><div class="ttdeci">int wcRCode</div><div class="ttdoc">Operation completion codes.</div><div class="ttdef"><b>Definition:</b> wcwebcamclient.h:65</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Dec 1 2022 18:18:39 for wcWebCamClient lib by
+    <li class="footer">Generated on Mon Dec 5 2022 18:08:25 for wcWebCamClient lib by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

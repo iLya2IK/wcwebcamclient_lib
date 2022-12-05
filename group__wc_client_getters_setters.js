@@ -1,5 +1,7 @@
 var group__wc_client_getters_setters =
 [
+    [ "wcStateId", "group__wc_client_getters_setters.html#ga95e837ab7c86723ba154989461613a03", null ],
+    [ "wcTaskStateId", "group__wc_client_getters_setters.html#ga12593420b46211dcbcdc7bedc1987dcc", null ],
     [ "wcStateId", "group__wc_client_getters_setters.html#gadfaa57b72e59d00fa03e0a1fd5ff4c5a", [
       [ "wcstConnection", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aaacc6a1d214490dc05c4b6bdbcaf7e44c", null ],
       [ "wcstVerifyTLS", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aad394968a9441b19a5e30987b72364027", null ],
@@ -23,6 +25,12 @@ var group__wc_client_getters_setters =
       [ "wcstProxyPort", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aab2137dde4b19d7b065225d312127575c", null ],
       [ "wcstProxyUser", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa321e222f0c991e5041f516b3ac155a27", null ],
       [ "wcstProxyPwrd", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa1aa9b996e02b164d54e815bb1bfddd8e", null ]
+    ] ],
+    [ "wcTaskStateId", "group__wc_client_getters_setters.html#gae447488abc576169d41101c8601978db", [
+      [ "wctstError", "group__wc_client_getters_setters.html#ggae447488abc576169d41101c8601978dbae1440513e0701efec724aa4082e00b0e", null ],
+      [ "wctstPath", "group__wc_client_getters_setters.html#ggae447488abc576169d41101c8601978dba034494baf7ae35849d78e109412c8179", null ],
+      [ "wctstSubProto", "group__wc_client_getters_setters.html#ggae447488abc576169d41101c8601978dbad3f9c951a5392a0e947a569cb94c9841", null ],
+      [ "wctstDeviceName", "group__wc_client_getters_setters.html#ggae447488abc576169d41101c8601978dba4da58e1cb983034d87161c93303e42d9", null ]
     ] ],
     [ "wcClientInvalidateState", "group__wc_client_getters_setters.html#ga5476168bb021a854c39f3d7cf4c8bd22", null ],
     [ "wcClientGetIntState", "group__wc_client_getters_setters.html#ga98277dee0477c1588f6e60444a0c41ad", null ],

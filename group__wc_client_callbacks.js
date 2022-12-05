@@ -1,9 +1,10 @@
 var group__wc_client_callbacks =
 [
+    [ "wcCallback", "group__wc_client_callbacks.html#gac5eeed8e09a9a726cb20f314c86d725e", null ],
     [ "EmptyNotifyLibFunc", "group__wc_client_callbacks.html#gab32005943cc9a7e51460304df7388b4a", null ],
     [ "NotifyEventLibFunc", "group__wc_client_callbacks.html#ga28029be9e49189631a2a21b0a2841f99", null ],
     [ "TaskNotifyLibFunc", "group__wc_client_callbacks.html#gaa35bf947666ae3937d3696f7755a2ef0", null ],
-    [ "ConnNotifyEventLibFunc", "group__wc_client_callbacks.html#ga05488e5eb3baabd4c24282eee54b0c01", null ],
+    [ "ConnNotifyEventLibFunc", "group__wc_client_callbacks.html#gaf1af64cb43552fbabec822a2ecfce8d3", null ],
     [ "CStringNotifyLibFunc", "group__wc_client_callbacks.html#ga9ff743d7d735c1feabe173fe3e6982cf", null ],
     [ "DataNotifyEventLibFunc", "group__wc_client_callbacks.html#ga7bf4bb001ca3b9ba7140c008e47c1131", null ],
     [ "DataAltNotifyEventLibFunc", "group__wc_client_callbacks.html#gae109b81a10580ec33e459932e0ad42ee", null ],

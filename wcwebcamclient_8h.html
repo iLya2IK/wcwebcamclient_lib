@@ -105,7 +105,6 @@ $(document).ready(function(){initNavTree('wcwebcamclient_8h.html',''); initResiz
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="wc_common_callbacks_8h_source.html">wcCommonCallbacks.h</a>&quot;</code><br />
-<code>#include &lt;cstddef&gt;</code><br />
 </div>
 <p><a href="wcwebcamclient_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -131,6 +130,13 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ae1ba77ff9ed951c2384f2564b6680760"><td class="memItemLeft" align="right" valign="top">typedef uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wcwebcamclient_8h.html#ae1ba77ff9ed951c2384f2564b6680760">wcTaskClass</a></td></tr>
 <tr class="memdesc:ae1ba77ff9ed951c2384f2564b6680760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task class.  <a href="wcwebcamclient_8h.html#ae1ba77ff9ed951c2384f2564b6680760">More...</a><br /></td></tr>
 <tr class="separator:ae1ba77ff9ed951c2384f2564b6680760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac5eeed8e09a9a726cb20f314c86d725e"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__wc_client_callbacks.html#gaa0654287d510e9750e0293d6d27758b2">wcCallback</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_client_callbacks.html#gac5eeed8e09a9a726cb20f314c86d725e">wcCallback</a></td></tr>
+<tr class="memdesc:gac5eeed8e09a9a726cb20f314c86d725e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of callbacks.  <a href="group__wc_client_callbacks.html#gac5eeed8e09a9a726cb20f314c86d725e">More...</a><br /></td></tr>
+<tr class="separator:gac5eeed8e09a9a726cb20f314c86d725e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga95e837ab7c86723ba154989461613a03"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__wc_client_getters_setters.html#gadfaa57b72e59d00fa03e0a1fd5ff4c5a">wcStateId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_client_getters_setters.html#ga95e837ab7c86723ba154989461613a03">wcStateId</a></td></tr>
+<tr class="separator:ga95e837ab7c86723ba154989461613a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga12593420b46211dcbcdc7bedc1987dcc"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__wc_client_getters_setters.html#gae447488abc576169d41101c8601978db">wcTaskStateId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_client_getters_setters.html#ga12593420b46211dcbcdc7bedc1987dcc">wcTaskStateId</a></td></tr>
+<tr class="separator:ga12593420b46211dcbcdc7bedc1987dcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab32005943cc9a7e51460304df7388b4a"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_client_callbacks.html#gab32005943cc9a7e51460304df7388b4a">EmptyNotifyLibFunc</a>) (<a class="el" href="wcwebcamclient_8h.html#a8ed09f7b448a852b96e2a705531a285c">wcHandle</a> client)</td></tr>
 <tr class="memdesc:gab32005943cc9a7e51460304df7388b4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notification callback.  <a href="group__wc_client_callbacks.html#gab32005943cc9a7e51460304df7388b4a">More...</a><br /></td></tr>
 <tr class="separator:gab32005943cc9a7e51460304df7388b4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,9 +146,9 @@ Typedefs</h2></td></tr>
 <tr class="memitem:gaa35bf947666ae3937d3696f7755a2ef0"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_client_callbacks.html#gaa35bf947666ae3937d3696f7755a2ef0">TaskNotifyLibFunc</a>) (<a class="el" href="wcwebcamclient_8h.html#a8ed09f7b448a852b96e2a705531a285c">wcHandle</a> client, <a class="el" href="wcwebcamclient_8h.html#a91c112d47f81589bb3ead6630798b831">wcTask</a> tsk)</td></tr>
 <tr class="memdesc:gaa35bf947666ae3937d3696f7755a2ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notification callback from the specific task.  <a href="group__wc_client_callbacks.html#gaa35bf947666ae3937d3696f7755a2ef0">More...</a><br /></td></tr>
 <tr class="separator:gaa35bf947666ae3937d3696f7755a2ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga05488e5eb3baabd4c24282eee54b0c01"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_client_callbacks.html#ga05488e5eb3baabd4c24282eee54b0c01">ConnNotifyEventLibFunc</a>) (<a class="el" href="wcwebcamclient_8h.html#a8ed09f7b448a852b96e2a705531a285c">wcHandle</a> client, bool state)</td></tr>
-<tr class="memdesc:ga05488e5eb3baabd4c24282eee54b0c01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notification callback that the connection status has been changed.  <a href="group__wc_client_callbacks.html#ga05488e5eb3baabd4c24282eee54b0c01">More...</a><br /></td></tr>
-<tr class="separator:ga05488e5eb3baabd4c24282eee54b0c01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf1af64cb43552fbabec822a2ecfce8d3"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_client_callbacks.html#gaf1af64cb43552fbabec822a2ecfce8d3">ConnNotifyEventLibFunc</a>) (<a class="el" href="wcwebcamclient_8h.html#a8ed09f7b448a852b96e2a705531a285c">wcHandle</a> client, int state)</td></tr>
+<tr class="memdesc:gaf1af64cb43552fbabec822a2ecfce8d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notification callback that the connection status has been changed.  <a href="group__wc_client_callbacks.html#gaf1af64cb43552fbabec822a2ecfce8d3">More...</a><br /></td></tr>
+<tr class="separator:gaf1af64cb43552fbabec822a2ecfce8d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9ff743d7d735c1feabe173fe3e6982cf"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_client_callbacks.html#ga9ff743d7d735c1feabe173fe3e6982cf">CStringNotifyLibFunc</a>) (<a class="el" href="wcwebcamclient_8h.html#a8ed09f7b448a852b96e2a705531a285c">wcHandle</a> client, const char *value)</td></tr>
 <tr class="memdesc:ga9ff743d7d735c1feabe173fe3e6982cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notification callback that returned a C-style string.  <a href="group__wc_client_callbacks.html#ga9ff743d7d735c1feabe173fe3e6982cf">More...</a><br /></td></tr>
 <tr class="separator:ga9ff743d7d735c1feabe173fe3e6982cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -220,6 +226,12 @@ Enumerations</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:gadfaa57b72e59d00fa03e0a1fd5ff4c5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae447488abc576169d41101c8601978db"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_client_getters_setters.html#gae447488abc576169d41101c8601978db">wcTaskStateId</a> { <a class="el" href="group__wc_client_getters_setters.html#ggae447488abc576169d41101c8601978dbae1440513e0701efec724aa4082e00b0e">wctstError</a> = 0, 
+<a class="el" href="group__wc_client_getters_setters.html#ggae447488abc576169d41101c8601978dba034494baf7ae35849d78e109412c8179">wctstPath</a>, 
+<a class="el" href="group__wc_client_getters_setters.html#ggae447488abc576169d41101c8601978dbad3f9c951a5392a0e947a569cb94c9841">wctstSubProto</a>, 
+<a class="el" href="group__wc_client_getters_setters.html#ggae447488abc576169d41101c8601978dba4da58e1cb983034d87161c93303e42d9">wctstDeviceName</a>
+ }</td></tr>
+<tr class="separator:gae447488abc576169d41101c8601978db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -271,7 +283,7 @@ Functions</h2></td></tr>
 <tr class="memitem:ga236c9ab837587b20b0ff7633da2d8a99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> DLLEXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_client_callbacks.html#ga236c9ab837587b20b0ff7633da2d8a99">wcSetTaskCallback</a> (<a class="el" href="wcwebcamclient_8h.html#a8ed09f7b448a852b96e2a705531a285c">wcHandle</a> client, <a class="el" href="group__wc_client_callbacks.html#gaa0654287d510e9750e0293d6d27758b2">wcCallback</a> callbackId, <a class="el" href="group__wc_client_callbacks.html#gaa35bf947666ae3937d3696f7755a2ef0">TaskNotifyLibFunc</a> func)</td></tr>
 <tr class="memdesc:ga236c9ab837587b20b0ff7633da2d8a99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set specified task notify callback for <em>client</em>.  <a href="group__wc_client_callbacks.html#ga236c9ab837587b20b0ff7633da2d8a99">More...</a><br /></td></tr>
 <tr class="separator:ga236c9ab837587b20b0ff7633da2d8a99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaff423ec577d1f989d5b958d037f1e1dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> DLLEXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_client_callbacks.html#gaff423ec577d1f989d5b958d037f1e1dd">wcSetConnCallback</a> (<a class="el" href="wcwebcamclient_8h.html#a8ed09f7b448a852b96e2a705531a285c">wcHandle</a> client, <a class="el" href="group__wc_client_callbacks.html#ga05488e5eb3baabd4c24282eee54b0c01">ConnNotifyEventLibFunc</a> func)</td></tr>
+<tr class="memitem:gaff423ec577d1f989d5b958d037f1e1dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> DLLEXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_client_callbacks.html#gaff423ec577d1f989d5b958d037f1e1dd">wcSetConnCallback</a> (<a class="el" href="wcwebcamclient_8h.html#a8ed09f7b448a852b96e2a705531a285c">wcHandle</a> client, <a class="el" href="group__wc_client_callbacks.html#gaf1af64cb43552fbabec822a2ecfce8d3">ConnNotifyEventLibFunc</a> func)</td></tr>
 <tr class="memdesc:gaff423ec577d1f989d5b958d037f1e1dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set specified connection notify callback for <em>client</em>.  <a href="group__wc_client_callbacks.html#gaff423ec577d1f989d5b958d037f1e1dd">More...</a><br /></td></tr>
 <tr class="separator:gaff423ec577d1f989d5b958d037f1e1dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8620a24ec871f07776cad99b0482c1de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> DLLEXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_client_callbacks.html#ga8620a24ec871f07776cad99b0482c1de">wcSetCStringCallback</a> (<a class="el" href="wcwebcamclient_8h.html#a8ed09f7b448a852b96e2a705531a285c">wcHandle</a> client, <a class="el" href="group__wc_client_callbacks.html#gaa0654287d510e9750e0293d6d27758b2">wcCallback</a> callbackId, <a class="el" href="group__wc_client_callbacks.html#ga9ff743d7d735c1feabe173fe3e6982cf">CStringNotifyLibFunc</a> func)</td></tr>
@@ -340,6 +352,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga9f8bc8647b35caef638283a775d27a99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> DLLEXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_tasks_funcs.html#ga9f8bc8647b35caef638283a775d27a99">wcTaskUnLock</a> (<a class="el" href="wcwebcamclient_8h.html#a91c112d47f81589bb3ead6630798b831">wcTask</a> task)</td></tr>
 <tr class="memdesc:ga9f8bc8647b35caef638283a775d27a99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlock the task object.  <a href="group__wc_tasks_funcs.html#ga9f8bc8647b35caef638283a775d27a99">More...</a><br /></td></tr>
 <tr class="separator:ga9f8bc8647b35caef638283a775d27a99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6b36906f0ca22d4990ac7570a597952b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> DLLEXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_tasks_funcs.html#ga6b36906f0ca22d4990ac7570a597952b">wcTaskGetStrValue</a> (<a class="el" href="wcwebcamclient_8h.html#a91c112d47f81589bb3ead6630798b831">wcTask</a> task, <a class="el" href="group__wc_client_getters_setters.html#gae447488abc576169d41101c8601978db">wcTaskStateId</a> aStateId, char **aStateVal)</td></tr>
+<tr class="memdesc:ga6b36906f0ca22d4990ac7570a597952b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a C-style string value for the selected task state.  <a href="group__wc_tasks_funcs.html#ga6b36906f0ca22d4990ac7570a597952b">More...</a><br /></td></tr>
+<tr class="separator:ga6b36906f0ca22d4990ac7570a597952b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaafa5e30affb3fb4d0644be29612621a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> DLLEXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_tasks_funcs.html#gaafa5e30affb3fb4d0644be29612621a4">wcTaskGetStrNValue</a> (<a class="el" href="wcwebcamclient_8h.html#a91c112d47f81589bb3ead6630798b831">wcTask</a> task, <a class="el" href="group__wc_client_getters_setters.html#gae447488abc576169d41101c8601978db">wcTaskStateId</a> aStateId, uint32_t sz, char *aStateVal)</td></tr>
+<tr class="memdesc:gaafa5e30affb3fb4d0644be29612621a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a C-style string value for the selected task state.  <a href="group__wc_tasks_funcs.html#gaafa5e30affb3fb4d0644be29612621a4">More...</a><br /></td></tr>
+<tr class="separator:gaafa5e30affb3fb4d0644be29612621a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaac040def5a25b7fe708a86f2ddf43c4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> DLLEXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_in_tasks_funcs.html#gaac040def5a25b7fe708a86f2ddf43c4f">wcInTaskPopFrame</a> (<a class="el" href="wcwebcamclient_8h.html#a91c112d47f81589bb3ead6630798b831">wcTask</a> task, void **data, size_t *len)</td></tr>
 <tr class="memdesc:gaac040def5a25b7fe708a86f2ddf43c4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get access to the first frame in the incoming data stack.  <a href="group__wc_in_tasks_funcs.html#gaac040def5a25b7fe708a86f2ddf43c4f">More...</a><br /></td></tr>
 <tr class="separator:gaac040def5a25b7fe708a86f2ddf43c4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -381,6 +399,12 @@ Variables</h2></td></tr>
 <tr class="memitem:a7593cc5ebe036ef34f6790e91ad6ffee"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="wcwebcamclient_8h.html#ae1ba77ff9ed951c2384f2564b6680760">wcTaskClass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wcwebcamclient_8h.html#a7593cc5ebe036ef34f6790e91ad6ffee">WC_ALL_TASKS</a> = 0xffffffff</td></tr>
 <tr class="memdesc:a7593cc5ebe036ef34f6790e91ad6ffee"><td class="mdescLeft">&#160;</td><td class="mdescRight">All tasks classes (mask)  <a href="wcwebcamclient_8h.html#a7593cc5ebe036ef34f6790e91ad6ffee">More...</a><br /></td></tr>
 <tr class="separator:a7593cc5ebe036ef34f6790e91ad6ffee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a941706cde2f229a3253a772a2a0598db"><td class="memItemLeft" align="right" valign="top">const uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wcwebcamclient_8h.html#a941706cde2f229a3253a772a2a0598db">WC_STREAM_FRAME_HEADER_SIZE</a> = sizeof(uint16_t) + sizeof(uint32_t)</td></tr>
+<tr class="memdesc:a941706cde2f229a3253a772a2a0598db"><td class="mdescLeft">&#160;</td><td class="mdescRight">The size of frame header (6 bytes)  <a href="wcwebcamclient_8h.html#a941706cde2f229a3253a772a2a0598db">More...</a><br /></td></tr>
+<tr class="separator:a941706cde2f229a3253a772a2a0598db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd515210e8162754ef70a8da7eb88a13"><td class="memItemLeft" align="right" valign="top">const uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wcwebcamclient_8h.html#abd515210e8162754ef70a8da7eb88a13">WC_FRAME_START_SEQ</a> = 0xaaaa</td></tr>
+<tr class="memdesc:abd515210e8162754ef70a8da7eb88a13"><td class="mdescLeft">&#160;</td><td class="mdescRight">The frame header sequence.  <a href="wcwebcamclient_8h.html#abd515210e8162754ef70a8da7eb88a13">More...</a><br /></td></tr>
+<tr class="separator:abd515210e8162754ef70a8da7eb88a13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="addc44e854fe60280c92899ec6ba3c354"></a>
@@ -460,6 +484,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The Base task class. </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="theora_test_2input_strm_2main_8cpp-example.html#a4">theora_test/input_strm/main.cpp</a>, and <a class="el" href="theora_test_2output_strm_2main_8cpp-example.html#a8">theora_test/output_strm/main.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -492,6 +518,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The Input-stream task class (for GET requests) </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="theora_test_2input_strm_2main_8cpp-example.html#a6">theora_test/input_strm/main.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -508,6 +536,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The Output-stream task class (for UPLOAD requests) </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="theora_test_2output_strm_2main_8cpp-example.html#a10">theora_test/output_strm/main.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -527,13 +557,49 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a941706cde2f229a3253a772a2a0598db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a941706cde2f229a3253a772a2a0598db">&#9670;&nbsp;</a></span>WC_STREAM_FRAME_HEADER_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint16_t WC_STREAM_FRAME_HEADER_SIZE = sizeof(uint16_t) + sizeof(uint32_t)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The size of frame header (6 bytes) </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="theora_test_2input_strm_2main_8cpp-example.html#a0">theora_test/input_strm/main.cpp</a>, and <a class="el" href="theora_test_2output_strm_2main_8cpp-example.html#a0">theora_test/output_strm/main.cpp</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="abd515210e8162754ef70a8da7eb88a13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd515210e8162754ef70a8da7eb88a13">&#9670;&nbsp;</a></span>WC_FRAME_START_SEQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint16_t WC_FRAME_START_SEQ = 0xaaaa</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The frame header sequence. </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="theora_test_2output_strm_2main_8cpp-example.html#a1">theora_test/output_strm/main.cpp</a>.</dd>
+</dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="wcwebcamclient_8h.html">wcwebcamclient.h</a></li>
-    <li class="footer">Generated on Thu Dec 1 2022 18:18:39 for wcWebCamClient lib by
+    <li class="footer">Generated on Mon Dec 5 2022 18:08:25 for wcWebCamClient lib by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

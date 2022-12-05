@@ -145,14 +145,14 @@ Functions</h2></td></tr>
 <p>Related to request <a class="el" href="_j_s_o_n_protocol_home.html#output">output.raw</a>. A signal that a new frame has been received is triggered by a <em>task</em> with the <a class="el" href="group__wc_client_callbacks.html#ggaa0654287d510e9750e0293d6d27758b2a167e248df079d152ee639b9480ebd1b4">wccbkSynchroUpdateTask</a> callback.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">client</td><td>The client handle. </td></tr>
-    <tr><td class="paramname">data</td><td>The pointer to the variable of void * type initialized with NULL value to return frame data. </td></tr>
+    <tr><td class="paramname">task</td><td>Pointer to the task object of <a class="el" href="wcwebcamclient_8h.html#a75f2ee25f8849ec1859b53ecc06bbff6">WC_IN_STREAM_TASK</a> class. </td></tr>
+    <tr><td class="paramname">data</td><td>The pointer to the variable of void * type to return frame data. </td></tr>
     <tr><td class="paramname">len</td><td>The pointer to the variable of size_t type to return frame size. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> <a class="el" href="group__wc_return.html#ga5f50c11b25339e1568bf54e5c4027418">WC_OK</a> or error code.</dd></dl>
-<p><b>Example</b> <br  />
+<p><b>Example</b> 1<br  />
  </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> * data = NULL;</div>
 <div class="line"><span class="keywordtype">size_t</span> len = 0;</div>
 <div class="line"> </div>
@@ -165,18 +165,37 @@ Functions</h2></td></tr>
 <div class="line">} <span class="keywordflow">else</span> {</div>
 <div class="line">   cout &lt;&lt; <span class="stringliteral">&quot;error occurred &quot;</span> &lt;&lt; aCode &lt;&lt; endl;</div>
 <div class="line">}</div>
+</div><!-- fragment --><p> <b>Example</b> 2<br  />
+ </p><div class="fragment"><div class="line"><span class="comment">// The data can be initialized in advance.</span></div>
+<div class="line"><span class="comment">// Then the len variable should contain the size of the</span></div>
+<div class="line"><span class="comment">// allocated memory for the data variable.</span></div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> BUFFER_SIZE = 0xffff;</div>
+<div class="line"><span class="keywordtype">size_t</span> len = BUFFER_SIZE;</div>
+<div class="line"><span class="keywordtype">void</span> * data = malloc(len);</div>
+<div class="line"> </div>
+<div class="line">aCode = <a class="code" href="group__wc_in_tasks_funcs.html#gaac040def5a25b7fe708a86f2ddf43c4f">wcInTaskPopFrame</a>(client, &amp;data, &amp;len);</div>
+<div class="line"><span class="keywordflow">if</span> (aCode == <a class="code" href="group__wc_return.html#ga5f50c11b25339e1568bf54e5c4027418">WC_OK</a>) {</div>
+<div class="line">   <span class="comment">// now the len variable contains the actual length of the data</span></div>
+<div class="line">   <span class="keywordflow">if</span> (data &amp;&amp; (len &gt; 0)) {</div>
+<div class="line">      <span class="comment">// work with incoming data and len (draw, save, etc.)</span></div>
+<div class="line">   }</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">   cout &lt;&lt; <span class="stringliteral">&quot;error occurred &quot;</span> &lt;&lt; aCode &lt;&lt; endl;</div>
+<div class="line">}</div>
 </div><!-- fragment --> <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7" title="Operation completion codes.">wcRCode</a>, <a class="el" href="group__wc_client_callbacks.html#ggaa0654287d510e9750e0293d6d27758b2a167e248df079d152ee639b9480ebd1b4" title="The IO streaming task signals that a change has occurred.">wccbkSynchroUpdateTask</a>, <a class="el" href="group__wc_client_callbacks.html#ga236c9ab837587b20b0ff7633da2d8a99" title="Set specified task notify callback for client.">wcSetTaskCallback</a>, <a class="el" href="group__wc_client_life_circle.html#ga7da1194c4e90fb9a2aa63d4c872f141f" title="Call the synchronous client update stage.">wcClientTasksProceed</a> </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="theora_test_2input_strm_2main_8cpp-example.html#a7">theora_test/input_strm/main.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="agroup__wc_return_html_ga5f50c11b25339e1568bf54e5c4027418"><div class="ttname"><a href="group__wc_return.html#ga5f50c11b25339e1568bf54e5c4027418">WC_OK</a></div><div class="ttdeci">const wcRCode WC_OK</div><div class="ttdef"><b>Definition:</b> wcwebcamclient.h:72</div></div>
+<div class="ttc" id="agroup__wc_return_html_ga5f50c11b25339e1568bf54e5c4027418"><div class="ttname"><a href="group__wc_return.html#ga5f50c11b25339e1568bf54e5c4027418">WC_OK</a></div><div class="ttdeci">const wcRCode WC_OK</div><div class="ttdef"><b>Definition:</b> wcwebcamclient.h:74</div></div>
 <div class="ttc" id="agroup__wc_in_tasks_funcs_html_gaac040def5a25b7fe708a86f2ddf43c4f"><div class="ttname"><a href="group__wc_in_tasks_funcs.html#gaac040def5a25b7fe708a86f2ddf43c4f">wcInTaskPopFrame</a></div><div class="ttdeci">wcRCode DLLEXPORT wcInTaskPopFrame(wcTask task, void **data, size_t *len)</div><div class="ttdoc">Get access to the first frame in the incoming data stack.</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Dec 1 2022 18:18:39 for wcWebCamClient lib by
+    <li class="footer">Generated on Mon Dec 5 2022 18:08:25 for wcWebCamClient lib by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
