@@ -11,7 +11,7 @@ class wcCustomMemoryStream
     public:
         wcCustomMemoryStream();
         wcCustomMemoryStream(const void * aBuf, size_t aSize);
-        virtual ~wcCustomMemoryStream() {};
+        virtual ~wcCustomMemoryStream() { if (mBuf) free(mBuf); };
         size_t read(void * dst, size_t len);
         virtual void copyFrom(wcCustomMemoryStream* src, size_t cnt) {};
         void setPosition(size_t p) { mPos = p;}

@@ -81,8 +81,11 @@ size_t wcMemoryStream::write(const void * src, size_t len)
     if (len == 0) { return 0; }
     size_t NewPos = mPos + len;
     if (NewPos > mSize) {
-       if (NewPos > mCapacity)
-         setCapacity(NewPos);
+       if (NewPos > mCapacity) {
+          size_t oldpos = mPos;
+          setCapacity(NewPos);
+          mPos = oldpos;
+       }
        mSize = NewPos;
     }
     memcpy((void*)((char*)getMemory() + mPos), src, len);

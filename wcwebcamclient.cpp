@@ -947,6 +947,14 @@ wcRCode DLLEXPORT wcSendMsg_cJson(wcHandle client, cJSON * msg, void * data) {
     return v;
 }
 #endif
+
+wcRCode DLLEXPORT wcRequestRecordMeta(wcHandle client, int rid, void * data) {
+    wcRCode v = CheckClient(client);
+    if (v != WC_OK) return v;
+    WC_CLIENT(client)->requestRecordMeta(rid, data);
+    return v;
+}
+
 wcRCode DLLEXPORT wcRequestRecord(wcHandle client, int rid, void * data) {
     wcRCode v = CheckClient(client);
     if (v != WC_OK) return v;
