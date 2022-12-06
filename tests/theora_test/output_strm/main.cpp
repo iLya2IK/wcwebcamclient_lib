@@ -48,8 +48,8 @@ static dirent **png_files;
 static char * mem_frame_buffer = NULL;
 static long frame_size = 0, frame_buffer = 0;
 
-static uint16_t loc_frame = 0;
-static uint16_t total_frames = 0;
+static int16_t loc_frame = 0;
+static int16_t total_frames = 0;
 
 bool need_to_load_next_frame = false;
 
@@ -241,7 +241,7 @@ int main(int argc, char * argv[])
 
     total_frames = scandir(input_directory.c_str(), &png_files, include_files, alphasort);
 
-    if (!total_frames) {
+    if (total_frames <= 0) {
         cerr << "no input files found; run with -h for help." << endl;
         return 1;
     }
@@ -314,7 +314,7 @@ int main(int argc, char * argv[])
             auto current_timestamp = std::chrono::system_clock::now();
             auto int_s = chrono::duration_cast<chrono::seconds>(current_timestamp - start_timestamp);
 
-            if (need_to_load_next_frame && (int_s.count() >= TIME_OUT)) {
+            if (int_s.count() >= TIME_OUT) {
                 cout << "timeout" << endl;
                 break;
             }

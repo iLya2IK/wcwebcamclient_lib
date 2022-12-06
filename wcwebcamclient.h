@@ -411,6 +411,7 @@ wcRCode DLLEXPORT wcClientGetIntState(wcHandle client, wcStateId aStateId, int *
  * \ref wcstDevices - should client update the list of devices,<br>
  * \ref wcstRecords - should client update the list of media records,<br>
  * \ref wcstMsgs - should client update the list of messages,<br>
+ * \ref wcstStreams - should client update the list of streams.<br>
  *
  * \param client          The client handle.
  * \param aStateId        The selected client state.
@@ -427,7 +428,7 @@ wcRCode DLLEXPORT wcClientGetBoolState(wcHandle client, wcStateId aStateId);
  * \ref wcstDevices - the client should update the list of devices (only \ref WC_TRUE value allowed),<br>
  * \ref wcstRecords - the client should update the list of media records (only \ref WC_TRUE value allowed),<br>
  * \ref wcstMsgs - the client should update the list of messages (only \ref WC_TRUE value allowed),<br>
- * \ref wcstStreams - the client should update the list of streams (only \ref WC_TRUE value allowed),<br>
+ * \ref wcstStreams - the client should update the list of streams (only \ref WC_TRUE value allowed).<br>
  *
  * \param client          The client handle.
  * \param aStateId        The selected client state.
@@ -727,14 +728,14 @@ wcRCode DLLEXPORT wcRequestRecordMeta(wcHandle client, int rid, void * data);
  *
  * \param client         The client handle.
  * \param aBuf           Pointer to record data  ( \ref  addRecord ).
- * \param Sz             The record size in bytes.
+ * \param sz             The record size in bytes.
  * \param meta           Metadata for the media record  ( \ref  addRecord ).
  * \param data           Additional user data that passed to the new task ( see also \ref wcTaskGetUserData ).
  * \return \ref wcRCode  \ref WC_OK or error code.
  *
  * \sa wcRCode, wcSetTaskCallback, wccbkSuccessSaveRecord, wcTaskGetUserData
  */
-wcRCode DLLEXPORT wcSaveRecord(wcHandle client, const void * aBuf, size_t  Sz, const char * meta, void * data);
+wcRCode DLLEXPORT wcSaveRecord(wcHandle client, const void * aBuf, size_t  sz, const char * meta, void * data);
 //! \brief Launch output stream for authorized \a client.
 /*! See protocol request \ref input.
  *

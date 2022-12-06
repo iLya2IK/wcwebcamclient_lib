@@ -34,6 +34,8 @@
 
 using namespace std;
 
+/* The total program timeout in seconds */
+static const uint32_t TIME_OUT = 60;
 static const size_t MAX_INPUT_BUFFER = 0x7D000;
 
 static uint8_t running = 0;
@@ -814,7 +816,7 @@ int main(int argc, char * argv[])
         /* Start client */
         wcClientStart(client);
 
-        int time_out = 500;
+        auto start_timestamp = std::chrono::system_clock::now();
         while (running < 8)
         {
             switch (running)
@@ -854,13 +856,15 @@ int main(int argc, char * argv[])
             if (running < 5)
                 std::this_thread::sleep_for(std::chrono::milliseconds(1000));
             else
-                std::this_thread::sleep_for(std::chrono::milliseconds(discrete_delta / 3));
+                std::this_thread::sleep_for(std::chrono::milliseconds(50));
             /* Proceed client */
             wcClientProceed(client);
             wcClientTasksProceed(client);
-            time_out--;
-            if (time_out <= 0)
-            {
+
+            auto current_timestamp = std::chrono::system_clock::now();
+            auto int_s = chrono::duration_cast<chrono::seconds>(current_timestamp - start_timestamp);
+
+            if (int_s.count() >= TIME_OUT) {
                 cout << "timeout" << endl;
                 break;
             }
