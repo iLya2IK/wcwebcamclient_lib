@@ -314,7 +314,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> <a class="el" href="group__wc_return.html#ga5f50c11b25339e1568bf54e5c4027418">WC_OK</a> or error code.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_getters_setters.html#gadfaa57b72e59d00fa03e0a1fd5ff4c5a">wcStateId</a>, <a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7" title="Operation completion codes.">wcRCode</a> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_test_2main_8cpp-example.html#a23">lib_test/main.cpp</a>, and <a class="el" href="theora_test_2input_strm_2main_8cpp-example.html#a32">theora_test/input_strm/main.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_test_2main_8cpp-example.html#a23">lib_test/main.cpp</a>, <a class="el" href="media_test_2main_8cpp-example.html#a28">media_test/main.cpp</a>, and <a class="el" href="theora_test_2input_strm_2main_8cpp-example.html#a32">theora_test/input_strm/main.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -413,6 +413,7 @@ Functions</h2></td></tr>
  <a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa07f6f3cd860c1b8db2d3fab001d4f176">wcstDevices</a> - should client update the list of devices,<br  />
  <a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aae03ffeb519318983af4a7e1f51b7f922">wcstRecords</a> - should client update the list of media records,<br  />
  <a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aac7b6bd153a2123bc35c85c1f911729a5">wcstMsgs</a> - should client update the list of messages,<br  />
+ <a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa23994f253f4746232e1803519d171356">wcstStreams</a> - should client update the list of streams.<br  />
 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -466,7 +467,7 @@ Functions</h2></td></tr>
  <a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa07f6f3cd860c1b8db2d3fab001d4f176">wcstDevices</a> - the client should update the list of devices (only <a class="el" href="group__wc_return.html#gaf6a3eb913fe1eb568345ae6ce3a8e193">WC_TRUE</a> value allowed),<br  />
  <a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aae03ffeb519318983af4a7e1f51b7f922">wcstRecords</a> - the client should update the list of media records (only <a class="el" href="group__wc_return.html#gaf6a3eb913fe1eb568345ae6ce3a8e193">WC_TRUE</a> value allowed),<br  />
  <a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aac7b6bd153a2123bc35c85c1f911729a5">wcstMsgs</a> - the client should update the list of messages (only <a class="el" href="group__wc_return.html#gaf6a3eb913fe1eb568345ae6ce3a8e193">WC_TRUE</a> value allowed),<br  />
- <a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa23994f253f4746232e1803519d171356">wcstStreams</a> - the client should update the list of streams (only <a class="el" href="group__wc_return.html#gaf6a3eb913fe1eb568345ae6ce3a8e193">WC_TRUE</a> value allowed),<br  />
+ <a class="el" href="group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa23994f253f4746232e1803519d171356">wcstStreams</a> - the client should update the list of streams (only <a class="el" href="group__wc_return.html#gaf6a3eb913fe1eb568345ae6ce3a8e193">WC_TRUE</a> value allowed).<br  />
 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -478,7 +479,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> <a class="el" href="group__wc_return.html#ga5f50c11b25339e1568bf54e5c4027418">WC_OK</a> or error code.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_getters_setters.html#gadfaa57b72e59d00fa03e0a1fd5ff4c5a">wcStateId</a>, <a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7" title="Operation completion codes.">wcRCode</a>, <a class="el" href="group__wc_return.html#ga38af1acfc8221fab2e7449e8051add9e" title="Boolean operation completion codes.">wcStateVal</a> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_test_2main_8cpp-example.html#a4">lib_test/main.cpp</a>, <a class="el" href="theora_test_2input_strm_2main_8cpp-example.html#a9">theora_test/input_strm/main.cpp</a>, and <a class="el" href="theora_test_2output_strm_2main_8cpp-example.html#a12">theora_test/output_strm/main.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_test_2main_8cpp-example.html#a4">lib_test/main.cpp</a>, <a class="el" href="media_test_2main_8cpp-example.html#a4">media_test/main.cpp</a>, <a class="el" href="theora_test_2input_strm_2main_8cpp-example.html#a9">theora_test/input_strm/main.cpp</a>, and <a class="el" href="theora_test_2output_strm_2main_8cpp-example.html#a12">theora_test/output_strm/main.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -548,7 +549,7 @@ Functions</h2></td></tr>
 <div class="line">   cout &lt;&lt; <span class="stringliteral">&quot;error occurred &quot;</span> &lt;&lt; aCode &lt;&lt; endl;</div>
 <div class="line">}</div>
 </div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_getters_setters.html#gadfaa57b72e59d00fa03e0a1fd5ff4c5a">wcStateId</a>, <a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7" title="Operation completion codes.">wcRCode</a>, <a class="el" href="group__wc_return.html#ga38af1acfc8221fab2e7449e8051add9e" title="Boolean operation completion codes.">wcStateVal</a>, <a class="el" href="group__wc_client_getters_setters.html#gac1d0c63268bdf97beffefaf3f16ffdd0" title="Get a C-style string value for the selected client state.">wcClientGetStrNValue</a> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_test_2main_8cpp-example.html#a0">lib_test/main.cpp</a>, <a class="el" href="theora_test_2input_strm_2main_8cpp-example.html#a1">theora_test/input_strm/main.cpp</a>, and <a class="el" href="theora_test_2output_strm_2main_8cpp-example.html#a6">theora_test/output_strm/main.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_test_2main_8cpp-example.html#a0">lib_test/main.cpp</a>, <a class="el" href="media_test_2main_8cpp-example.html#a0">media_test/main.cpp</a>, <a class="el" href="theora_test_2input_strm_2main_8cpp-example.html#a1">theora_test/input_strm/main.cpp</a>, and <a class="el" href="theora_test_2output_strm_2main_8cpp-example.html#a6">theora_test/output_strm/main.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -680,7 +681,7 @@ Functions</h2></td></tr>
 <div class="line">   cout &lt;&lt; <span class="stringliteral">&quot;error occurred &quot;</span> &lt;&lt; aCode &lt;&lt; endl;</div>
 <div class="line">}</div>
 </div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_client_getters_setters.html#gadfaa57b72e59d00fa03e0a1fd5ff4c5a">wcStateId</a>, <a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7" title="Operation completion codes.">wcRCode</a>, <a class="el" href="group__wc_return.html#ga38af1acfc8221fab2e7449e8051add9e" title="Boolean operation completion codes.">wcStateVal</a>, <a class="el" href="group__wc_client_getters_setters.html#ga441981a02cd8ff1a42f87253f2eadc9b" title="Get a C-style string value for the selected client state.">wcClientGetStrValue</a>, <a class="el" href="group__wc_client_getters_setters.html#gac1d0c63268bdf97beffefaf3f16ffdd0" title="Get a C-style string value for the selected client state.">wcClientGetStrNValue</a> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_test_2main_8cpp-example.html#a7">lib_test/main.cpp</a>, <a class="el" href="theora_test_2input_strm_2main_8cpp-example.html#a12">theora_test/input_strm/main.cpp</a>, and <a class="el" href="theora_test_2output_strm_2main_8cpp-example.html#a15">theora_test/output_strm/main.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_test_2main_8cpp-example.html#a7">lib_test/main.cpp</a>, <a class="el" href="media_test_2main_8cpp-example.html#a7">media_test/main.cpp</a>, <a class="el" href="theora_test_2input_strm_2main_8cpp-example.html#a12">theora_test/input_strm/main.cpp</a>, and <a class="el" href="theora_test_2output_strm_2main_8cpp-example.html#a15">theora_test/output_strm/main.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -699,7 +700,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Dec 5 2022 18:08:25 for wcWebCamClient lib by
+    <li class="footer">Generated on Tue Dec 6 2022 16:33:49 for wcWebCamClient lib by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

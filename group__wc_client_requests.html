@@ -121,9 +121,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga6875cdb485e9e04d137560b6a2abdfe0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> DLLEXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_client_requests.html#ga6875cdb485e9e04d137560b6a2abdfe0">wcRequestRecordMeta</a> (<a class="el" href="wcwebcamclient_8h.html#a8ed09f7b448a852b96e2a705531a285c">wcHandle</a> client, int rid, void *data)</td></tr>
 <tr class="memdesc:ga6875cdb485e9e04d137560b6a2abdfe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request metadata of specified media record from server for authorized <em>client</em>.  <a href="group__wc_client_requests.html#ga6875cdb485e9e04d137560b6a2abdfe0">More...</a><br /></td></tr>
 <tr class="separator:ga6875cdb485e9e04d137560b6a2abdfe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga80f790db70266eff02eec74a560b22a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> DLLEXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_client_requests.html#ga80f790db70266eff02eec74a560b22a1">wcSaveRecord</a> (<a class="el" href="wcwebcamclient_8h.html#a8ed09f7b448a852b96e2a705531a285c">wcHandle</a> client, const void *aBuf, size_t Sz, const char *meta, void *data)</td></tr>
-<tr class="memdesc:ga80f790db70266eff02eec74a560b22a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a media record to server from authorized <em>client</em>.  <a href="group__wc_client_requests.html#ga80f790db70266eff02eec74a560b22a1">More...</a><br /></td></tr>
-<tr class="separator:ga80f790db70266eff02eec74a560b22a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga693bf638eb8be7ed5713af905fa7a1be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> DLLEXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_client_requests.html#ga693bf638eb8be7ed5713af905fa7a1be">wcSaveRecord</a> (<a class="el" href="wcwebcamclient_8h.html#a8ed09f7b448a852b96e2a705531a285c">wcHandle</a> client, const void *aBuf, size_t sz, const char *meta, void *data)</td></tr>
+<tr class="memdesc:ga693bf638eb8be7ed5713af905fa7a1be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a media record to server from authorized <em>client</em>.  <a href="group__wc_client_requests.html#ga693bf638eb8be7ed5713af905fa7a1be">More...</a><br /></td></tr>
+<tr class="separator:ga693bf638eb8be7ed5713af905fa7a1be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0f433f2e886bf7bf5fffcae9b05ce448"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> DLLEXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_client_requests.html#ga0f433f2e886bf7bf5fffcae9b05ce448">wcLaunchOutStream</a> (<a class="el" href="wcwebcamclient_8h.html#a8ed09f7b448a852b96e2a705531a285c">wcHandle</a> client, const char *subProtocol, int delta, void *data)</td></tr>
 <tr class="memdesc:ga0f433f2e886bf7bf5fffcae9b05ce448"><td class="mdescLeft">&#160;</td><td class="mdescRight">Launch output stream for authorized <em>client</em>.  <a href="group__wc_client_requests.html#ga0f433f2e886bf7bf5fffcae9b05ce448">More...</a><br /></td></tr>
 <tr class="separator:ga0f433f2e886bf7bf5fffcae9b05ce448"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -351,6 +351,8 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> <a class="el" href="group__wc_return.html#ga5f50c11b25339e1568bf54e5c4027418">WC_OK</a> or error code.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7" title="Operation completion codes.">wcRCode</a>, wcSetDataCallback, <a class="el" href="group__wc_client_callbacks.html#gadea82cab460fd04f9556282a6cc842ab" title="Set specified notify callback for client to handling the sized data values.">wcSetAltDataCallback</a>, <a class="el" href="group__wc_client_callbacks.html#ggaa0654287d510e9750e0293d6d27758b2a2dc813374f09ca41926d54013971b490" title="The request to get the media record has been completed.">wccbkSuccessRequestRecord</a>, <a class="el" href="group__wc_tasks_funcs.html#gadf23ece9f30ffad29c93e5ecc031f306" title="Get the user data for the task.">wcTaskGetUserData</a> </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="media_test_2main_8cpp-example.html#a31">media_test/main.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -398,11 +400,13 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> <a class="el" href="group__wc_return.html#ga5f50c11b25339e1568bf54e5c4027418">WC_OK</a> or error code.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7" title="Operation completion codes.">wcRCode</a>, <a class="el" href="group__wc_client_callbacks.html#ggaa0654287d510e9750e0293d6d27758b2a3e371ce2bd4799fa2326d3dc3b542b93" title="The request to get metadata for the media record has been completed.">wccbkSuccessRequestRecordMeta</a>, <a class="el" href="group__wc_tasks_funcs.html#gadf23ece9f30ffad29c93e5ecc031f306" title="Get the user data for the task.">wcTaskGetUserData</a> </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="media_test_2main_8cpp-example.html#a30">media_test/main.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
-<a id="ga80f790db70266eff02eec74a560b22a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga80f790db70266eff02eec74a560b22a1">&#9670;&nbsp;</a></span>wcSaveRecord()</h2>
+<a id="ga693bf638eb8be7ed5713af905fa7a1be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga693bf638eb8be7ed5713af905fa7a1be">&#9670;&nbsp;</a></span>wcSaveRecord()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -423,7 +427,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>Sz</em>, </td>
+          <td class="paramname"><em>sz</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -451,7 +455,7 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">client</td><td>The client handle. </td></tr>
     <tr><td class="paramname">aBuf</td><td>Pointer to record data ( <a class="el" href="_j_s_o_n_protocol_home.html#addRecord">addRecord.json</a> ). </td></tr>
-    <tr><td class="paramname">Sz</td><td>The record size in bytes. </td></tr>
+    <tr><td class="paramname">sz</td><td>The record size in bytes. </td></tr>
     <tr><td class="paramname">meta</td><td>Metadata for the media record ( <a class="el" href="_j_s_o_n_protocol_home.html#addRecord">addRecord.json</a> ). </td></tr>
     <tr><td class="paramname">data</td><td>Additional user data that passed to the new task ( see also <a class="el" href="group__wc_tasks_funcs.html#gadf23ece9f30ffad29c93e5ecc031f306">wcTaskGetUserData</a> ). </td></tr>
   </table>
@@ -459,6 +463,8 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7">wcRCode</a> <a class="el" href="group__wc_return.html#ga5f50c11b25339e1568bf54e5c4027418">WC_OK</a> or error code.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7" title="Operation completion codes.">wcRCode</a>, <a class="el" href="group__wc_client_callbacks.html#ga236c9ab837587b20b0ff7633da2d8a99" title="Set specified task notify callback for client.">wcSetTaskCallback</a>, <a class="el" href="group__wc_client_callbacks.html#ggaa0654287d510e9750e0293d6d27758b2a61980db14343fabefa568dbb41589c47" title="The request to save the media record has been completed.">wccbkSuccessSaveRecord</a>, <a class="el" href="group__wc_tasks_funcs.html#gadf23ece9f30ffad29c93e5ecc031f306" title="Get the user data for the task.">wcTaskGetUserData</a> </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="media_test_2main_8cpp-example.html#a27">media_test/main.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -572,7 +578,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Dec 5 2022 18:08:25 for wcWebCamClient lib by
+    <li class="footer">Generated on Tue Dec 6 2022 16:33:49 for wcWebCamClient lib by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

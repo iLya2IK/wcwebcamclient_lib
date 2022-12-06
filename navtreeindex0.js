@@ -172,8 +172,8 @@ var NAVTREEINDEX0 =
 "group__wc_client_requests.html#ga300288c07be744c78d57232a40d0ecf4":[4,4,3],
 "group__wc_client_requests.html#ga370a673da7d9d7381f9e8255d0acc6d0":[4,4,2],
 "group__wc_client_requests.html#ga6875cdb485e9e04d137560b6a2abdfe0":[4,4,5],
+"group__wc_client_requests.html#ga693bf638eb8be7ed5713af905fa7a1be":[4,4,6],
 "group__wc_client_requests.html#ga74b004b9e778e36284c70987d1b0adad":[4,4,1],
-"group__wc_client_requests.html#ga80f790db70266eff02eec74a560b22a1":[4,4,6],
 "group__wc_client_requests.html#gae97a59ad2b035a36608a64a3714cd908":[4,4,0],
 "group__wc_frames_funcs.html":[4,5],
 "group__wc_frames_funcs.html#ga0e1289336aaf4a5a4ce6bd27abd08046":[4,5,1],
@@ -207,6 +207,7 @@ var NAVTREEINDEX0 =
 "index.html":[],
 "index.html":[0],
 "lib_test_2main_8cpp-example.html":[9,0],
+"media_test_2main_8cpp-example.html":[9,1],
 "modules.html":[4],
 "pages.html":[],
 "struct_c_string_notify.html":[5,1],
@@ -244,6 +245,6 @@ var NAVTREEINDEX0 =
 "struct_task_notify.html#ab9832130aec8a15c5e70fcff5cbb215c":[5,10,0],
 "structure.html":[2],
 "structure.html#autotoc_md48":[2,0],
-"theora_test_2input_strm_2main_8cpp-example.html":[9,1],
-"theora_test_2output_strm_2main_8cpp-example.html":[9,2]
+"theora_test_2input_strm_2main_8cpp-example.html":[9,2],
+"theora_test_2output_strm_2main_8cpp-example.html":[9,3]
 };

@@ -72,7 +72,7 @@ var searchData=
   ['wcrcode_118',['wcRCode',['../group__wc_return.html#ga6a1fc62624f098c89977a9ab13a976e7',1,'wcwebcamclient.h']]],
   ['wcrequestrecord_119',['wcRequestRecord',['../group__wc_client_requests.html#ga16a38219184af5481b69c0f533b4497f',1,'wcwebcamclient.h']]],
   ['wcrequestrecordmeta_120',['wcRequestRecordMeta',['../group__wc_client_requests.html#ga6875cdb485e9e04d137560b6a2abdfe0',1,'wcwebcamclient.h']]],
-  ['wcsaverecord_121',['wcSaveRecord',['../group__wc_client_requests.html#ga80f790db70266eff02eec74a560b22a1',1,'wcwebcamclient.h']]],
+  ['wcsaverecord_121',['wcSaveRecord',['../group__wc_client_requests.html#ga693bf638eb8be7ed5713af905fa7a1be',1,'wcwebcamclient.h']]],
   ['wcsendmsg_122',['wcSendMsg',['../group__wc_client_requests.html#ga300288c07be744c78d57232a40d0ecf4',1,'wcwebcamclient.h']]],
   ['wcsetaltdatacallback_123',['wcSetAltDataCallback',['../group__wc_client_callbacks.html#gadea82cab460fd04f9556282a6cc842ab',1,'wcwebcamclient.h']]],
   ['wcsetconfig_124',['wcSetConfig',['../group__wc_client_requests.html#ga74b004b9e778e36284c70987d1b0adad',1,'wcwebcamclient.h']]],
