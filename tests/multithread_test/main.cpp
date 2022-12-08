@@ -16,6 +16,7 @@
 #include <fstream>
 #include <curses.h>
 #include <wcwebcamclient.h>
+#include <cstring>
 #include <chrono>
 #include <thread>
 #include <wcJSON.h>
@@ -47,6 +48,11 @@ void CHECK(wcRCode res) {
 #define CHAT_MSG_COLOR 7
 #define CHAT_IMSG_COLOR 8
 #define CHAT_OMSG_COLOR 9
+
+static const char * WIN_CHAT_TITLE = "Chat";
+static const char * WIN_LOG_TITLE = "Log";
+static const char * WIN_DEVS_TITLE = "Devices [UP]/[DOWN]";
+static const char * WIN_INP_TITLE = "Input message here, [Enter] to send to target device";
 
 WINDOW * win_chat_input = NULL;
 WINDOW * win_device_list = NULL;
@@ -189,10 +195,11 @@ void updateChat(const string & myDevice) {
             int dir = 0;
 
             if (myDevice.compare(msg.getDevice()) == 0) {
-                if (myDevice.compare(msg.getTarget()) == 0)
+                string v = msg.getTarget();
+                if ((myDevice.compare(v) == 0) || (v.empty()))
                     msg_lines.push_back(string(myDevice + string("--") + myDevice));
                 else {
-                    msg_lines.push_back(string(myDevice + string("->") + msg.getTarget()));
+                    msg_lines.push_back(string(myDevice + string("->") + v));
                     dir = 1;
                 }
             } else {
@@ -264,7 +271,7 @@ void updateChat(const string & myDevice) {
                 int sz = (int) msg_lines[j].size();
                 if (k > 0) {
                     wattrset(win_chat, COLOR_PAIR(CHAT_WIN_COLOR));
-                    mvwprintw(win_chat, k, 1, "%*.s", chatWidth, blank_line);
+                    mvwprintw(win_chat, k, 1, "%.*s", chatWidth, blank_line);
                     switch (dir) {
                         case 0 : {wattrset(win_chat, COLOR_PAIR(CHAT_MSG_COLOR));
                                   break;}
@@ -274,14 +281,14 @@ void updateChat(const string & myDevice) {
                                   break;}
                     }
                     mvwprintw(win_chat, k, x, "%s", msg_lines[j].c_str());
-                    mvwprintw(win_chat, k, x + sz, "%*.s", max_len - sz, blank_line);
+                    mvwprintw(win_chat, k, x + sz, "%.*s", max_len - sz, blank_line);
                     k--;
                 } else
                   break;
             }
             if (k > 0) {
                 wattrset(win_chat, COLOR_PAIR(CHAT_WIN_COLOR));
-                mvwprintw(win_chat, k, 1, "%*.s", chatWidth, blank_line);
+                mvwprintw(win_chat, k, 1, "%.*s", chatWidth, blank_line);
                 k--;
             }
         } else
@@ -289,7 +296,7 @@ void updateChat(const string & myDevice) {
     }
     wattrset(win_chat, COLOR_PAIR(CHAT_WIN_COLOR));
     for (int i = k; i >= 1; i--)
-        mvwprintw(win_chat, k, 1, "%*.s", chatWidth, blank_line);
+        mvwprintw(win_chat, k, 1, "%.*s", chatWidth, blank_line);
 
     wrefresh(win_chat);
 }
@@ -390,12 +397,16 @@ int rebuildWindows() {
     init_pair(CHAT_OMSG_COLOR, COLOR_RED, COLOR_CYAN);
     wbkgd(win_chat, COLOR_PAIR(CHAT_WIN_COLOR));
     box(win_chat, 0, 0);
+    mvwprintw(win_chat, 0, (chatWidth - strlen(WIN_CHAT_TITLE))/2 + 1, WIN_CHAT_TITLE);
     wrefresh(win_chat);
 
     init_pair(INP_WIN_COLOR, COLOR_BLACK, COLOR_WHITE);
     init_pair(INP_SEL_COLOR, COLOR_WHITE, COLOR_BLACK);
     wbkgd(win_chat_input, COLOR_PAIR(INP_WIN_COLOR));
     box(win_chat_input, 0, 0);
+    w = strlen(WIN_INP_TITLE);
+    if (w > inpWidth) w = inpWidth;
+    mvwprintw(win_chat_input, 0, 1, "%.*s", w, WIN_INP_TITLE);
     wrefresh(win_chat_input);
     nodelay(win_chat_input, FALSE);
     notimeout(win_chat_input, FALSE);
@@ -406,11 +417,13 @@ int rebuildWindows() {
     init_pair(DEV_SEL_COLOR, COLOR_BLACK, COLOR_WHITE);
     wbkgd(win_device_list, COLOR_PAIR(DEV_WIN_COLOR));
     box(win_device_list, 0, 0);
+    mvwprintw(win_device_list, 0, (devWidth - strlen(WIN_DEVS_TITLE))/2 + 1, WIN_DEVS_TITLE);
     wrefresh(win_device_list);
 
     init_pair(LOG_WIN_COLOR, COLOR_RED, COLOR_CYAN);
     wbkgd(win_log, COLOR_PAIR(LOG_WIN_COLOR));
     box(win_log, 0, 0);
+    mvwprintw(win_log, 0, (logWidth - strlen(WIN_LOG_TITLE))/2 + 1, WIN_LOG_TITLE);
     wrefresh(win_log);
 
     return 0;
