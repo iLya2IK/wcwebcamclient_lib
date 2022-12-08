@@ -209,6 +209,7 @@ var NAVTREEINDEX0 =
 "lib_test_2main_8cpp-example.html":[9,0],
 "media_test_2main_8cpp-example.html":[9,1],
 "modules.html":[4],
+"multithread_test_2main_8cpp-example.html":[9,2],
 "pages.html":[],
 "struct_c_string_notify.html":[5,1],
 "struct_c_string_notify.html#a393a33300a6bfb3a849b4ae3c540cbda":[5,1,1],
@@ -245,6 +246,6 @@ var NAVTREEINDEX0 =
 "struct_task_notify.html#ab9832130aec8a15c5e70fcff5cbb215c":[5,10,0],
 "structure.html":[2],
 "structure.html#autotoc_md48":[2,0],
-"theora_test_2input_strm_2main_8cpp-example.html":[9,2],
+"theora_test_2input_strm_2main_8cpp-example.html":[9,4],
 "theora_test_2output_strm_2main_8cpp-example.html":[9,3]
 };
