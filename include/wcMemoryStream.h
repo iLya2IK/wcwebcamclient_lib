@@ -54,7 +54,6 @@ class wcMemoryStream : public wcCustomMemoryStream
             wcCustomMemoryStream::setPointer(malloc(aSize), aSize);
             mCapacity = aSize;
         };
-        virtual ~wcMemoryStream();
         virtual void setPointer(const void * aBuf, size_t aSize) override;
         size_t write(const void * src, size_t len);
         void copyFrom(wcCustomMemoryStream* src, size_t cnt) override;

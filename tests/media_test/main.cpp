@@ -114,6 +114,12 @@ void getRecordMeta(wcHandle self, wcTask task, const char * jObj)
 /* Callback. The request to save the media record has been completed. The response has arrived. */
 void afterSaveRecord(wcHandle self, wcTask task)
 {
+    char * file_name = NULL;
+
+    if ((wcTaskGetUserData(task, (void**)&file_name) == WC_OK) && file_name) {
+        cout << "file " << file_name << " sended" << endl;
+    }
+
     running = 3;
 }
 
@@ -200,18 +206,14 @@ int main(int argc, char * argv[])
                     cerr << input_media_file << ": error: " << errno << endl;
                     return 1;
                 }
-
                 fp.seekg (0, ios::end);
                 long fsize = fp.tellg();
                 fp.seekg (0, ios::beg);
-
                 char * mem = (char*)malloc(fsize);
-
                 fp.read (mem, fsize);
-
                 fp.close();
 
-                wcSaveRecord(client, mem, fsize, "PNG", mem);
+                wcSaveRecord(client, mem, fsize, "PNG", (void*) input_media_file.c_str());
 
                 running = 4;
                 break;

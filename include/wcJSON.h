@@ -13,11 +13,11 @@ class wcJSON
         wcJSON(const char * value) {
             mJSON = intern_parse(value);
         };
-        wcJSON(const wcJSON & value) {
-            mJSON = value.mJSON;
-            mErrorStr = value.mErrorStr;
-            jobjown = value.jobjown;
-        };
+        wcJSON(const wcJSON & value) :
+            mJSON (value.mJSON),
+            jobjown (value.jobjown),
+            mErrorStr (value.mErrorStr)
+        {};
         wcJSON(const std::string & value) {
             mJSON = intern_parse(value.c_str());
         }

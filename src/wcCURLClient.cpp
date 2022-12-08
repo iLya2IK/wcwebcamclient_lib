@@ -812,11 +812,11 @@ void wcCURLClient::successUpdateMsgs(void* ATask)
             {
                 JSON_CLIENT_CALLBACK(SuccessUpdateMsgs, ATask, jArr);
 
-                int size = jArr.length();
-                for (int i = 0; i < size; i++) {
+                int tsize = jArr.length();
+                for (int i = tsize-1; i >= 0; i--) {
                     wcJSON jEl = jArr.getArrayItem(i);
                     wcJSON stamp = jEl.getObjItem(JSON_RPC_STAMP);
-                    if (stamp.isValid()) {
+                    if (stamp.isString()) {
                         setLastMsgsStamp(std::string(stamp.valueString()));
                         break;
                     }
@@ -840,11 +840,11 @@ void wcCURLClient::successUpdateRecords(void* ATask)
             {
                 JSON_CLIENT_CALLBACK(SuccessUpdateRecords, ATask, jArr);
 
-                int size = jArr.length();
-                for (int i = 0; i < size; i++) {
+                int tsize = jArr.length();
+                for (int i = tsize-1; i >= 0; i--) {
                     wcJSON jEl = jArr.getArrayItem(i);
                     wcJSON stamp = jEl.getObjItem(JSON_RPC_STAMP);
-                    if (stamp.isValid()) {
+                    if (stamp.isString()) {
                         setLastRecsStamp(std::string(stamp.valueString()));
                         break;
                     }

@@ -105,8 +105,3 @@ void wcMemoryStream::copyFrom(wcCustomMemoryStream* src, size_t cnt)
     size_t wc = write(src->getOffsMemory(), cnt);
     src->seek(wc, 1);
 }
-
-wcMemoryStream::~wcMemoryStream()
-{
-    clearStr();
-}

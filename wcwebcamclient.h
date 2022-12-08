@@ -1019,6 +1019,12 @@ wcRCode DLLEXPORT wcInTaskPopFrame(wcTask task, void ** data, size_t * len);
  */
 
 /** \include commline_tools.h
+    \example multithread_test/main.cpp
+ * This is an example of how to use the wcWebCamClient library.
+ * A simple chat program to demonstrate multithreading and working with messages.
+ */
+
+/** \include commline_tools.h
     \example theora_test/output_strm/main.cpp
  * This is an example of how to use the wcWebCamClient library.
  * A simple test program to demonstrate the streaming of output data.

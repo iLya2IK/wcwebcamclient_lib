@@ -295,17 +295,17 @@ void wcHTTP2BackgroundTasks::doIdle()
 
     mCURLM->lock();
         if (ready()) {
-            response_code = curl_multi_perform(mCURLM->getValue(), &still_running);
+            response_code = curl_multi_perform(mCURLM->getValueUnsafe(), &still_running);
 
             if (response_code == CURLE_OK) {
                 CURLMsg * m;
                 do {
-                    m = curl_multi_info_read(mCURLM->getValue(), &msgq);
+                    m = curl_multi_info_read(mCURLM->getValueUnsafe(), &msgq);
                     if ((ASSIGNED(m)) && (m->msg == CURLMSG_DONE))
                          doForAllEx(DoExecuteExSet(wcHTTP2BackgroundTasks_setTaskFinished, this), m);
                 } while ( ASSIGNED(m) );
                 if (still_running > 0)
-                    response_code = curl_multi_poll(mCURLM->getValue(), NULL, 0, 200, NULL);
+                    response_code = curl_multi_poll(mCURLM->getValueUnsafe(), NULL, 0, 200, NULL);
             }
         } else
           response_code = 0;

@@ -1,6 +1,7 @@
 #include "wcwebcamclient.h"
 #include "wcCURLClient.h"
 #include "wcJSON.h"
+#include <tsObject.h>
 
 class wcInternalClient
 {
@@ -24,37 +25,80 @@ public:
 extern "C" {
 #endif
 
-static std::vector<wcInternalClient*> wcClients;
+
+class wcClientsList : public tsObject {
+public:
+    void push_back(wcInternalClient * obj) {
+        lock();
+        mList.push_back(obj);
+        unlock();
+    }
+    size_t size() {
+        lock();
+        size_t len = mList.size();
+        unlock();
+        return len;
+    }
+    wcInternalClient * at(int i) {
+        lock();
+        wcInternalClient * obj = mList[i];
+        unlock();
+        return obj;
+    }
+    void push_back_unsafe(wcInternalClient * obj) {
+        mList.push_back(obj);
+    }
+    size_t size_unsafe() {
+        return mList.size();
+    }
+    wcInternalClient * at_unsafe(int pos) {
+        return mList[pos];
+    }
+    void set_unsafe(int pos, wcInternalClient * v) {
+        mList[pos] = v;
+    }
+    void clean_at(int pos) {
+        lock();
+        delete mList[pos];
+        mList[pos] = NULL;
+        unlock();
+    }
+private:
+    std::vector<wcInternalClient*> mList;
+};
+static wcClientsList wcClients;
 
 wcHandle DLLEXPORT wcClientCreate() {
     wcHandle res = -1;
     wcInternalClient* e = new wcInternalClient(res);
-    for (size_t i = 0; i < wcClients.size(); i++)
+    wcClients.lock();
+    for (size_t i = 0; i < wcClients.size_unsafe(); i++)
     {
-        if (!ASSIGNED(wcClients[i])) res = (wcHandle)i;
+        if (!ASSIGNED(wcClients.at_unsafe(i))) res = (wcHandle)i;
     }
     if (res < 0)
     {
-        wcClients.push_back(e);
-        res = (wcHandle)wcClients.size() - 1;
+        wcClients.push_back_unsafe(e);
+        res = (wcHandle)wcClients.size_unsafe() - 1;
     }
     else
     {
-        wcClients[res] = e;
+        wcClients.set_unsafe(res, e);
     }
     e->handle = res;
+    wcClients.unlock();
     return res;
 }
 inline int CheckClient(wcHandle & handle) {
 	if (handle < (int)wcClients.size() && handle >= 0) {
-		if ASSIGNED(wcClients[handle]) {
+		if ASSIGNED(wcClients.at(handle)) {
                 return WC_OK;
 		};
 	};
 	return WC_BAD_TARGET;
 }
 
-#define WC_CLIENT(arg) wcClients[arg]->client
+#define WC_CLIENT(arg) wcClients.at(arg)->client
 
 inline int CheckTask(wcTask task, uint32_t allowed) {
     if ASSIGNED(task) {
@@ -403,25 +447,28 @@ wcRCode DLLEXPORT wcClientDestroy(wcHandle client) {
     wcRCode v = CheckClient(client);
     if (v != WC_OK) return v;
 
-    delete wcClients[client];
-    wcClients[client] =  NULL;
+    wcClients.clean_at(client);
 
     return v;
 }
 
 inline wcInternalClient * findClient(wcCallbackClient client) {
-    for (size_t i = 0; i < wcClients.size(); i++)
+    wcClients.lock();
+    for (size_t i = 0; i < wcClients.size_unsafe(); i++)
     {
-        if (ASSIGNED(wcClients[i])) {
-            if (wcClients[i]->client == client)
-                return wcClients[i];
+        if (ASSIGNED(wcClients.at_unsafe(i))) {
+            if (wcClients.at_unsafe(i)->client == client) {
+                wcClients.unlock();
+                return wcClients.at(i);
+            }
         }
     }
+    wcClients.unlock();
     return NULL;
 }
 
 inline void setIntClientCallback(wcHandle client, wcCallback cb, void * func) {
-    wcClients[client]->setCallback(cb, func);
+    wcClients.at(client)->setCallback(cb, func);
 }
 
 
