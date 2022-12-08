@@ -228,6 +228,7 @@ $(document).ready(function(){initNavTree('multithread_test_2main_8cpp-example.ht
 <div class="line"><span class="preprocessor">#include &lt;fstream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;curses.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="wcwebcamclient_8h.html">wcwebcamclient.h</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;cstring&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;chrono&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;wcJSON.h&gt;</span></div>
@@ -259,6 +260,11 @@ $(document).ready(function(){initNavTree('multithread_test_2main_8cpp-example.ht
 <div class="line"><span class="preprocessor">#define CHAT_MSG_COLOR 7</span></div>
 <div class="line"><span class="preprocessor">#define CHAT_IMSG_COLOR 8</span></div>
 <div class="line"><span class="preprocessor">#define CHAT_OMSG_COLOR 9</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * WIN_CHAT_TITLE = <span class="stringliteral">&quot;Chat&quot;</span>;</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * WIN_LOG_TITLE = <span class="stringliteral">&quot;Log&quot;</span>;</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * WIN_DEVS_TITLE = <span class="stringliteral">&quot;Devices [UP]/[DOWN]&quot;</span>;</div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * WIN_INP_TITLE = <span class="stringliteral">&quot;Input message here, [Enter] to send to target device&quot;</span>;</div>
 <div class="line"> </div>
 <div class="line">WINDOW * win_chat_input = NULL;</div>
 <div class="line">WINDOW * win_device_list = NULL;</div>
@@ -401,10 +407,11 @@ $(document).ready(function(){initNavTree('multithread_test_2main_8cpp-example.ht
 <div class="line">            <span class="keywordtype">int</span> dir = 0;</div>
 <div class="line"> </div>
 <div class="line">            <span class="keywordflow">if</span> (myDevice.compare(msg.getDevice()) == 0) {</div>
-<div class="line">                <span class="keywordflow">if</span> (myDevice.compare(msg.getTarget()) == 0)</div>
+<div class="line">                <span class="keywordtype">string</span> v = msg.getTarget();</div>
+<div class="line">                <span class="keywordflow">if</span> ((myDevice.compare(v) == 0) || (v.empty()))</div>
 <div class="line">                    msg_lines.push_back(<span class="keywordtype">string</span>(myDevice + <span class="keywordtype">string</span>(<span class="stringliteral">&quot;--&quot;</span>) + myDevice));</div>
 <div class="line">                <span class="keywordflow">else</span> {</div>
-<div class="line">                    msg_lines.push_back(<span class="keywordtype">string</span>(myDevice + <span class="keywordtype">string</span>(<span class="stringliteral">&quot;-&gt;&quot;</span>) + msg.getTarget()));</div>
+<div class="line">                    msg_lines.push_back(<span class="keywordtype">string</span>(myDevice + <span class="keywordtype">string</span>(<span class="stringliteral">&quot;-&gt;&quot;</span>) + v));</div>
 <div class="line">                    dir = 1;</div>
 <div class="line">                }</div>
 <div class="line">            } <span class="keywordflow">else</span> {</div>
@@ -476,7 +483,7 @@ $(document).ready(function(){initNavTree('multithread_test_2main_8cpp-example.ht
 <div class="line">                <span class="keywordtype">int</span> sz = (int) msg_lines[j].size();</div>
 <div class="line">                <span class="keywordflow">if</span> (k &gt; 0) {</div>
 <div class="line">                    wattrset(win_chat, COLOR_PAIR(CHAT_WIN_COLOR));</div>
-<div class="line">                    mvwprintw(win_chat, k, 1, <span class="stringliteral">&quot;%*.s&quot;</span>, chatWidth, blank_line);</div>
+<div class="line">                    mvwprintw(win_chat, k, 1, <span class="stringliteral">&quot;%.*s&quot;</span>, chatWidth, blank_line);</div>
 <div class="line">                    <span class="keywordflow">switch</span> (dir) {</div>
 <div class="line">                        <span class="keywordflow">case</span> 0 : {wattrset(win_chat, COLOR_PAIR(CHAT_MSG_COLOR));</div>
 <div class="line">                                  <span class="keywordflow">break</span>;}</div>
@@ -486,14 +493,14 @@ $(document).ready(function(){initNavTree('multithread_test_2main_8cpp-example.ht
 <div class="line">                                  <span class="keywordflow">break</span>;}</div>
 <div class="line">                    }</div>
 <div class="line">                    mvwprintw(win_chat, k, x, <span class="stringliteral">&quot;%s&quot;</span>, msg_lines[j].c_str());</div>
-<div class="line">                    mvwprintw(win_chat, k, x + sz, <span class="stringliteral">&quot;%*.s&quot;</span>, max_len - sz, blank_line);</div>
+<div class="line">                    mvwprintw(win_chat, k, x + sz, <span class="stringliteral">&quot;%.*s&quot;</span>, max_len - sz, blank_line);</div>
 <div class="line">                    k--;</div>
 <div class="line">                } <span class="keywordflow">else</span></div>
 <div class="line">                  <span class="keywordflow">break</span>;</div>
 <div class="line">            }</div>
 <div class="line">            <span class="keywordflow">if</span> (k &gt; 0) {</div>
 <div class="line">                wattrset(win_chat, COLOR_PAIR(CHAT_WIN_COLOR));</div>
-<div class="line">                mvwprintw(win_chat, k, 1, <span class="stringliteral">&quot;%*.s&quot;</span>, chatWidth, blank_line);</div>
+<div class="line">                mvwprintw(win_chat, k, 1, <span class="stringliteral">&quot;%.*s&quot;</span>, chatWidth, blank_line);</div>
 <div class="line">                k--;</div>
 <div class="line">            }</div>
 <div class="line">        } <span class="keywordflow">else</span></div>
@@ -501,7 +508,7 @@ $(document).ready(function(){initNavTree('multithread_test_2main_8cpp-example.ht
 <div class="line">    }</div>
 <div class="line">    wattrset(win_chat, COLOR_PAIR(CHAT_WIN_COLOR));</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = k; i &gt;= 1; i--)</div>
-<div class="line">        mvwprintw(win_chat, k, 1, <span class="stringliteral">&quot;%*.s&quot;</span>, chatWidth, blank_line);</div>
+<div class="line">        mvwprintw(win_chat, k, 1, <span class="stringliteral">&quot;%.*s&quot;</span>, chatWidth, blank_line);</div>
 <div class="line"> </div>
 <div class="line">    wrefresh(win_chat);</div>
 <div class="line">}</div>
@@ -602,12 +609,16 @@ $(document).ready(function(){initNavTree('multithread_test_2main_8cpp-example.ht
 <div class="line">    init_pair(CHAT_OMSG_COLOR, COLOR_RED, COLOR_CYAN);</div>
 <div class="line">    wbkgd(win_chat, COLOR_PAIR(CHAT_WIN_COLOR));</div>
 <div class="line">    box(win_chat, 0, 0);</div>
+<div class="line">    mvwprintw(win_chat, 0, (chatWidth - strlen(WIN_CHAT_TITLE))/2 + 1, WIN_CHAT_TITLE);</div>
 <div class="line">    wrefresh(win_chat);</div>
 <div class="line"> </div>
 <div class="line">    init_pair(INP_WIN_COLOR, COLOR_BLACK, COLOR_WHITE);</div>
 <div class="line">    init_pair(INP_SEL_COLOR, COLOR_WHITE, COLOR_BLACK);</div>
 <div class="line">    wbkgd(win_chat_input, COLOR_PAIR(INP_WIN_COLOR));</div>
 <div class="line">    box(win_chat_input, 0, 0);</div>
+<div class="line">    w = strlen(WIN_INP_TITLE);</div>
+<div class="line">    <span class="keywordflow">if</span> (w &gt; inpWidth) w = inpWidth;</div>
+<div class="line">    mvwprintw(win_chat_input, 0, 1, <span class="stringliteral">&quot;%.*s&quot;</span>, w, WIN_INP_TITLE);</div>
 <div class="line">    wrefresh(win_chat_input);</div>
 <div class="line">    nodelay(win_chat_input, FALSE);</div>
 <div class="line">    notimeout(win_chat_input, FALSE);</div>
@@ -618,11 +629,13 @@ $(document).ready(function(){initNavTree('multithread_test_2main_8cpp-example.ht
 <div class="line">    init_pair(DEV_SEL_COLOR, COLOR_BLACK, COLOR_WHITE);</div>
 <div class="line">    wbkgd(win_device_list, COLOR_PAIR(DEV_WIN_COLOR));</div>
 <div class="line">    box(win_device_list, 0, 0);</div>
+<div class="line">    mvwprintw(win_device_list, 0, (devWidth - strlen(WIN_DEVS_TITLE))/2 + 1, WIN_DEVS_TITLE);</div>
 <div class="line">    wrefresh(win_device_list);</div>
 <div class="line"> </div>
 <div class="line">    init_pair(LOG_WIN_COLOR, COLOR_RED, COLOR_CYAN);</div>
 <div class="line">    wbkgd(win_log, COLOR_PAIR(LOG_WIN_COLOR));</div>
 <div class="line">    box(win_log, 0, 0);</div>
+<div class="line">    mvwprintw(win_log, 0, (logWidth - strlen(WIN_LOG_TITLE))/2 + 1, WIN_LOG_TITLE);</div>
 <div class="line">    wrefresh(win_log);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
@@ -944,7 +957,7 @@ $(document).ready(function(){initNavTree('multithread_test_2main_8cpp-example.ht
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Dec 8 2022 11:56:29 for wcWebCamClient lib by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Dec 8 2022 12:49:26 for wcWebCamClient lib by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

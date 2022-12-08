@@ -19,7 +19,12 @@ h1 {
     pointer-events: all !important;
 }
 
-.svg_image .img {
+.svg_image .inline {
+    width: 100% !important;
+    pointer-events: all !important;
+}
+
+.svg_image .inline > * {
     width: 100% !important;
     pointer-events: all !important;
 }
