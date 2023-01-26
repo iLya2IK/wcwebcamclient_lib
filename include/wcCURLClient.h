@@ -66,6 +66,7 @@ class wcCURLClient : public tsObject
         bool getConnected();
         bool getNeedToUpdateDevices();
         bool getNeedToUpdateMsgs();
+        bool getNeedToSyncMsgs();
         bool getNeedToUpdateStreams();
         bool getNeedToUpdateRecords();
         bool getStreaming();
@@ -77,6 +78,7 @@ class wcCURLClient : public tsObject
         void clearLastRecsStamp();
 
         void setNeedToUpdateMsgs(bool AValue);
+        void setNeedToSyncMsgs(bool AValue);
         void setNeedToUpdateDevices(bool AValue);
         void setNeedToUpdateStreams(bool AValue);
         void setNeedToUpdateRecords(bool AValue);
@@ -198,6 +200,7 @@ class wcCURLClient : public tsObject
             mNeedToUpdateDevices{false},
             mNeedToUpdateRecords{false},
             mNeedToUpdateMsgs{false},
+            mNeedToSyncMsgs{false},
             mNeedToUpdateStreams{false},
             mStreaming{false},
             mInitialized{false};

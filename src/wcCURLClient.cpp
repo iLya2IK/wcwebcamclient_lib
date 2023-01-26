@@ -259,6 +259,14 @@ bool wcCURLClient::getNeedToUpdateMsgs()
     return res;
 }
 
+bool wcCURLClient::getNeedToSyncMsgs()
+{
+    lock();
+    bool res = mNeedToSyncMsgs;
+    unlock();
+    return res;
+}
+
 bool wcCURLClient::getNeedToUpdateRecords()
 {
     lock();
@@ -286,6 +294,13 @@ void wcCURLClient::setNeedToUpdateMsgs(bool AValue)
 {
     lock();
     mNeedToUpdateMsgs = AValue;
+    unlock();
+}
+
+void wcCURLClient::setNeedToSyncMsgs(bool AValue)
+{
+    lock();
+    mNeedToSyncMsgs = AValue;
     unlock();
 }
 
@@ -392,6 +407,7 @@ void wcCURLClient::disconnect()
     mNeedToUpdateRecords = false;
     mNeedToUpdateMsgs    = false;
     mNeedToUpdateStreams = false;
+    mNeedToSyncMsgs      = false;
     unlock();
 
     if _ASSIGNED(mOnDisconnect)
@@ -412,7 +428,7 @@ void wcCURLClient::authorize(const std::string & aName, const std::string & aPas
         jObj.add_cString(JSON_RPC_META, getMetaData().c_str());
     }
     std::string aStr = jObj.toString();
-    disconnect();
+    if (getConnected()) disconnect();
     std::string aMsg("/authorize.json");
     doPost(aMsg, aStr, {intern_SuccessAuth, this}, false, NULL);
 }
@@ -495,7 +511,11 @@ void wcCURLClient::updateMsgs()
     jObj.add_cString(JSON_RPC_SHASH, getSID().c_str());
     jObj.add_cString(JSON_RPC_STAMP, getLastMsgsStamp().c_str());
     std::string aStr = jObj.toString();
-    std::string aMsg("/getMsgs.json");
+    std::string aMsg;
+    if (getNeedToSyncMsgs())
+        aMsg = std::string("/getMsgsAndSync.json");
+    else
+        aMsg = std::string("/getMsgs.json");
     doPost(aMsg, aStr, {intern_SuccessUpdateMsgs, this});
 }
 

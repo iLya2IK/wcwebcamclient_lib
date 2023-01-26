@@ -171,28 +171,29 @@ wcCallback;
  * @{
  */
 typedef enum wcStateId {
-    wcstConnection = 0,
-    wcstVerifyTLS,
-    wcstError,
-    wcstLog,
-    wcstStreaming,
-    wcstStreams,
-    wcstDevices,
-    wcstRecords,
-    wcstRecordsStamp,
-    wcstMsgs,
-    wcstMsgsStamp,
-    wcstMetaData,
-    wcstDeviceName,
-    wcstSID,
-    wcstHostName,
-    wcstProxy,
-    wcstProxyAuth,
-    wcstProxyProtocol,
-    wcstProxyHost,
-    wcstProxyPort,
-    wcstProxyUser,
-    wcstProxyPwrd  }
+    wcstConnection      = 0,
+    wcstVerifyTLS       = 1,
+    wcstError           = 2,
+    wcstLog             = 3,
+    wcstStreaming       = 4,
+    wcstStreams         = 5,
+    wcstDevices         = 6,
+    wcstRecords         = 7,
+    wcstRecordsStamp    = 8,
+    wcstMsgs            = 9,
+    wcstSendWithSync    = 22,  /*!< since v0.8 */
+    wcstMsgsStamp       = 10,
+    wcstMetaData        = 11,
+    wcstDeviceName      = 12,
+    wcstSID             = 13,
+    wcstHostName        = 14,
+    wcstProxy           = 15,
+    wcstProxyAuth       = 16,
+    wcstProxyProtocol   = 17,
+    wcstProxyHost       = 18,
+    wcstProxyPort       = 19,
+    wcstProxyUser       = 20,
+    wcstProxyPwrd       = 21 }
 #ifdef __GNUC__
 __attribute__((__packed__))
 #endif
@@ -361,6 +362,7 @@ wcRCode DLLEXPORT wcClientDestroy(wcHandle client);
  * \ref wcstRecords - update the list of media records (see also \ref getRecordCount - according to the results of the request, the wcstRecordsStamp state will be updated automatically),<br>
  * \ref wcstRecordsStamp - clear the timestamp for records (the *stamp* parameter in \ref getRecordCount request),<br>
  * \ref wcstMsgs - update the list of messages (see also \ref getMsgs - according to the results of the request, the wcstMsgsStamp state will be updated automatically),<br>
+ * \ref wcstSendWithSync - uncheck the synchronization flag - the next update of the message list will occur with the sending of a 'sync' message ( \ref getMsgsAndSync),<br>
  * \ref wcstMsgsStamp - clear the timestamp for messages (the *stamp* parameter in \ref getMsgs request),<br>
  * \ref wcstStreams - update the list of streams (see also \ref getStreams),<br>
  * \ref wcstMetaData - clear the metadata,<br>
@@ -411,6 +413,7 @@ wcRCode DLLEXPORT wcClientGetIntState(wcHandle client, wcStateId aStateId, int *
  * \ref wcstDevices - should client update the list of devices,<br>
  * \ref wcstRecords - should client update the list of media records,<br>
  * \ref wcstMsgs - should client update the list of messages,<br>
+ * \ref wcstSendWithSync - get the synchronization flag (see also: \ref getMsgsAndSync,  \ref getMsgs),<br>
  * \ref wcstStreams - should client update the list of streams.<br>
  *
  * \param client          The client handle.
@@ -423,11 +426,13 @@ wcRCode DLLEXPORT wcClientGetBoolState(wcHandle client, wcStateId aStateId);
 //! \brief Set the boolean value to the selected client state.
 /*! Acceptable values of the state param are:<br>
  * \ref wcstConnection - disconnect ( \ref WC_FALSE, see also \ref wcClientDisconnect) the client ( \ref WC_TRUE not allowed, use \ref wcClientAuth instead), <br>
- * \ref wcstVerifyTLS - should client verify TLS certificate ( \ref WC_TRUE/ \ref WC_FALSE allowed),  <br>
+ * \ref wcstVerifyTLS - should client verify TLS certificate (both \ref WC_TRUE/ \ref WC_FALSE allowed),  <br>
  * \ref wcstStreaming - stop streaming ( \ref WC_FALSE) for the client ( \ref WC_TRUE not allowed, use \ref wcLaunchOutStream instead),<br>
  * \ref wcstDevices - the client should update the list of devices (only \ref WC_TRUE value allowed),<br>
  * \ref wcstRecords - the client should update the list of media records (only \ref WC_TRUE value allowed),<br>
  * \ref wcstMsgs - the client should update the list of messages (only \ref WC_TRUE value allowed),<br>
+ * \ref wcstSendWithSync - set the synchronization flag (both \ref WC_TRUE/ \ref WC_FALSE allowed) -
+ * the next update of the message list will occur with or without the sending of a 'sync' message ( \ref getMsgsAndSync,  \ref getMsgs),<br>
  * \ref wcstStreams - the client should update the list of streams (only \ref WC_TRUE value allowed).<br>
  *
  * \param client          The client handle.

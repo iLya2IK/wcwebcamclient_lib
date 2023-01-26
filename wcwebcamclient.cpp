@@ -177,6 +177,9 @@ wcRCode DLLEXPORT wcClientInvalidateState(wcHandle client, wcStateId aStateId) {
     case wcstMsgs :
         WC_CLIENT(client)->setNeedToUpdateMsgs(true);
         break;
+    case wcstSendWithSync :
+        WC_CLIENT(client)->setNeedToSyncMsgs(false);
+        break;
     case wcstMsgsStamp:
         WC_CLIENT(client)->clearLastMsgsStamp();
         break;
@@ -255,6 +258,9 @@ wcRCode DLLEXPORT wcClientGetBoolState(wcHandle client, wcStateId aStateId) {
     case wcstMsgs :
         if (WC_CLIENT(client)->getNeedToUpdateMsgs()) v = WC_TRUE;
         break;
+    case wcstSendWithSync :
+        if (WC_CLIENT(client)->getNeedToSyncMsgs()) v = WC_TRUE;
+        break;
     default :
         v = WC_BAD_PARAM;
         break;
@@ -306,6 +312,9 @@ wcRCode DLLEXPORT wcClientSetBoolState(wcHandle client, wcStateId aStateId, wcSt
             WC_CLIENT(client)->setNeedToUpdateMsgs(true);
         else
             v = WC_BAD_VALUE;
+        break;
+    case wcstSendWithSync :
+        WC_CLIENT(client)->setNeedToSyncMsgs(aStateVal == WC_TRUE);
         break;
     default :
         v = WC_BAD_PARAM;
