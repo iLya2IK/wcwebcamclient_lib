@@ -13,6 +13,7 @@ var group__wc_client_getters_setters =
       [ "wcstRecords", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aae03ffeb519318983af4a7e1f51b7f922", null ],
       [ "wcstRecordsStamp", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aaf8cf7a58830e3c3b386ad1e791ef0ca7", null ],
       [ "wcstMsgs", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aac7b6bd153a2123bc35c85c1f911729a5", null ],
+      [ "wcstSendWithSync", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aac5539f3c7c3ebf402a62332a09d375a0", null ],
       [ "wcstMsgsStamp", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa9c4c5142370220db4d0d8ab43de8dae7", null ],
       [ "wcstMetaData", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aace42dcc05f883ac24529ba6c72c3eec2", null ],
       [ "wcstDeviceName", "group__wc_client_getters_setters.html#ggadfaa57b72e59d00fa03e0a1fd5ff4c5aa82a89872b009222639406f7a906b261d", null ],
