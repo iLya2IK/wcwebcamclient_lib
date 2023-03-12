@@ -410,6 +410,8 @@ void wcCURLClient::disconnect()
     mNeedToSyncMsgs      = false;
     unlock();
 
+    synchroFinishTasks();
+
     if _ASSIGNED(mOnDisconnect)
         EXEC_METHOD(mOnDisconnect, this);
 
