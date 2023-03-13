@@ -286,7 +286,7 @@ bool wcCURLClient::getStreaming()
 void wcCURLClient::stopStreaming()
 {
     if (getStreaming()) {
-        //find streaming tasks and stop them
+        mTaskPool->getTasks()->closeStreaming();
     }
 }
 

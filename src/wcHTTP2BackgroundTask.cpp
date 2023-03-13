@@ -206,6 +206,14 @@ void wcHTTP2BackgroundTasks_terminateTask(void* obj, void* aTsk)
     static_cast<wcHTTP2BackgroundTask*>(aTsk)->terminate();
 }
 
+void wcHTTP2BackgroundTasks_setStreamFinished(void* obj, void* aTsk)
+{
+    wcHTTP2BackgroundTask * anTask = static_cast<wcHTTP2BackgroundTask*>(aTsk);
+    if (anTask->getTaskClass() & (WC_OUT_STREAM_TASK|WC_IN_STREAM_TASK)) {
+        anTask->terminate();
+    }
+}
+
 void wcHTTP2BackgroundTasks_afterTaskExtract(void* obj, void* aTsk)
 {
     wcHTTP2BackgroundTask* aTask = static_cast<wcHTTP2BackgroundTask*>(aTsk);
@@ -321,6 +329,11 @@ void wcHTTP2BackgroundTasks::doIdle()
 void wcHTTP2BackgroundTasks::terminate()
 {
     doForAll(DoExecuteSet(wcHTTP2BackgroundTasks_terminateTask, this));
+}
+
+void wcHTTP2BackgroundTasks::closeStreaming()
+{
+    doForAll(DoExecuteSet(wcHTTP2BackgroundTasks_setStreamFinished, this));
 }
 
 bool wcHTTP2BackgroundTasks::ready()

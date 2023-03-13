@@ -26,6 +26,7 @@ class wcHTTP2BackgroundTasks : public wcHTTP2BackgroundTasksProto
         bool doInitMultiPipeling();
         void doIdle();
         void terminate();
+        void closeStreaming();
 
         bool ready();
 
