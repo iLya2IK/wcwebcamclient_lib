@@ -275,17 +275,25 @@ bool wcCURLClient::getNeedToUpdateRecords()
     return res;
 }
 
-bool wcCURLClient::getStreaming()
+bool wcCURLClient::getIsStreaming()
 {
     lock();
-    bool res = mStreaming;
+    bool res = (mStreaming != 0);
+    unlock();
+    return res;
+}
+
+int wcCURLClient::getStreaming()
+{
+    lock();
+    int res = mStreaming;
     unlock();
     return res;
 }
 
 void wcCURLClient::stopStreaming()
 {
-    if (getStreaming()) {
+    if (getIsStreaming()) {
         mTaskPool->getTasks()->closeStreaming();
     }
 }
@@ -318,10 +326,17 @@ void wcCURLClient::setNeedToUpdateRecords(bool AValue)
     unlock();
 }
 
-void wcCURLClient::setStreaming(bool AValue)
+void wcCURLClient::setStreaming(int AValue)
 {
     lock();
-    mStreaming = AValue;
+    mStreaming |= AValue;
+    unlock();
+}
+
+void wcCURLClient::unsetStreaming(int AValue)
+{
+    lock();
+    mStreaming &= ~(AValue & 0xF);
     unlock();
 }
 
@@ -961,7 +976,7 @@ bool wcCURLClient::launchOutStream(const std::string & aSubProto, int delta, voi
 
         Tsk->launchStream({intern_GetNextFrame, this});
         getTaskPool()->addTask(Tsk);
-        setStreaming(true);
+        setStreaming(WC_OUT_STREAM_TASK);
 
         return true;
     }
@@ -984,6 +999,7 @@ bool wcCURLClient::launchInStream(const std::string& aDevice, void * data)
 
         Tsk->launchStream({intern_HasNextFrame, this});
         getTaskPool()->addTask(Tsk);
+        setStreaming(WC_IN_STREAM_TASK);
 
         return true;
     }
@@ -1000,9 +1016,7 @@ void wcCURLClient::successIOStream(void* ATask)
 {
     wcHTTP2BackgroundTask* ATaskObj = static_cast<wcHTTP2BackgroundTask*>(ATask);
     ATaskObj->lock();
-    //if (dynamic_cast<wcHTTP2BackgroundOutStreamTask*>(ATaskObj) != NULL)
-    if (ATaskObj->getTaskClass() == WC_OUT_STREAM_TASK)
-        setStreaming(false);
+    unsetStreaming(ATaskObj->getTaskClass());
     ATaskObj->unlock();
     if _ASSIGNED(mOnSuccessIOStream)
         EXEC_METHOD(mOnSuccessIOStream, ATask);

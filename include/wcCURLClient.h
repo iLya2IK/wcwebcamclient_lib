@@ -69,8 +69,9 @@ class wcCURLClient : public tsObject
         bool getNeedToSyncMsgs();
         bool getNeedToUpdateStreams();
         bool getNeedToUpdateRecords();
-        bool getStreaming();
+        bool getIsStreaming();
         bool hasError();
+        int  getStreaming();
         int  getLastError();
         int  getLastSubError();
         void clearError();
@@ -183,7 +184,8 @@ class wcCURLClient : public tsObject
         virtual void synchroUpdateTasks();
 
         virtual void setConnected(bool AValue);
-        void setStreaming(bool AValue);
+        void setStreaming(int AValue);
+        void unsetStreaming(int AValue);
         void setSID(std::string& AValue);
 
         virtual wcJSON consumeResponseToObj(wcHTTP2BackgroundTask * ATask);
@@ -202,8 +204,8 @@ class wcCURLClient : public tsObject
             mNeedToUpdateMsgs{false},
             mNeedToSyncMsgs{false},
             mNeedToUpdateStreams{false},
-            mStreaming{false},
             mInitialized{false};
+        int mStreaming{0};
 
         TaskNotify mOnSuccessIOStream {NULL_TaskNotify};
         TaskNotify mOnSynchroUpdateTask {NULL_TaskNotify};

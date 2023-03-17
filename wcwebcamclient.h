@@ -171,39 +171,39 @@ wcCallback;
  * @{
  */
 typedef enum wcStateId {
-    wcstConnection      = 0,
-    wcstVerifyTLS       = 1,
-    wcstError           = 2,
-    wcstLog             = 3,
-    wcstStreaming       = 4,
-    wcstStreams         = 5,
-    wcstDevices         = 6,
-    wcstRecords         = 7,
-    wcstRecordsStamp    = 8,
-    wcstMsgs            = 9,
-    wcstSendWithSync    = 22,  /*!< since v0.8 */
-    wcstMsgsStamp       = 10,
-    wcstMetaData        = 11,
-    wcstDeviceName      = 12,
-    wcstSID             = 13,
-    wcstHostName        = 14,
-    wcstProxy           = 15,
-    wcstProxyAuth       = 16,
-    wcstProxyProtocol   = 17,
-    wcstProxyHost       = 18,
-    wcstProxyPort       = 19,
-    wcstProxyUser       = 20,
-    wcstProxyPwrd       = 21 }
+    wcstConnection      = 0,   /*!< \sa wcClientGetBoolState, \sa wcClientSetBoolState */
+    wcstVerifyTLS       = 1,   /*!< \sa wcClientGetBoolState, \sa wcClientSetBoolState */
+    wcstError           = 2,   /*!< \sa wcClientInvalidateState, \sa wcClientGetIntState, \sa wcClientGetBoolState */
+    wcstLog             = 3,   /*!< \sa wcClientInvalidateState, \sa wcClientGetIntState, \sa wcClientGetBoolState, \sa wcClientGetStrValue, \sa wcClientGetStrNValue */
+    wcstStreaming       = 4,   /*!< \sa wcClientGetIntState, \sa wcClientGetBoolState, \sa wcClientSetBoolState */
+    wcstStreams         = 5,   /*!< \sa wcClientInvalidateState, \sa wcClientGetBoolState, \sa wcClientSetBoolState */
+    wcstDevices         = 6,   /*!< \sa wcClientInvalidateState, \sa wcClientGetBoolState, \sa wcClientSetBoolState */
+    wcstRecords         = 7,   /*!< \sa wcClientInvalidateState, \sa wcClientGetBoolState, \sa wcClientSetBoolState */
+    wcstRecordsStamp    = 8,   /*!< \sa wcClientInvalidateState, \sa wcClientGetStrValue, \sa wcClientGetStrNValue, \sa wcClientSetStrValue */
+    wcstMsgs            = 9,   /*!< \sa wcClientInvalidateState, \sa wcClientSetStrValue, \sa wcClientGetBoolState, \sa wcClientSetBoolState */
+    wcstSendWithSync    = 22,  /*!< 'since v0.8' \sa wcClientInvalidateState, \sa wcClientGetBoolState, \sa wcClientSetBoolState */
+    wcstMsgsStamp       = 10,  /*!< \sa wcClientInvalidateState, \sa wcClientGetStrValue, \sa wcClientGetStrNValue, \sa wcClientSetStrValue */
+    wcstMetaData        = 11,  /*!< \sa wcClientInvalidateState, \sa wcClientGetStrValue, \sa wcClientGetStrNValue, \sa wcClientSetStrValue */
+    wcstDeviceName      = 12,  /*!< \sa wcClientInvalidateState, \sa wcClientGetStrValue, \sa wcClientGetStrNValue, \sa wcClientSetStrValue */
+    wcstSID             = 13,  /*!< \sa wcClientGetStrValue, \sa wcClientGetStrNValue, \sa wcClientSetStrValue */
+    wcstHostName        = 14,  /*!< \sa wcClientInvalidateState, \sa wcClientGetStrValue, \sa wcClientGetStrNValue, \sa wcClientSetStrValue */
+    wcstProxy           = 15,  /*!< \sa wcClientInvalidateState, \sa wcClientGetStrValue, \sa wcClientGetStrNValue, \sa wcClientSetStrValue */
+    wcstProxyAuth       = 16,  /*!< \sa wcClientGetStrValue, \sa wcClientGetStrNValue */
+    wcstProxyProtocol   = 17,  /*!< \sa wcClientSetStrValue */
+    wcstProxyHost       = 18,  /*!< \sa wcClientSetStrValue */
+    wcstProxyPort       = 19,  /*!< \sa wcClientSetStrValue */
+    wcstProxyUser       = 20,  /*!< \sa wcClientSetStrValue */
+    wcstProxyPwrd       = 21 } /*!< \sa wcClientSetStrValue */
 #ifdef __GNUC__
 __attribute__((__packed__))
 #endif
 wcStateId;
 
 typedef enum wcTaskStateId {
-    wctstError = 0,
-    wctstPath,
-    wctstSubProto,
-    wctstDeviceName}
+    wctstError = 0,           /*!<  */
+    wctstPath,                /*!<  */
+    wctstSubProto,            /*!<  */
+    wctstDeviceName}          /*!<  */
 #ifdef __GNUC__
 __attribute__((__packed__))
 #endif
@@ -362,7 +362,7 @@ wcRCode DLLEXPORT wcClientDestroy(wcHandle client);
  * \ref wcstRecords - update the list of media records (see also \ref getRecordCount - according to the results of the request, the wcstRecordsStamp state will be updated automatically),<br>
  * \ref wcstRecordsStamp - clear the timestamp for records (the *stamp* parameter in \ref getRecordCount request),<br>
  * \ref wcstMsgs - update the list of messages (see also \ref getMsgs - according to the results of the request, the wcstMsgsStamp state will be updated automatically),<br>
- * \ref wcstSendWithSync - uncheck the synchronization flag - the next update of the message list will occur with the sending of a 'sync' message ( \ref getMsgsAndSync),<br>
+ * \ref wcstSendWithSync - uncheck the synchronization flag - the next update of the message list will occur without the sending of a 'sync' message ( \ref getMsgsAndSync),<br>
  * \ref wcstMsgsStamp - clear the timestamp for messages (the *stamp* parameter in \ref getMsgs request),<br>
  * \ref wcstStreams - update the list of streams (see also \ref getStreams),<br>
  * \ref wcstMetaData - clear the metadata,<br>
@@ -382,7 +382,8 @@ wcRCode DLLEXPORT wcClientInvalidateState(wcHandle client, wcStateId aStateId);
 //! \brief Get a integer value for the selected client state.
 /*! Acceptable values of the state param are:<br>
  * \ref wcstError - get a code of the last error, <br>
- * \ref wcstLog - get a length of the log.<br>
+ * \ref wcstLog - get a length of the log,<br>
+ * \ref wcstStreaming - get streaming mask (input or output stream launched).<br>
  *
  * \param client          The client handle.
  * \param aStateId        The selected client state.

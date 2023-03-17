@@ -218,6 +218,9 @@ wcRCode DLLEXPORT wcClientGetIntState(wcHandle client, wcStateId aStateId, int *
     case wcstLog :
         *aStateVal = WC_CLIENT(client)->getLogLength();
         break;
+    case wcstStreaming :
+        *aStateVal = WC_CLIENT(client)->getStreaming();
+        break;
     default :
         v = WC_BAD_PARAM;
         break;
@@ -241,7 +244,7 @@ wcRCode DLLEXPORT wcClientGetBoolState(wcHandle client, wcStateId aStateId) {
         if (WC_CLIENT(client)->hasError()) v = WC_TRUE;
         break;
     case wcstStreaming :
-        if (WC_CLIENT(client)->getStreaming()) v = WC_TRUE;
+        if (WC_CLIENT(client)->getIsStreaming()) v = WC_TRUE;
         break;
     case wcstLog :
         if (WC_CLIENT(client)->getLogLength() > 0) v = WC_TRUE;
@@ -1044,7 +1047,7 @@ wcRCode DLLEXPORT wcLaunchInStream(wcHandle client, const char * deviceName, voi
 wcRCode DLLEXPORT wcClientGetFrameID(wcHandle client, long * id) {
     wcRCode v = CheckClient(client);
     if (v != WC_OK) return v;
-    if (!(WC_CLIENT(client)->getStreaming())) return WC_CLIENT_NOT_STREAMING;
+    if ((WC_CLIENT(client)->getStreaming() & WC_OUT_STREAM_TASK) > 0) return WC_CLIENT_NOT_STREAMING;
     *id = WC_CLIENT(client)->getFrame()->getFrameID();
     return v;
 }
@@ -1066,7 +1069,7 @@ wcRCode DLLEXPORT wcClientFrameUnLock(wcHandle client) {
 wcRCode DLLEXPORT wcClientFramePushData(wcHandle client, const void * data, size_t len) {
     wcRCode v = CheckClient(client);
     if (v != WC_OK) return v;
-    if (!(WC_CLIENT(client)->getStreaming())) return WC_CLIENT_NOT_STREAMING;
+    if ((WC_CLIENT(client)->getStreaming() & WC_OUT_STREAM_TASK) > 0) return WC_CLIENT_NOT_STREAMING;
 
     wcMemoryStream * str = new wcMemoryStream(len);
     str->write(data, len);
@@ -1080,7 +1083,7 @@ wcRCode DLLEXPORT wcClientFrameGetData(wcHandle client, void ** data, size_t * l
     if (v != WC_OK) return v;
     if (!ASSIGNED(data)) return WC_BAD_PARAM;
     if (!ASSIGNED(len)) return WC_BAD_PARAM;
-    if (!(WC_CLIENT(client)->getStreaming())) return WC_CLIENT_NOT_STREAMING;
+    if ((WC_CLIENT(client)->getStreaming() & WC_OUT_STREAM_TASK) > 0) return WC_CLIENT_NOT_STREAMING;
 
     WC_CLIENT(client)->getFrame()->lock();
     wcCustomMemoryStream * str = WC_CLIENT(client)->getFrame()->getLstFrame();
