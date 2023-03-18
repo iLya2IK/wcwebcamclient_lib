@@ -139,7 +139,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_contributions.html"
+"_contributions.html",
+"theora_test_2output_strm_2main_8cpp-example.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

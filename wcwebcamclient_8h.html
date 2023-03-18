@@ -33,7 +33,7 @@
   <td id="projectlogo"><img alt="Logo" src="wclogo_c.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">wcWebCamClient lib
-   &#160;<span id="projectnumber">v0.7</span>
+   &#160;<span id="projectnumber">v0.8.2</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -134,11 +134,8 @@ Typedefs</h2></td></tr>
 <tr class="memdesc:gac5eeed8e09a9a726cb20f314c86d725e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of callbacks.  <a href="group__wc_client_callbacks.html#gac5eeed8e09a9a726cb20f314c86d725e">More...</a><br /></td></tr>
 <tr class="separator:gac5eeed8e09a9a726cb20f314c86d725e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga95e837ab7c86723ba154989461613a03"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__wc_client_getters_setters.html#gadfaa57b72e59d00fa03e0a1fd5ff4c5a">wcStateId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_client_getters_setters.html#ga95e837ab7c86723ba154989461613a03">wcStateId</a></td></tr>
-<tr class="memdesc:ga95e837ab7c86723ba154989461613a03"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt;  <a href="group__wc_client_getters_setters.html#ga95e837ab7c86723ba154989461613a03">More...</a><br /></td></tr>
 <tr class="separator:ga95e837ab7c86723ba154989461613a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga12593420b46211dcbcdc7bedc1987dcc"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__wc_client_getters_setters.html#gae447488abc576169d41101c8601978db">wcTaskStateId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_client_getters_setters.html#ga12593420b46211dcbcdc7bedc1987dcc">wcTaskStateId</a></td></tr>
-<tr class="memdesc:ga12593420b46211dcbcdc7bedc1987dcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; <br  />
-  <a href="group__wc_client_getters_setters.html#ga12593420b46211dcbcdc7bedc1987dcc">More...</a><br /></td></tr>
 <tr class="separator:ga12593420b46211dcbcdc7bedc1987dcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab32005943cc9a7e51460304df7388b4a"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_client_callbacks.html#gab32005943cc9a7e51460304df7388b4a">EmptyNotifyLibFunc</a>) (<a class="el" href="wcwebcamclient_8h.html#a8ed09f7b448a852b96e2a705531a285c">wcHandle</a> client)</td></tr>
 <tr class="memdesc:gab32005943cc9a7e51460304df7388b4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notification callback.  <a href="group__wc_client_callbacks.html#gab32005943cc9a7e51460304df7388b4a">More...</a><br /></td></tr>
@@ -239,6 +236,9 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ga4f741ddf910de59fd644be10cd191efa"><td class="memItemLeft" align="right" valign="top">void DLLEXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_common_routines.html#ga4f741ddf910de59fd644be10cd191efa">wcGetLibVersion</a> (uint8_t *vmajor, uint8_t *vminor, uint16_t *vrev)</td></tr>
+<tr class="memdesc:ga4f741ddf910de59fd644be10cd191efa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the library version.  <a href="group__wc_common_routines.html#ga4f741ddf910de59fd644be10cd191efa">More...</a><br /></td></tr>
+<tr class="separator:ga4f741ddf910de59fd644be10cd191efa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6ff7e5cc74e848c1fd7b051332423e64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="wcwebcamclient_8h.html#a8ed09f7b448a852b96e2a705531a285c">wcHandle</a> DLLEXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wc_client_life_circle.html#ga6ff7e5cc74e848c1fd7b051332423e64">wcClientCreate</a> ()</td></tr>
 <tr class="memdesc:ga6ff7e5cc74e848c1fd7b051332423e64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <em>client</em>.  <a href="group__wc_client_life_circle.html#ga6ff7e5cc74e848c1fd7b051332423e64">More...</a><br /></td></tr>
 <tr class="separator:ga6ff7e5cc74e848c1fd7b051332423e64"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -603,7 +603,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="wcwebcamclient_8h.html">wcwebcamclient.h</a></li>
-    <li class="footer">Generated on Fri Mar 17 2023 09:54:36 for wcWebCamClient lib by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Mar 18 2023 11:36:24 for wcWebCamClient lib by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
