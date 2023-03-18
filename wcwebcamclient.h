@@ -180,12 +180,12 @@ typedef enum wcStateId {
     wcstDevices         = 6,   /*!< \sa wcClientInvalidateState, \sa wcClientGetBoolState, \sa wcClientSetBoolState */
     wcstRecords         = 7,   /*!< \sa wcClientInvalidateState, \sa wcClientGetBoolState, \sa wcClientSetBoolState */
     wcstRecordsStamp    = 8,   /*!< \sa wcClientInvalidateState, \sa wcClientGetStrValue, \sa wcClientGetStrNValue, \sa wcClientSetStrValue */
-    wcstMsgs            = 9,   /*!< \sa wcClientInvalidateState, \sa wcClientSetStrValue, \sa wcClientGetBoolState, \sa wcClientSetBoolState */
-    wcstSendWithSync    = 22,  /*!< 'since v0.8' \sa wcClientInvalidateState, \sa wcClientGetBoolState, \sa wcClientSetBoolState */
+    wcstMsgs            = 9,   /*!< \sa wcClientInvalidateState, \sa wcClientGetBoolState, \sa wcClientSetBoolState */
+    wcstSendWithSync    = 22,  /*!< `since v0.8` \sa wcClientInvalidateState, \sa wcClientGetBoolState, \sa wcClientSetBoolState */
     wcstMsgsStamp       = 10,  /*!< \sa wcClientInvalidateState, \sa wcClientGetStrValue, \sa wcClientGetStrNValue, \sa wcClientSetStrValue */
     wcstMetaData        = 11,  /*!< \sa wcClientInvalidateState, \sa wcClientGetStrValue, \sa wcClientGetStrNValue, \sa wcClientSetStrValue */
     wcstDeviceName      = 12,  /*!< \sa wcClientInvalidateState, \sa wcClientGetStrValue, \sa wcClientGetStrNValue, \sa wcClientSetStrValue */
-    wcstSID             = 13,  /*!< \sa wcClientGetStrValue, \sa wcClientGetStrNValue, \sa wcClientSetStrValue */
+    wcstSID             = 13,  /*!< \sa wcClientGetStrValue, \sa wcClientGetStrNValue */
     wcstHostName        = 14,  /*!< \sa wcClientInvalidateState, \sa wcClientGetStrValue, \sa wcClientGetStrNValue, \sa wcClientSetStrValue */
     wcstProxy           = 15,  /*!< \sa wcClientInvalidateState, \sa wcClientGetStrValue, \sa wcClientGetStrNValue, \sa wcClientSetStrValue */
     wcstProxyAuth       = 16,  /*!< \sa wcClientGetStrValue, \sa wcClientGetStrNValue */
@@ -193,17 +193,19 @@ typedef enum wcStateId {
     wcstProxyHost       = 18,  /*!< \sa wcClientSetStrValue */
     wcstProxyPort       = 19,  /*!< \sa wcClientSetStrValue */
     wcstProxyUser       = 20,  /*!< \sa wcClientSetStrValue */
-    wcstProxyPwrd       = 21 } /*!< \sa wcClientSetStrValue */
+    wcstProxyPwrd       = 21   /*!< \sa wcClientSetStrValue */
+}
 #ifdef __GNUC__
 __attribute__((__packed__))
 #endif
 wcStateId;
 
 typedef enum wcTaskStateId {
-    wctstError = 0,           /*!<  */
-    wctstPath,                /*!<  */
-    wctstSubProto,            /*!<  */
-    wctstDeviceName}          /*!<  */
+    wctstError = 0,           /*!< \sa wcTaskGetStrValue, \sa wcTaskGetStrNValue */
+    wctstPath,                /*!< \sa wcTaskGetStrValue, \sa wcTaskGetStrNValue */
+    wctstSubProto,            /*!< \sa wcTaskGetStrValue, \sa wcTaskGetStrNValue */
+    wctstDeviceName           /*!< \sa wcTaskGetStrValue, \sa wcTaskGetStrNValue */
+}
 #ifdef __GNUC__
 __attribute__((__packed__))
 #endif
@@ -282,7 +284,18 @@ typedef void (*StringNotifyLibFunc) (wcHandle client, const std::string& value);
 typedef void (*JSONNotifyEventLibFunc) (wcHandle client, wcTask tsk, wcJSON& jsonObj);
 #endif
 /*!@}*/
-
+/*!
+ * \defgroup wcCommonRoutines Common library routines
+ * @{
+ */
+//! \brief Get the library version
+/*!
+ * \param vmajor   A pointer to the major component of the library version.
+ * \param vminor   A pointer to the minor component of the library version.
+ * \param vrev     A pointer to the revision version value.
+ */
+void DLLEXPORT wcGetLibVersion(uint8_t * vmajor, uint8_t * vminor, uint16_t * vrev);
+/*!@}*/
 /*!
  * \defgroup wcClientLifeCircle Library functions to manage client
  * @{
@@ -409,7 +422,7 @@ wcRCode DLLEXPORT wcClientGetIntState(wcHandle client, wcStateId aStateId, int *
  * \ref wcstConnection - is client connected, <br>
  * \ref wcstVerifyTLS - should client verify TLS certificate,  <br>
  * \ref wcstError - an error has occurred, <br>
- * \ref wcstStreaming - has the client started the media stream,<br>
+ * \ref wcstStreaming - has the client started the media stream - the result is disjunction of the launched task classes (see also: \ref wcTaskClass),<br>
  * \ref wcstLog - does the log contain entries,<br>
  * \ref wcstDevices - should client update the list of devices,<br>
  * \ref wcstRecords - should client update the list of media records,<br>
@@ -428,7 +441,7 @@ wcRCode DLLEXPORT wcClientGetBoolState(wcHandle client, wcStateId aStateId);
 /*! Acceptable values of the state param are:<br>
  * \ref wcstConnection - disconnect ( \ref WC_FALSE, see also \ref wcClientDisconnect) the client ( \ref WC_TRUE not allowed, use \ref wcClientAuth instead), <br>
  * \ref wcstVerifyTLS - should client verify TLS certificate (both \ref WC_TRUE/ \ref WC_FALSE allowed),  <br>
- * \ref wcstStreaming - stop streaming ( \ref WC_FALSE) for the client ( \ref WC_TRUE not allowed, use \ref wcLaunchOutStream instead),<br>
+ * \ref wcstStreaming - stop output streaming ( \ref WC_FALSE) for the client ( \ref WC_TRUE not allowed, use \ref wcLaunchOutStream instead),<br>
  * \ref wcstDevices - the client should update the list of devices (only \ref WC_TRUE value allowed),<br>
  * \ref wcstRecords - the client should update the list of media records (only \ref WC_TRUE value allowed),<br>
  * \ref wcstMsgs - the client should update the list of messages (only \ref WC_TRUE value allowed),<br>

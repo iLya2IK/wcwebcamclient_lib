@@ -1,6 +1,7 @@
 #include "wcwebcamclient.h"
 #include "wcCURLClient.h"
 #include "wcJSON.h"
+#include <wcVersion.h>
 #include <tsObject.h>
 
 class wcInternalClient
@@ -25,6 +26,11 @@ public:
 extern "C" {
 #endif
 
+void DLLEXPORT wcGetLibVersion(uint8_t * vmajor, uint8_t * vminor, uint16_t * vrev) {
+    *vmajor = WC_LIB_VERSION_MAJOR;
+    *vminor = WC_LIB_VERSION_MINOR;
+    *vrev   = WC_LIB_VERSION_REV;
+}
 
 class wcClientsList : public tsObject {
 public:

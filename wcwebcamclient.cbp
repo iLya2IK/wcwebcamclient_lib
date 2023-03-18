@@ -112,6 +112,7 @@
 		<Unit filename="include/wcMemoryStream.h" />
 		<Unit filename="include/wcStreaming.h" />
 		<Unit filename="include/wcThread.h" />
+		<Unit filename="include/wcVersion.h" />
 		<Unit filename="src/NotifyObj.cpp" />
 		<Unit filename="src/tsCURLM.cpp" />
 		<Unit filename="src/tsInteger.cpp" />
