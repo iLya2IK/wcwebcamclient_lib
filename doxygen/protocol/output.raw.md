@@ -7,7 +7,7 @@ Request
 ------------
 JSON object in request content is not allowed. 
 Query string
-`https://localhost/input.raw?shash=string&device=string`
+`https://localhost/output.raw?shash=string&device=string`
 
 <h3>Parameters</h3>
 
@@ -24,7 +24,7 @@ Server open the data stream from selected device. The description of data stream
 Example
 ------------
 ```
-> curl --http2 -k -X POST https://localhost:8080/input.raw?shash=ra5PNJRgzrqpwbfw8JvHIkWuxJE%3D&device=camera_device
+> curl --http2 -k -X POST https://localhost:8080/output.raw?shash=ra5PNJRgzrqpwbfw8JvHIkWuxJE%3D&device=camera_device
 
 
 ```

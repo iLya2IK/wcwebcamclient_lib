@@ -7,7 +7,7 @@ Request
 ------------
 JSON object in request content is not allowed. 
 Query string
-`https://localhost/output.raw?shash=string&subproto=string&delta=integer`
+`https://localhost/input.raw?shash=string&subproto=string&delta=integer`
 The content of the request must contain [formatted](Data-stream-format.md) frames data.
 
 <h3>Parameters</h3>
@@ -38,5 +38,5 @@ There is no formatted response. If an error occurs, the stream is closed by the 
 Example
 ------------
 ```
-curl --http2 -k --data-binary '@data.raw' -X POST https://localhost:8080/addRecordData.json?shash=ra5PNJRgzrqpwbfw8JvHIkWuxJE%3D&subproto=RAW_JPEG
+curl --http2 -k --data-binary '@data.raw' -X POST https://localhost:8080/input.raw?shash=ra5PNJRgzrqpwbfw8JvHIkWuxJE%3D&subproto=RAW_JPEG
 ```
