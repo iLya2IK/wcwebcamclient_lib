@@ -313,7 +313,7 @@ output.raw</h1>
 <p>Receiving data stream from selected device to client.</p>
 <h2><a class="anchor" id="autotoc_md7"></a>
 Request</h2>
-<p>JSON object in request content is not allowed. Query string <code><a href="https://localhost/input.raw?shash=string&device=string">https://localhost/input.raw?shash=string&amp;device=string</a></code></p>
+<p>JSON object in request content is not allowed. Query string <code><a href="https://localhost/output.raw?shash=string&device=string">https://localhost/output.raw?shash=string&amp;device=string</a></code></p>
 <h3>Parameters</h3>
 <ul>
 <li><em><b>shash</b></em> - session id (required)</li>
@@ -325,14 +325,14 @@ Response</h2>
 <p>Server open the data stream from selected device. The description of data stream format you can find here</p>
 <h2><a class="anchor" id="autotoc_md9"></a>
 Example</h2>
-<div class="fragment"><div class="line">&gt; curl --http2 -k -X POST https://localhost:8080/input.raw?shash=ra5PNJRgzrqpwbfw8JvHIkWuxJE%3D&amp;device=camera_device</div>
+<div class="fragment"><div class="line">&gt; curl --http2 -k -X POST https://localhost:8080/output.raw?shash=ra5PNJRgzrqpwbfw8JvHIkWuxJE%3D&amp;device=camera_device</div>
 </div><!-- fragment --><hr  />
 <h1><a class="anchor" id="input"></a>
 input.raw</h1>
 <p>Open data stream from client device to server.</p>
 <h2><a class="anchor" id="autotoc_md10"></a>
 Request</h2>
-<p>JSON object in request content is not allowed. Query string <code><a href="https://localhost/output.raw?shash=string&subproto=string&delta=integer">https://localhost/output.raw?shash=string&amp;subproto=string&amp;delta=integer</a></code> The content of the request must contain formatted frames data.</p>
+<p>JSON object in request content is not allowed. Query string <code><a href="https://localhost/input.raw?shash=string&subproto=string&delta=integer">https://localhost/input.raw?shash=string&amp;subproto=string&amp;delta=integer</a></code> The content of the request must contain formatted frames data.</p>
 <h3>Parameters</h3>
 <ul>
 <li><em><b>shash</b></em> - session id (required)</li>
@@ -353,7 +353,7 @@ Response</h2>
 <p>There is no formatted response. If an error occurs, the stream is closed by the host.</p>
 <h2><a class="anchor" id="autotoc_md13"></a>
 Example</h2>
-<div class="fragment"><div class="line">curl --http2 -k --data-binary &#39;@data.raw&#39; -X POST https://localhost:8080/addRecordData.json?shash=ra5PNJRgzrqpwbfw8JvHIkWuxJE%3D&amp;subproto=RAW_JPEG</div>
+<div class="fragment"><div class="line">curl --http2 -k --data-binary &#39;@data.raw&#39; -X POST https://localhost:8080/input.raw?shash=ra5PNJRgzrqpwbfw8JvHIkWuxJE%3D&amp;subproto=RAW_JPEG</div>
 </div><!-- fragment --><hr  />
 <h1><a class="anchor" id="authorize"></a>
 authorize.json</h1>
@@ -764,7 +764,7 @@ JSON_BAD message format</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat Mar 18 2023 11:36:24 for wcWebCamClient lib by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Wed Mar 22 2023 13:43:08 for wcWebCamClient lib by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
